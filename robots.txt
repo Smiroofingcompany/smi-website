@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
 Sitemap: https://smiroof.com/sitemap.xml
+
+# Source of truth: github.com/Smiroofingcompany/smi-website
