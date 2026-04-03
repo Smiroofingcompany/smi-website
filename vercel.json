@@ -1,0 +1,259 @@
+{
+  "version": 2,
+  "redirects": [
+    {
+      "source": "/roofing-blog/f/metal-roofing-benefits-for-arkansas-homeowners",
+      "destination": "/blog/metal-roof-vs-shingles-arkansas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/roofing-blog/f/signs-your-roof-needs-replacement",
+      "destination": "/blog/signs-you-need-new-roof/",
+      "statusCode": 301
+    },
+    {
+      "source": "/roofing-blog/f/annual-roof-inspection-checklist",
+      "destination": "/roof-repair/",
+      "statusCode": 301
+    },
+    {
+      "source": "/roofing-blog/f/how-to-prepare-for-arkansas-storm-season",
+      "destination": "/blog/storm-damage-insurance-claims-arkansas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/roofing-blog/f/understanding-roof-insurance-claims",
+      "destination": "/insurance-claims/",
+      "statusCode": 301
+    },
+    {
+      "source": "/roofing-blog/f/choosing-the-right-roofing-material",
+      "destination": "/blog/metal-roof-vs-shingles-arkansas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/roofing-blog/f/roof-maintenance-tips-for-homeowners",
+      "destination": "/roof-repair/",
+      "statusCode": 301
+    },
+    {
+      "source": "/roofing-blog/f/cost-of-roof-replacement-in-arkansas",
+      "destination": "/blog/roof-replacement-cost-arkansas-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/roofing-blog/f/:path*",
+      "destination": "/residential-roofing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dardanelle-ar-72834",
+      "destination": "/service-areas/dardanelle-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/conway-ar-72032",
+      "destination": "/service-areas/conway-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pottsville-ar-72858",
+      "destination": "/service-areas/pottsville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/atkins-ar-72823",
+      "destination": "/service-areas/atkins-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/greenbrier-ar-72058",
+      "destination": "/service-areas/greenbrier-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dover-ar-72837",
+      "destination": "/service-areas/dover-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/russellville-ar-72801",
+      "destination": "/service-areas/russellville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/london-ar-72847",
+      "destination": "/service-areas/london-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/morrilton-ar-72110",
+      "destination": "/service-areas/morrilton-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/clarksville-ar-72830",
+      "destination": "/service-areas/clarksville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ozark-ar-72949",
+      "destination": "/service-areas/ozark-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/faq",
+      "destination": "/residential-roofing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about",
+      "destination": "/#why",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact",
+      "destination": "/#contact",
+      "statusCode": 301
+    },
+    {
+      "source": "/services",
+      "destination": "/#services",
+      "statusCode": 301
+    },
+    {
+      "source": "/fort-smith-ar-72901",
+      "destination": "/service-areas/fort-smith-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fort-smith-ar-:zip",
+      "destination": "/service-areas/fort-smith-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/little-rock-ar-:zip",
+      "destination": "/service-areas/little-rock-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fayetteville-ar-:zip",
+      "destination": "/service-areas/fayetteville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/springdale-ar-:zip",
+      "destination": "/service-areas/springdale-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/rogers-ar-:zip",
+      "destination": "/service-areas/rogers-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bentonville-ar-:zip",
+      "destination": "/service-areas/bentonville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/benton-ar-:zip",
+      "destination": "/service-areas/benton-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bryant-ar-:zip",
+      "destination": "/service-areas/bryant-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cabot-ar-:zip",
+      "destination": "/service-areas/cabot-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/searcy-ar-:zip",
+      "destination": "/service-areas/searcy-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/jacksonville-ar-:zip",
+      "destination": "/service-areas/jacksonville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mena-ar-:zip",
+      "destination": "/service-areas/mena-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nashville-ar-:zip",
+      "destination": "/service-areas/nashville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/booneville-ar-:zip",
+      "destination": "/service-areas/booneville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/van-buren-ar-:zip",
+      "destination": "/service-areas/van-buren-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vilonia-ar-:zip",
+      "destination": "/service-areas/vilonia-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/alma-ar-:zip",
+      "destination": "/service-areas/alma-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/el-dorado-ar-:zip",
+      "destination": "/service-areas/el-dorado-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/north-little-rock-ar-:zip",
+      "destination": "/service-areas/north-little-rock-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/siloam-springs-ar-:zip",
+      "destination": "/service-areas/siloam-springs-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy-policy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy/",
+      "destination": "/privacy-policy/",
+      "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}
