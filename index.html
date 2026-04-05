@@ -822,35 +822,35 @@ L.polygon(arBorder,{color:'#f59e0b',weight:3,fillColor:'rgba(245,158,11,0.06)',f
 })();
 
 function submitContactForm(){
-  var fn=document.getElementById('cf_fname').value;
-  var ln=document.getElementById('cf_lname').value;
-  var addr=document.getElementById('cf_address').value;
-  var phone=document.getElementById('cf_phone').value;
+  var fn=document.getElementById('cf_fname').value.trim();
+  var ln=document.getElementById('cf_lname').value.trim();
+  var addr=document.getElementById('cf_address').value.trim();
+  var phone=document.getElementById('cf_phone').value.trim();
   var service=document.getElementById('cf_service').value;
   if(!fn||!ln||!phone){alert('Please enter your first name, last name, and phone number.');return;}
   var smsConsent=document.getElementById('cf_sms_consent');
   if(!smsConsent||!smsConsent.checked){alert('Please check the box to consent to SMS messages before submitting.');return;}
   var btn=document.getElementById('cf_submit');
   btn.textContent='Sending...';btn.disabled=true;btn.style.opacity='.6';
-  var pg=window.location.pathname;
-  fetch('https://formsubmit.co/ajax/smiroofingcompany@gmail.com',{
+  fetch('/api/contact',{
     method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    headers:{'Content-Type':'application/json'},
     body:JSON.stringify({
-      'First Name':fn,
-      'Last Name':ln,
-      'Phone':phone,
-      'Address':addr||'Not provided',
-      'Service Needed':service||'Not specified',
-      'SMS Consent':'Yes - opted in at time of form submission',
-      'Page':pg,
-      _subject:'🏠 New SMI Roofing Lead: '+fn+' '+ln+' - '+(service||'General Inquiry'),
-      _template:'table',
-      _captcha:'false'
+      name:fn+' '+ln,
+      phone:phone,
+      email:'',
+      service:service||'',
+      message:addr?'Address: '+addr:'',
+      smsConsent:true,
+      page:window.location.pathname
     })
-  }).then(function(r){return r.json()}).then(function(){
-    document.getElementById('formContainer').style.display='none';
-    document.getElementById('formSuccess').style.display='block';
+  }).then(function(r){return r.json()}).then(function(d){
+    if(d.success){
+      document.getElementById('formContainer').style.display='none';
+      document.getElementById('formSuccess').style.display='block';
+    } else {
+      throw new Error(d.error||'error');
+    }
   }).catch(function(){
     btn.textContent='Get My Free Inspection →';btn.disabled=false;btn.style.opacity='1';
     alert('Something went wrong. Please call us directly at (501) 464-5139.');
