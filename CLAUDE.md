@@ -56,7 +56,7 @@ are benign and can be ignored.
 smiroof.com is a 60+ page static HTML site. No framework. No build step.
 Pure HTML, CSS, and JavaScript files committed directly to the repo.
 
-Page inventory (60 HTML files as of April 2026):
+Page inventory (95+ HTML files as of April 2026):
 - index.html (homepage)
 - 5 standalone service pages (residential, metal-roofing, storm-damage,
   roof-repair, roof-inspections, insurance-claims)
@@ -64,7 +64,7 @@ Page inventory (60 HTML files as of April 2026):
   metal panels, EPDM, modified bitumen, built-up, coatings, repair)
 - 32 city landing pages (residential) + service-areas hub
 - 4 industry vertical pages
-- blog index + 4 blog posts
+- blog index + 35 blog posts (1 original + 34 added April 2026)
 - privacy policy + SMS terms
 - sitemap.xml + robots.txt
 
@@ -77,9 +77,10 @@ Every page must have:
 - Nav with both desktop nav-links AND mobile menu (both must be verified
   before any push — the Commercial nav link has been broken before)
 
-As of April 2026: all 60 pages have standalone @id RoofingContractor
-schema, canonical tags, and Open Graph tags. Schema was added in bulk
-during the April 4 2026 session.
+As of April 2026: all pages have standalone @id RoofingContractor schema,
+canonical tags, and Open Graph tags. 14 city pages rewritten with locally-
+specific content (landmarks, employers, weather, nearby area pills) and
+city-specific FAQPage schema. 34 new blog posts added across 8 categories.
 
 ---
 
@@ -179,10 +180,17 @@ and submit new URLs to Google Search Console.
 
 ## CONTACT FORM
 
-Current handler: Formsubmit.co on the homepage contact form.
-Future: Route submissions to crm.smiroof.com/api/book (not yet built).
+Handler: `/api/contact` Vercel serverless function (built April 2026).
+- POSTs lead JSON to `crm.smiroof.com/api/leads`
+- Sends Twilio SMS to opted-in leads (first name + 1-hour callback message)
+- Sends internal notification email to info@smiroof.com via SMTP
+- Returns `{success:true}` JSON for no-reload thank-you
 
-Do not change the form handler without explicit instruction from Cory.
+Required env vars (set in Vercel dashboard, not in .env):
+- `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_FROM_NUMBER`
+- `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`
+- `CRM_API_TOKEN` (optional — for authenticated CRM requests)
+
 Do not break the A2P compliance checkbox (see above).
 
 ---
@@ -204,14 +212,15 @@ Domain emails: info@smiroof.com and cory@smiroof.com (not confirmed active)
 Fix these when they come up. Do not wait for a separate session.
 
 - Confirm Twilio A2P SMS campaign registration outcome after checkbox fix
+- Set TWILIO_* and SMTP_* env vars in Vercel dashboard (contact form won't
+  send SMS or email until these are set)
 - Add commercial project photos to all commercial pages (Cory provides photos)
 - Correct LSA profile: wrong phone number and website URL on Local Services Ads
 - Domain email setup: info@smiroof.com and cory@smiroof.com not confirmed active
-- CRM form integration: contact form submissions need to route to CRM API
 - Content automation pipeline: blog posts, GBP updates, social publishing
 - Manufacturer certifications: GAF, Duro-Last, Elevate/Firestone, Carlisle,
   Johns Manville, CertainTeed directory listings and backlinks
-- Google reviews embed on website
+- Update sitemap.xml to include 34 new blog posts and verify all city pages listed
 
 ---
 
