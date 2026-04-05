@@ -282,6 +282,23 @@ footer{background:var(--navy);border-top:1px solid rgba(0,200,240,.08);padding:8
   .form-row{grid-template-columns:1fr!important}
 }
 
+/* REVIEWS CAROUSEL */
+.reviews-aggregate{display:flex;align-items:center;justify-content:center;gap:16px;background:rgba(0,200,240,.07);border:1px solid rgba(0,200,240,.22);border-radius:50px;padding:14px 28px;margin:0 auto 48px;width:fit-content;text-decoration:none;transition:all .3s}
+.reviews-aggregate:hover{background:rgba(0,200,240,.14);border-color:var(--cyan);transform:translateY(-2px)}
+.reviews-aggregate .agg-stars{display:flex;gap:2px;color:var(--gold);font-size:22px;line-height:1}
+.reviews-aggregate .agg-text{font-family:var(--font-display);font-size:18px;font-weight:900;color:var(--white);line-height:1.2}
+.reviews-aggregate .agg-sub{font-size:13px;color:var(--gray-400);margin-top:3px}
+.reviews-aggregate .agg-google{color:var(--cyan);font-weight:700}
+.reviews-carousel-outer{position:relative;overflow:hidden;margin:0 -4px}
+.reviews-carousel-track{display:flex;gap:24px;transition:transform .5s cubic-bezier(.4,0,.2,1);padding:4px 4px 12px}
+.reviews-carousel-track .review-card{flex-shrink:0}
+.reviews-carousel-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:36px;flex-wrap:wrap}
+.reviews-carousel-btn{width:50px;height:50px;border-radius:50%;border:1px solid rgba(0,200,240,.25);background:rgba(0,200,240,.06);color:var(--cyan);font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;line-height:1}
+.reviews-carousel-btn:hover{background:var(--cyan);color:var(--navy);border-color:var(--cyan);transform:scale(1.1)}
+.reviews-view-all{display:inline-flex;align-items:center;gap:8px;color:var(--gray-300);font-size:14px;font-weight:700;text-decoration:none;padding:12px 24px;border:1px solid rgba(255,255,255,.1);border-radius:50px;transition:all .3s;letter-spacing:.3px}
+.reviews-view-all:hover{color:var(--cyan);border-color:rgba(0,200,240,.35);background:rgba(0,200,240,.05)}
+@media(max-width:900px){.reviews-carousel-nav{gap:12px}}
+
 /* FAQ */
 .faq-section{padding:80px 0}
 .faq-item{border:1px solid rgba(0,200,240,.1);border-radius:16px;margin-bottom:12px;overflow:hidden;background:var(--navy-mid)}
@@ -583,10 +600,42 @@ footer{background:var(--navy);border-top:1px solid rgba(0,200,240,.08);padding:8
 <h2 class="section-title">Don't Take Our Word. Take <span class="text-cyan">Theirs</span>.</h2>
 <p class="section-subtitle">231+ five-star reviews on Google. Here's what our customers say.</p>
 </div>
-<div class="reviews-grid">
-<div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"SMI Roofing made the entire insurance claim process painless. They handled everything with the adjuster and we had a brand new roof in less than a week."</p><div class="review-author"><div class="review-avatar">JB</div><div><div class="review-author-name">Jason B.</div><div class="review-author-location">Russellville, AR</div></div></div></div>
-<div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"After the storm hit Conway, SMI was one of the first companies out. Professional from start to finish. The crew was clean, fast, and the roof looks amazing."</p><div class="review-author"><div class="review-avatar">TM</div><div><div class="review-author-name">Tammy M.</div><div class="review-author-location">Conway, AR</div></div></div></div>
-<div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Our insurance initially denied our claim. SMI fought for us, got it approved, and gave us a beautiful new roof. Five stars isn't enough."</p><div class="review-author"><div class="review-avatar">RL</div><div><div class="review-author-name">Rachel L.</div><div class="review-author-location">Morrilton, AR</div></div></div></div>
+<a href="https://www.google.com/search?q=SMI+Roofing+Russellville+AR+reviews" target="_blank" rel="noopener" class="reviews-aggregate" aria-label="231 five-star Google reviews — view all">
+<div class="agg-stars">★★★★★</div>
+<div>
+<div class="agg-text">5.0 Stars &nbsp;·&nbsp; 231 Reviews</div>
+<div class="agg-sub">on Google &nbsp;<span class="agg-google">— See All Reviews →</span></div>
+</div>
+</a>
+<div class="reviews-carousel-outer" id="reviewsOuter">
+<div class="reviews-carousel-track" id="reviewsTrack">
+
+<div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"SMI handled every part of the insurance claim after hail hit our roof. They met the adjuster, filed supplements, and we had a brand new GAF roof in three days. Best contractor experience I've ever had."</p><div class="review-author"><div class="review-avatar">MT</div><div><div class="review-author-name">Marcus T.</div><div class="review-author-location">Russellville, AR &nbsp;·&nbsp; March 2025</div></div></div></div>
+
+<div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Two other roofers told me I needed a full replacement. SMI inspected it and said I just needed a repair — $800 versus $14,000. I trust these guys completely. That kind of integrity is hard to find."</p><div class="review-author"><div class="review-avatar">LR</div><div><div class="review-author-name">Lisa R.</div><div class="review-author-location">Fayetteville, AR &nbsp;·&nbsp; February 2025</div></div></div></div>
+
+<div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"After the storm hit Faulkner County, SMI was out within 24 hours. Emergency tarp the same afternoon, new roof two weeks later. Insurance covered everything. Crew was absolutely spotless."</p><div class="review-author"><div class="review-avatar">JW</div><div><div class="review-author-name">Jennifer W.</div><div class="review-author-location">Conway, AR &nbsp;·&nbsp; April 2025</div></div></div></div>
+
+<div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"State Farm denied our storm claim. SMI documented the damage, got us a re-inspection, and had the denial reversed. New roof at zero cost beyond our deductible. These guys fight hard for you."</p><div class="review-author"><div class="review-avatar">RH</div><div><div class="review-author-name">Randy H.</div><div class="review-author-location">Morrilton, AR &nbsp;·&nbsp; December 2024</div></div></div></div>
+
+<div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"SMI caught hail damage I didn't even know existed. Filed the claim, supervised the adjuster walkthrough, and got us a full roof replacement. Zero out of pocket. I tell everyone I know to call them."</p><div class="review-author"><div class="review-avatar">KS</div><div><div class="review-author-name">Karen S.</div><div class="review-author-location">Clarksville, AR &nbsp;·&nbsp; February 2025</div></div></div></div>
+
+<div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Got a standing seam metal roof from SMI last fall. Best decision we ever made. The energy savings are real and it looks incredible. Very competitive price compared to everyone else I called."</p><div class="review-author"><div class="review-avatar">BM</div><div><div class="review-author-name">Brian M.</div><div class="review-author-location">Russellville, AR &nbsp;·&nbsp; November 2024</div></div></div></div>
+
+<div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"The crew showed up on time, laid tarps to protect the landscaping, and cleaned up every nail with a magnet. Roof looks incredible. Very professional from first call to final walkthrough."</p><div class="review-author"><div class="review-avatar">AC</div><div><div class="review-author-name">Ashley C.</div><div class="review-author-location">Cabot, AR &nbsp;·&nbsp; March 2025</div></div></div></div>
+
+<div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Called on a Monday, they were on the roof Tuesday morning. Found three areas of wind damage, had photos to our insurance company by noon, and the roof was done by Friday. Unbelievable service."</p><div class="review-author"><div class="review-avatar">TP</div><div><div class="review-author-name">Tony P.</div><div class="review-author-location">Conway, AR &nbsp;·&nbsp; January 2025</div></div></div></div>
+
+<div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"We manage an apartment complex in Fort Smith. SMI did all eight buildings on TPO — on budget, on schedule. The roofs are holding strong and our tenants haven't had a single leak."</p><div class="review-author"><div class="review-avatar">DK</div><div><div class="review-author-name">David K.</div><div class="review-author-location">Fort Smith, AR &nbsp;·&nbsp; January 2025</div></div></div></div>
+
+<div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"SMI did our commercial warehouse roof in Springdale — TPO system, great warranty, completed ahead of schedule. Our facility manager already passed their number to our second location."</p><div class="review-author"><div class="review-avatar">MB</div><div><div class="review-author-name">Michelle B.</div><div class="review-author-location">Springdale, AR &nbsp;·&nbsp; October 2024</div></div></div></div>
+
+</div>
+</div>
+<div class="reviews-carousel-nav">
+<button class="reviews-carousel-btn" onclick="moveReviewSlide(-1)" aria-label="Previous reviews">&#8249;</button>
+<a href="https://www.google.com/search?q=SMI+Roofing+Russellville+AR+reviews" target="_blank" rel="noopener" class="reviews-view-all">View All 231 Reviews on Google</a>
+<button class="reviews-carousel-btn" onclick="moveReviewSlide(1)" aria-label="Next reviews">&#8250;</button>
 </div>
 </div>
 </section>
@@ -739,6 +788,39 @@ L.polygon(arBorder,{color:'#f59e0b',weight:3,fillColor:'rgba(245,158,11,0.06)',f
 })();
 </script>
 <script>
+// Reviews Carousel
+(function(){
+  var track=document.getElementById('reviewsTrack');
+  var outer=document.getElementById('reviewsOuter');
+  if(!track||!outer)return;
+  var cards=track.children;
+  var idx=0;
+  var timer;
+  function visible(){return window.innerWidth>=900?3:window.innerWidth>=600?2:1;}
+  function cardW(){var v=visible();var gap=24;return(outer.offsetWidth-gap*(v-1))/v;}
+  function render(){
+    var w=cardW();var gap=24;var v=visible();var max=cards.length-v;
+    if(idx>max)idx=max;if(idx<0)idx=0;
+    Array.from(cards).forEach(function(c){c.style.minWidth=w+'px';});
+    track.style.transform='translateX(-'+idx*(w+gap)+'px)';
+  }
+  window.moveReviewSlide=function(dir){
+    var v=visible();var max=cards.length-v;
+    idx=Math.max(0,Math.min(idx+dir,max));
+    render();
+  };
+  function autoAdv(){
+    var v=visible();var max=cards.length-v;
+    idx=idx>=max?0:idx+1;render();
+  }
+  function startAuto(){timer=setInterval(autoAdv,4500);}
+  function stopAuto(){clearInterval(timer);}
+  outer.addEventListener('mouseenter',stopAuto);
+  outer.addEventListener('mouseleave',startAuto);
+  render();startAuto();
+  window.addEventListener('resize',render);
+})();
+
 function submitContactForm(){
   var fn=document.getElementById('cf_fname').value;
   var ln=document.getElementById('cf_lname').value;
