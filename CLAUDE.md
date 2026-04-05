@@ -36,13 +36,14 @@ Commit and push to GitHub instead.
 
 GitHub repo: github.com/Smiroofingcompany/smi-website
 Branch: main (auto-deploys to smiroof.com via Vercel)
-GitHub token: [REDACTED — paste in-session]
 Git config name: SMI Roofing
 Git config email: smiroofingcompany@gmail.com
 
 Vercel projectId: prj_Ur8yabvNY8MrzTG1CgQzr39MU7tn
 Vercel teamId: team_YEyhFvcZVhdtBmQHYhPqk8yK
-Vercel token: [REDACTED — paste in-session]
+
+Tokens are stored in .env in the repo root. Never commit .env.
+Read tokens from .env at the start of each session.
 
 Deployment confirmation: Look for the Vercel build completing in GitHub Actions
 or the live URL reflecting the change. DNS telemetry errors in terminal output
