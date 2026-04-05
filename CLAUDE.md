@@ -53,18 +53,20 @@ are benign and can be ignored.
 
 ## SITE STRUCTURE
 
-smiroof.com is a 60+ page static HTML site. No framework. No build step.
+smiroof.com is a 120+ page static HTML site. No framework. No build step.
 Pure HTML, CSS, and JavaScript files committed directly to the repo.
 
-Page inventory (95+ HTML files as of April 2026):
+Page inventory (as of April 2026):
 - index.html (homepage)
-- 5 standalone service pages (residential, metal-roofing, storm-damage,
+- 6 standalone service pages (residential, metal-roofing, storm-damage,
   roof-repair, roof-inspections, insurance-claims)
 - commercial services hub + 8 service pages (TPO, standing seam metal,
   metal panels, EPDM, modified bitumen, built-up, coatings, repair)
+- 26 commercial city landing pages at /commercial-roofing/[city]-ar/
 - 32 city landing pages (residential) + service-areas hub
 - 4 industry vertical pages
-- blog index + 35 blog posts (1 original + 34 added April 2026)
+- blog index + 35 blog posts (all topics: cost, insurance, materials,
+  commercial, storm/damage, process/tips, local)
 - privacy policy + SMS terms
 - sitemap.xml + robots.txt
 
@@ -77,10 +79,11 @@ Every page must have:
 - Nav with both desktop nav-links AND mobile menu (both must be verified
   before any push — the Commercial nav link has been broken before)
 
-As of April 2026: all pages have standalone @id RoofingContractor schema,
-canonical tags, and Open Graph tags. 14 city pages rewritten with locally-
-specific content (landmarks, employers, weather, nearby area pills) and
-city-specific FAQPage schema. 34 new blog posts added across 8 categories.
+As of April 2026: all residential city pages have the cost FAQ ("How much
+does a roof replacement cost in [City]?") in both FAQPage schema and HTML.
+All 35 blog posts have topic-specific related article links in the sidebar.
+26 commercial city pages built at /commercial-roofing/[city]-ar/ with unique
+local content, commercial FAQs, and full schema markup.
 
 ---
 
@@ -212,15 +215,15 @@ Domain emails: info@smiroof.com and cory@smiroof.com (not confirmed active)
 Fix these when they come up. Do not wait for a separate session.
 
 - Confirm Twilio A2P SMS campaign registration outcome after checkbox fix
-- Set TWILIO_* and SMTP_* env vars in Vercel dashboard (contact form won't
-  send SMS or email until these are set)
+- Set SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS in Vercel dashboard so the
+  contact form sends internal notification emails (Twilio env vars already set)
 - Add commercial project photos to all commercial pages (Cory provides photos)
 - Correct LSA profile: wrong phone number and website URL on Local Services Ads
 - Domain email setup: info@smiroof.com and cory@smiroof.com not confirmed active
-- Content automation pipeline: blog posts, GBP updates, social publishing
-- Manufacturer certifications: GAF, Duro-Last, Elevate/Firestone, Carlisle,
-  Johns Manville, CertainTeed directory listings and backlinks
-- Update sitemap.xml to include 34 new blog posts and verify all city pages listed
+- Directory listings: GAF, Owens Corning, BBB, Angi, HomeAdvisor, Russellville
+  Chamber of Commerce — Cory must claim/create these manually with his login
+- Google Business Profile: needs weekly posts (1-2x/week using CompanyCam photos)
+- Google Search Console: submit all 26 new commercial city URLs + 31 new blog URLs
 
 ---
 
@@ -228,15 +231,10 @@ Fix these when they come up. Do not wait for a separate session.
 
 These are identified but not yet built. Do not start without explicit instruction.
 
-- 26 commercial city landing pages missing. Requires dedicated
-  content-generation session. Each page needs unique local content,
-  RoofingContractor schema, FAQPage schema, BreadcrumbList, and
-  LocalBusiness schema.
-- 9th commercial service page. The 8 existing pages are: TPO, standing
-  seam metal, metal panel systems, EPDM, modified bitumen, built-up
-  roofing, roof coatings/restoration, and commercial roof repair. The
-  most logical 9th page is commercial roof inspections / preventive
+- 9th commercial service page: commercial roof inspections / preventive
   maintenance programs. Needs clarification from Cory before building.
+- GBP post content calendar: 4 weeks of draft posts ready to publish
+- Blog content expansion: additional local market posts for NW Arkansas cities
 
 ---
 
@@ -269,7 +267,7 @@ SMI's moat: 231 reviews at 5.0, 35 years, 1,700+ roofs. Lead with this everywher
 
 ## LAST UPDATED
 
-April 2026. Update this file whenever the site structure, deployment setup,
+April 5, 2026. Update this file whenever the site structure, deployment setup,
 or compliance requirements change.
 
 ---
