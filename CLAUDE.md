@@ -69,21 +69,48 @@ Page inventory (as of April 2026):
   commercial, storm/damage, process/tips, local)
 - privacy policy + SMS terms
 - sitemap.xml + robots.txt
+- /assets/ directory (self-hosted images and video — see below)
 
 Every page must have:
 - Schema markup: RoofingContractor (standalone with @id), FAQPage,
-  BreadcrumbList, LocalBusiness (covered by RoofingContractor which
-  extends LocalBusiness in schema.org)
+  BreadcrumbList, LocalBusiness
 - Open Graph meta tags (og:title, og:description, og:image, og:url, og:type)
 - Canonical URL
 - Nav with both desktop nav-links AND mobile menu (both must be verified
   before any push — the Commercial nav link has been broken before)
 
-As of April 2026: all residential city pages have the cost FAQ ("How much
-does a roof replacement cost in [City]?") in both FAQPage schema and HTML.
-All 35 blog posts have topic-specific related article links in the sidebar.
-26 commercial city pages built at /commercial-roofing/[city]-ar/ with unique
-local content, commercial FAQs, and full schema markup.
+As of April 2026:
+- All 32 residential city pages have the cost FAQ in both FAQPage schema and HTML
+- All 35 blog posts have topic-specific related article links in the sidebar
+- All 58 city pages (residential + commercial) have the drone video hero
+- 26 commercial city pages built with unique local content and full schema
+- All assets are self-hosted — zero Cloudinary dependency
+
+---
+
+## ASSETS — SELF-HOSTED (CRITICAL)
+
+All images and video are served from /assets/ in the repo.
+Cloudinary account dzypmhsh7 was disabled April 2026, breaking the entire site.
+Every Cloudinary URL was replaced. Do NOT add new Cloudinary URLs.
+
+Files in /assets/:
+- logo.png — SMI logo used in nav on every page
+- hero-video.mp4 — drone footage, autoplay hero on homepage + all city pages
+- hero-poster.jpg — video fallback still image (DJI drone shot, 1920px)
+- og-image.jpg — Open Graph share image (1200px)
+- commercial.jpg — commercial/metal roofing section image
+- residential.jpg — residential completed roof image
+- truck.jpg — SMI truck on job site
+- team.jpg — SMI crew photo
+- aerial.jpg — aerial drone view of luxury home
+- construction.jpg — commercial steel construction
+- completed.jpg — completed residential roof
+- crew.jpg — crew on roof
+
+When adding new pages or sections that need images: use files from /assets/.
+If new photos are needed, add them to /assets/ and reference them with a
+root-relative path (e.g. /assets/filename.jpg). Never use external image hosts.
 
 ---
 
@@ -91,11 +118,8 @@ local content, commercial FAQs, and full schema markup.
 
 Theme: Navy and cyan.
 Fonts: Outfit (headings), Plus Jakarta Sans (body).
-Logo hosted on Cloudinary: res.cloudinary.com/dzypmhsh7
-
-Before generating any new page, extract the CSS variables and design tokens
-from the existing index.html. Never guess at colors or font sizes.
-Every new page must be visually identical to the existing site.
+CSS variables: --cyan:#00C8F0, --navy:#0a1628, --navy-light:#111f36,
+--navy-mid:#162440. Extract from existing pages before writing new ones.
 
 Background: true dark navy, not blue-gray.
 Accent: cyan #00C8F0 used sparingly for CTAs and highlights only.
@@ -114,32 +138,23 @@ Never remove it. Never move it. Never alter the checkbox, its label text,
 its ID (cf_sms_consent), or the JavaScript validation that blocks form
 submission when unchecked.
 
-Four prior Twilio campaign registrations were rejected because the form
-had SMS consent as static text only with no checkbox. The fix was a proper
-unchecked TCPA-compliant checkbox with adjacent consent language and
-JavaScript validation. A fifth resubmission is currently pending.
-Touching this block could invalidate the entire campaign registration.
+A fifth resubmission is currently pending. Touching this block could
+invalidate the entire campaign registration.
 
 ---
 
 ## KNOWN FAILURE MODES — READ BEFORE EVERY SESSION
 
-1. Pages disappearing on deploy. This happens when a deploy does not include
-   all existing files. Every push must include the complete file tree.
-   Never push only changed files via a partial commit. Pull first,
-   edit, commit all, push.
+1. Pages disappearing on deploy. Pull first, edit, commit all, push.
+   Never push a partial file set.
 
-2. Commercial nav link breaking. The desktop nav and mobile menu are separate
-   code blocks. Both must include the Commercial link. Always verify both
-   before pushing any homepage or nav changes.
+2. Commercial nav link breaking. Desktop nav and mobile menu are separate
+   code blocks. Both must include the Commercial link. Verify before any push.
 
-3. Live site and GitHub repo going out of sync. Never assume GitHub reflects
-   what is live or vice versa. Always pull the latest from GitHub at the
-   start of every session and cross-reference with the live site if needed.
+3. Live site and GitHub out of sync. Always pull at session start.
 
-4. Vercel file content API. The v8 API returns base64-encoded JSON in the
-   format {"data":"..."}. Must decode before writing to disk.
-   The v6 endpoint cannot be used for file content retrieval.
+4. External asset dependencies. All images/video are now in /assets/.
+   Never reference Cloudinary or any external CDN. Self-host everything.
 
 5. CSS and design drift. Always extract design tokens from existing files
    before writing new pages. Never generate new pages from memory.
@@ -148,65 +163,55 @@ Touching this block could invalidate the entire campaign registration.
 
 ## SESSION STARTUP PROTOCOL
 
-Every session must begin with these steps before writing a single line:
-
 1. Pull the latest from GitHub. Never work from a stale local copy.
 2. Audit the current file tree. Know what exists before adding anything.
 3. Check index.html for the current nav structure (both desktop and mobile).
-4. Extract CSS variables from the existing stylesheet before generating
-   any new pages.
-5. Identify what the session goal is and confirm the exact files in scope.
-6. Only then begin writing code.
+4. Extract CSS variables from existing pages before generating new ones.
+5. Identify the session goal and exact files in scope.
+6. Begin work. Update CLAUDE.md before the final commit of every session.
 
 ---
 
 ## SEO REQUIREMENTS
 
 Every city landing page must include unique local content. Reference specific
-employers, landmarks, and neighborhoods for that city. Do not generate
-generic content that could apply to any city.
+employers, landmarks, and neighborhoods. No generic content.
 
-Priority keyword categories to own:
+Priority keywords:
 - Residential roofing + city name (all Arkansas markets)
-- Commercial roofing + city name
-- Standing seam metal roofing (major opportunity, competitors are weak here)
+- Commercial roofing + city name (26 pages live, zero competition)
+- Standing seam metal roofing
 - Storm damage roof repair
 - Roof replacement cost Arkansas
 
-Schema required on every page: RoofingContractor, FAQPage, BreadcrumbList,
-LocalBusiness. No exceptions.
-
-Sitemap: smiroof.com/sitemap.xml. Update it whenever new pages are added
-and submit new URLs to Google Search Console.
+Schema required on every page: RoofingContractor, FAQPage, BreadcrumbList.
+Sitemap: smiroof.com/sitemap.xml — update whenever new pages are added.
 
 ---
 
 ## CONTACT FORM
 
-Handler: `/api/contact` Vercel serverless function (built April 2026).
+Handler: `/api/contact` Vercel serverless function.
 - POSTs lead JSON to `crm.smiroof.com/api/leads`
-- Sends Twilio SMS to opted-in leads (first name + 1-hour callback message)
+- Sends Twilio SMS to opted-in leads
 - Sends internal notification email to info@smiroof.com via SMTP
-- Returns `{success:true}` JSON for no-reload thank-you
+- Returns `{success:true}` JSON
 
-Required env vars (set in Vercel dashboard, not in .env):
-- `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_FROM_NUMBER`
-- `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`
-- `CRM_API_TOKEN` (optional — for authenticated CRM requests)
-
-Do not break the A2P compliance checkbox (see above).
+Env vars in Vercel dashboard (not .env):
+- `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_FROM_NUMBER` — set
+- `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` — NOT YET SET (email broken)
+- `CRM_API_TOKEN` — optional
 
 ---
 
 ## TOOLS AND INTEGRATIONS
 
 CRM: crm.smiroof.com (custom React app, separate repo)
-Jobber booking link: clienthub.getjobber.com/booking/31b1fe0c-4da6-49e9-ad15-2e9a8cefa5fb
-SMS: Twilio / SimpleTexting (Twilio account data must be pasted in-session by Cory)
-Photos: CompanyCam (commercial project photos still need to be added to live pages)
+Jobber booking: clienthub.getjobber.com/booking/31b1fe0c-4da6-49e9-ad15-2e9a8cefa5fb
+SMS: Twilio (credentials in Vercel env vars)
+Photos: CompanyCam (project photos still need to be added to commercial pages)
 Financing: Wisetack
-Business email: smiroofingcompany@gmail.com (confirmed active)
-Domain emails: info@smiroof.com and cory@smiroof.com (not confirmed active)
+Email: smiroofingcompany@gmail.com (active), info@smiroof.com (not confirmed)
 
 ---
 
@@ -214,27 +219,31 @@ Domain emails: info@smiroof.com and cory@smiroof.com (not confirmed active)
 
 Fix these when they come up. Do not wait for a separate session.
 
-- Confirm Twilio A2P SMS campaign registration outcome after checkbox fix
-- Set SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS in Vercel dashboard so the
-  contact form sends internal notification emails (Twilio env vars already set)
-- Add commercial project photos to all commercial pages (Cory provides photos)
+- SMTP env vars not set in Vercel — internal email notifications not sending
+- Cloudinary account dzypmhsh7 disabled — investigate why, but site no longer
+  depends on it so not urgent
+- Commercial project photos not yet on live pages (Cory provides via CompanyCam)
 - Correct LSA profile: wrong phone number and website URL on Local Services Ads
 - Domain email setup: info@smiroof.com and cory@smiroof.com not confirmed active
-- Directory listings: GAF, Owens Corning, BBB, Angi, HomeAdvisor, Russellville
-  Chamber of Commerce — Cory must claim/create these manually with his login
+- Directory listings: GAF, Owens Corning, BBB, Angi, HomeAdvisor, Chamber —
+  Cory must claim these manually
 - Google Business Profile: needs weekly posts (1-2x/week using CompanyCam photos)
-- Google Search Console: submit all 26 new commercial city URLs + 31 new blog URLs
+- Google Search Console: submit 26 new commercial city URLs + 31 new blog URLs
+  (fastest: submit sitemap.xml in GSC, queues everything automatically)
+- Twilio A2P campaign registration outcome still pending
 
 ---
 
 ## ON THE HORIZON
 
-These are identified but not yet built. Do not start without explicit instruction.
+Do not start without explicit instruction from Cory.
 
 - 9th commercial service page: commercial roof inspections / preventive
-  maintenance programs. Needs clarification from Cory before building.
-- GBP post content calendar: 4 weeks of draft posts ready to publish
-- Blog content expansion: additional local market posts for NW Arkansas cities
+  maintenance. Needs clarification before building.
+- GBP post content calendar: 4 weeks of draft posts
+- Blog expansion: additional local market posts for NW Arkansas cities
+- Replace placeholder /assets/ photos with real CompanyCam project photos
+  once Cory provides them
 
 ---
 
@@ -250,7 +259,8 @@ These apply to every session, every edit, every push:
 6. Never deploy via CLI. GitHub push only.
 7. After pushing, confirm the Vercel build succeeded before closing the session.
 8. If a page existed before the session, it must exist after the session.
-   Disappearing pages are unacceptable and have happened before.
+9. Never add external image or CDN dependencies. All assets go in /assets/.
+10. Update CLAUDE.md before the final commit of every session.
 
 ---
 
@@ -267,8 +277,7 @@ SMI's moat: 231 reviews at 5.0, 35 years, 1,700+ roofs. Lead with this everywher
 
 ## LAST UPDATED
 
-April 5, 2026. Update this file whenever the site structure, deployment setup,
-or compliance requirements change.
+April 6, 2026.
 
 ---
 
@@ -281,20 +290,17 @@ Add: anything new that was built, any new patterns or decisions established,
 any new known issues discovered, any new files that are now protected or
 critical.
 
-Move: anything from "on the horizon" that is now live should move to
-"current state" with a one-line description of how it works.
+Move: anything from "on the horizon" that is now live should move to the
+relevant section describing current state.
 
-Remove: completed one-time tasks that don't need to be remembered, decisions
-that are fully implemented and are now just how things work, anything that is
-no longer accurate, anything redundant or obvious.
+Remove: completed one-time tasks, decisions fully implemented that are now
+just how things work, anything no longer accurate, anything redundant.
 
-Trim: if any section is longer than it needs to be to orient a developer in
-under 2 minutes, cut it down. The goal is a lean, accurate, current document.
-Not an archive. Not a changelog.
+Trim: the goal is a lean, accurate, current document. Not an archive.
+Not a changelog. If a section takes more than 2 minutes to read, cut it down.
 
 The file should always answer exactly three questions: what is this project,
-what is the current state right now, and what are the rules. Anything that
-does not serve one of those three questions gets removed.
+what is the current state right now, and what are the rules.
 
 Commit the updated CLAUDE.md as the final commit of every session with the
 message "chore: update CLAUDE.md". Never close a session without doing this.
