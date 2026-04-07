@@ -399,7 +399,7 @@ footer{background:var(--navy);border-top:1px solid rgba(0,200,240,.08);padding:8
 
 
 <!-- CREDENTIAL TICKER -->
-<div class="ticker"><div class="ticker-track">
+<div class="ticker" id="tickerBar"><div class="ticker-track" id="tickerTrack">
 <div class="ticker-item"><span class="dot"></span> 231+ Five-Star Google Reviews</div>
 <div class="ticker-item"><span class="gold">★★★★★</span> 5.0 Perfect Rating</div>
 <div class="ticker-item"><span class="dot"></span> 35 Years Combined Experience</div>
@@ -424,6 +424,28 @@ footer{background:var(--navy);border-top:1px solid rgba(0,200,240,.08);padding:8
 <div class="ticker-item"><span class="dot"></span> Financing Available</div>
 <div class="ticker-item"><span class="dot"></span> 24/7 Storm Response</div>
 </div></div>
+<script>
+(function(){
+  var today=new Date();today.setHours(0,0,0,0);
+  fetch('/_data/promos.json').then(function(r){return r.json();}).then(function(promos){
+    if(!Array.isArray(promos))return;
+    var active=promos.filter(function(p){
+      var s=new Date(p.startDate);s.setHours(0,0,0,0);
+      var e=new Date(p.endDate);e.setHours(23,59,59,999);
+      return today>=s&&today<=e&&p.text;
+    });
+    if(!active.length)return;
+    var track=document.getElementById('tickerTrack');
+    if(!track)return;
+    active.forEach(function(p){
+      var el=document.createElement('div');
+      el.className='ticker-item';
+      el.innerHTML='<span class="dot" style="background:#f59e0b"></span> '+p.text;
+      track.insertBefore(el,track.firstChild);
+    });
+  }).catch(function(){});
+})();
+</script>
 
 <!-- NAV -->
 <nav id="navbar"><div class="nav-inner">
