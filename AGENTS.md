@@ -223,6 +223,59 @@ Vercel dashboard (never in code, never in `.env` committed to the repo):
 
 ---
 
+## SYNC RULE — BOTH FILES MUST STAY IN LOCK STEP
+
+`AGENTS.md` and `CLAUDE.md` are sister files. Any time one is updated,
+the other must be updated in the same commit to reflect the change.
+
+- **Codex** owns `AGENTS.md` — sign your edits here as `Codex`
+- **Claude** owns `CLAUDE.md` — edits there are signed as `Claude`
+- Either agent updating their file must also propagate relevant changes
+  to the other file before committing
+
+If AGENTS.md is out of date vs CLAUDE.md or vice versa, fix both before
+doing any other work that session.
+
+---
+
+## CHANGE LOG
+
+Format: `YYYY-MM-DD | Agent | What changed`
+
+| Date | Agent | Change |
+|------|-------|--------|
+| 2026-04-07 | Claude | Created AGENTS.md as sanitized mirror of CLAUDE.md |
+| 2026-04-07 | Claude | Added SYNC RULE, CHANGE LOG, and attribution convention to both files |
+
+---
+
+---
+
+## END-OF-SESSION UPDATE INSTRUCTIONS (PERMANENT — DO NOT REMOVE)
+
+At the end of every session, before the final commit, update BOTH this file
+and CLAUDE.md. Follow these rules exactly.
+
+**AGENTS.md:**
+- Add a row to the CHANGE LOG: `YYYY-MM-DD | Codex | What changed`
+- Update LAST UPDATED date
+- Update any structural, stack, or rule changes relevant to other agents
+- Keep sanitized — no credentials, no internal business data
+
+**CLAUDE.md:**
+- Add a matching row to its CHANGE LOG: `YYYY-MM-DD | Codex | What changed`
+- Update LAST UPDATED date
+- Propagate any changes that affect how the site is built or deployed
+
+**Commit both files together** as the final commit of every session:
+`chore: update AGENTS.md + CLAUDE.md`
+
+Never close a session without updating both files.
+
+This update instruction is permanent and must never be removed during pruning.
+
+---
+
 ## LAST UPDATED
 
 April 7, 2026.

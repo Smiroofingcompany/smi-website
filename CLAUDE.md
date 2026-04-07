@@ -275,35 +275,69 @@ SMI's moat: 231 reviews at 5.0, 35 years, 1,700+ roofs. Lead with this everywher
 
 ---
 
+## SYNC RULE — BOTH FILES MUST STAY IN LOCK STEP
+
+`CLAUDE.md` and `AGENTS.md` are sister files. Any time one is updated,
+the other must be updated in the same commit to reflect the change.
+
+- **Claude** owns `CLAUDE.md` — sign your edits in the change log as `Claude`
+- **Codex** owns `AGENTS.md` — edits there are signed as `Codex`
+- Either agent updating their file must also propagate relevant changes
+  to the other file before committing
+
+If CLAUDE.md is out of date vs AGENTS.md or vice versa, fix both before
+doing any other work that session.
+
+---
+
+## CHANGE LOG
+
+Format: `YYYY-MM-DD | Agent | What changed`
+
+| Date | Agent | Change |
+|------|-------|--------|
+| 2026-04-05 | Claude | Built 26 commercial city pages, cost FAQs on 30 residential pages, blog cross-links, sitemap rebuild |
+| 2026-04-05 | Claude | Built /api/contact.js serverless function, set Twilio env vars |
+| 2026-04-06 | Claude | Self-hosted all assets in /assets/, removed Cloudinary dependency |
+| 2026-04-06 | Claude | Added hero video to all 58 city pages, fixed video glitch with fade-in |
+| 2026-04-07 | Claude | Created AGENTS.md as sanitized mirror |
+| 2026-04-07 | Claude | Added SYNC RULE, CHANGE LOG, and attribution convention to both files |
+
+---
+
 ## LAST UPDATED
 
-April 6, 2026.
+April 7, 2026.
 
 ---
 
 ## END-OF-SESSION UPDATE INSTRUCTIONS (PERMANENT — DO NOT REMOVE)
 
-At the end of every session, before the final commit, update this CLAUDE.md
-file. Follow these rules exactly.
+At the end of every session, before the final commit, update BOTH this file
+and AGENTS.md. Follow these rules exactly.
 
-Add: anything new that was built, any new patterns or decisions established,
-any new known issues discovered, any new files that are now protected or
-critical.
+**CLAUDE.md:**
+- Add a row to the CHANGE LOG: `YYYY-MM-DD | Claude | What changed`
+- Update LAST UPDATED date
+- Add anything new that was built, any new patterns, new known issues,
+  new protected files
+- Move anything from "on the horizon" that is now live to the right section
+- Remove completed one-time tasks, stale info, redundant content
+- Trim: lean and accurate, not an archive. Under 2 minutes to read.
 
-Move: anything from "on the horizon" that is now live should move to the
-relevant section describing current state.
+**AGENTS.md:**
+- Add a matching row to its CHANGE LOG: `YYYY-MM-DD | Claude | What changed`
+- Update LAST UPDATED date
+- Propagate any structural, stack, or rule changes that affect other agents
+- Keep it sanitized — no credentials, no internal business data
 
-Remove: completed one-time tasks, decisions fully implemented that are now
-just how things work, anything no longer accurate, anything redundant.
+**Commit both files together** as the final commit of every session:
+`chore: update CLAUDE.md + AGENTS.md`
 
-Trim: the goal is a lean, accurate, current document. Not an archive.
-Not a changelog. If a section takes more than 2 minutes to read, cut it down.
+Never close a session without updating both files.
 
 The file should always answer exactly three questions: what is this project,
 what is the current state right now, and what are the rules.
-
-Commit the updated CLAUDE.md as the final commit of every session with the
-message "chore: update CLAUDE.md". Never close a session without doing this.
 
 This update instruction is permanent and must never be removed during pruning.
 When updating this file, always preserve this entire end-of-session block
