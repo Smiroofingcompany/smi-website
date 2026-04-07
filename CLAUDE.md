@@ -1,5 +1,7 @@
 # CLAUDE.md — SMI Roofing Website
-# Read this entire file before touching any code. No exceptions.
+# Claude-specific notes. All shared rules live in AGENTS.md.
+
+@AGENTS.md
 
 ---
 
@@ -11,24 +13,9 @@ Phone: (501) 464-5139
 Email: info@smiroof.com
 Website: smiroof.com
 Google reviews: 231+ at 5.0 stars. 35 years experience. 1,700+ roofs completed.
-10-year workmanship warranty. Up to 50-year material warranties.
-Revenue goal: $2M+.
 
 Working style: Execute immediately. No permission needed. No handoffs.
 Fix every identified issue in the same session. Brutal honesty only.
-
----
-
-## THE MOST IMPORTANT RULE IN THIS ENTIRE FILE
-
-NEVER deploy via Vercel CLI directly. Ever.
-
-Two CLI deploys wiped the entire site to a single file. The only safe
-deployment path is: edit files, commit to GitHub, push to main.
-Vercel auto-deploys from GitHub. That is the only workflow.
-
-If you are ever tempted to run `vercel deploy` or `vercel --prod`, stop.
-Commit and push to GitHub instead.
 
 ---
 
@@ -42,165 +29,37 @@ Git config email: smiroofingcompany@gmail.com
 Vercel projectId: prj_Ur8yabvNY8MrzTG1CgQzr39MU7tn
 Vercel teamId: team_YEyhFvcZVhdtBmQHYhPqk8yK
 
-Tokens are stored in .env in the repo root. Never commit .env.
-Read tokens from .env at the start of each session.
-
-Deployment confirmation: Look for the Vercel build completing in GitHub Actions
-or the live URL reflecting the change. DNS telemetry errors in terminal output
-are benign and can be ignored.
+Tokens are in `.env` in the repo root. Never commit `.env`.
+Read tokens from `.env` at the start of each session.
 
 ---
 
-## SITE STRUCTURE
+## SESSION STARTUP PROTOCOL
 
-smiroof.com is a 120+ page static HTML site. No framework. No build step.
-Pure HTML, CSS, and JavaScript files committed directly to the repo.
+Do these steps before writing a single line of code:
 
-Page inventory (as of April 2026):
-- index.html (homepage)
-- 6 standalone service pages (residential, metal-roofing, storm-damage,
-  roof-repair, roof-inspections, insurance-claims)
-- commercial services hub + 8 service pages (TPO, standing seam metal,
-  metal panels, EPDM, modified bitumen, built-up, coatings, repair)
-- 26 commercial city landing pages at /commercial-roofing/[city]-ar/
-- 32 city landing pages (residential) + service-areas hub
-- 4 industry vertical pages
-- blog index + 35 blog posts (all topics: cost, insurance, materials,
-  commercial, storm/damage, process/tips, local)
-- privacy policy + SMS terms
-- sitemap.xml + robots.txt
-- /assets/ directory (self-hosted images and video — see below)
-
-Every page must have:
-- Schema markup: RoofingContractor (standalone with @id), FAQPage,
-  BreadcrumbList, LocalBusiness
-- Open Graph meta tags (og:title, og:description, og:image, og:url, og:type)
-- Canonical URL
-- Nav with both desktop nav-links AND mobile menu (both must be verified
-  before any push — the Commercial nav link has been broken before)
-
-As of April 2026:
-- All 32 residential city pages have the cost FAQ in both FAQPage schema and HTML
-- All 35 blog posts have topic-specific related article links in the sidebar
-- All 58 city pages (residential + commercial) have the drone video hero
-- 26 commercial city pages built with unique local content and full schema
-- All assets are self-hosted — zero Cloudinary dependency
-
----
-
-## ASSETS — SELF-HOSTED (CRITICAL)
-
-All images and video are served from /assets/ in the repo.
-Cloudinary account dzypmhsh7 was disabled April 2026, breaking the entire site.
-Every Cloudinary URL was replaced. Do NOT add new Cloudinary URLs.
-
-Files in /assets/:
-- logo.png — SMI logo used in nav on every page
-- hero-video.mp4 — drone footage, autoplay hero on homepage + all city pages
-- hero-poster.jpg — video fallback still image (DJI drone shot, 1920px)
-- og-image.jpg — Open Graph share image (1200px)
-- commercial.jpg — commercial/metal roofing section image
-- residential.jpg — residential completed roof image
-- truck.jpg — SMI truck on job site
-- team.jpg — SMI crew photo
-- aerial.jpg — aerial drone view of luxury home
-- construction.jpg — commercial steel construction
-- completed.jpg — completed residential roof
-- crew.jpg — crew on roof
-
-When adding new pages or sections that need images: use files from /assets/.
-If new photos are needed, add them to /assets/ and reference them with a
-root-relative path (e.g. /assets/filename.jpg). Never use external image hosts.
-
----
-
-## DESIGN SYSTEM
-
-Theme: Navy and cyan.
-Fonts: Outfit (headings), Plus Jakarta Sans (body).
-CSS variables: --cyan:#00C8F0, --navy:#0a1628, --navy-light:#111f36,
---navy-mid:#162440. Extract from existing pages before writing new ones.
-
-Background: true dark navy, not blue-gray.
-Accent: cyan #00C8F0 used sparingly for CTAs and highlights only.
-Max 3 colors in any UI section.
+1. Pull the latest from GitHub — never work from a stale local copy
+2. Audit the current file tree — know what exists before adding anything
+3. Check `index.html` for current nav structure (desktop AND mobile)
+4. Extract CSS variables from existing pages before generating new ones
+5. Identify the session goal and exact files in scope
+6. Begin work
+7. Update AGENTS.md + CLAUDE.md before the final commit
 
 ---
 
 ## CRITICAL COMPLIANCE BLOCK — DO NOT EVER TOUCH
 
 The SMS opt-in checkbox on the contact form is A2P 10DLC compliance-required.
-It is wrapped in this comment block:
+Wrapped in:
 
+```
 <!-- A2P 10DLC COMPLIANCE BLOCK — DO NOT MODIFY OR REMOVE -->
+```
 
-Never remove it. Never move it. Never alter the checkbox, its label text,
-its ID (cf_sms_consent), or the JavaScript validation that blocks form
-submission when unchecked.
-
-A fifth resubmission is currently pending. Touching this block could
-invalidate the entire campaign registration.
-
----
-
-## KNOWN FAILURE MODES — READ BEFORE EVERY SESSION
-
-1. Pages disappearing on deploy. Pull first, edit, commit all, push.
-   Never push a partial file set.
-
-2. Commercial nav link breaking. Desktop nav and mobile menu are separate
-   code blocks. Both must include the Commercial link. Verify before any push.
-
-3. Live site and GitHub out of sync. Always pull at session start.
-
-4. External asset dependencies. All images/video are now in /assets/.
-   Never reference Cloudinary or any external CDN. Self-host everything.
-
-5. CSS and design drift. Always extract design tokens from existing files
-   before writing new pages. Never generate new pages from memory.
-
----
-
-## SESSION STARTUP PROTOCOL
-
-1. Pull the latest from GitHub. Never work from a stale local copy.
-2. Audit the current file tree. Know what exists before adding anything.
-3. Check index.html for the current nav structure (both desktop and mobile).
-4. Extract CSS variables from existing pages before generating new ones.
-5. Identify the session goal and exact files in scope.
-6. Begin work. Update CLAUDE.md before the final commit of every session.
-
----
-
-## SEO REQUIREMENTS
-
-Every city landing page must include unique local content. Reference specific
-employers, landmarks, and neighborhoods. No generic content.
-
-Priority keywords:
-- Residential roofing + city name (all Arkansas markets)
-- Commercial roofing + city name (26 pages live, zero competition)
-- Standing seam metal roofing
-- Storm damage roof repair
-- Roof replacement cost Arkansas
-
-Schema required on every page: RoofingContractor, FAQPage, BreadcrumbList.
-Sitemap: smiroof.com/sitemap.xml — update whenever new pages are added.
-
----
-
-## CONTACT FORM
-
-Handler: `/api/contact` Vercel serverless function.
-- POSTs lead JSON to `crm.smiroof.com/api/leads`
-- Sends Twilio SMS to opted-in leads
-- Sends internal notification email to info@smiroof.com via SMTP
-- Returns `{success:true}` JSON
-
-Env vars in Vercel dashboard (not .env):
-- `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_FROM_NUMBER` — set
-- `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` — NOT YET SET (email broken)
-- `CRM_API_TOKEN` — optional
+Never remove, move, or alter the checkbox, its label, its ID (`cf_sms_consent`),
+or the JS validation. A Twilio campaign registration is currently pending.
+Touching this could invalidate the entire registration.
 
 ---
 
@@ -208,10 +67,10 @@ Env vars in Vercel dashboard (not .env):
 
 CRM: crm.smiroof.com (custom React app, separate repo)
 Jobber booking: clienthub.getjobber.com/booking/31b1fe0c-4da6-49e9-ad15-2e9a8cefa5fb
-SMS: Twilio (credentials in Vercel env vars)
+SMS: Twilio (credentials in Vercel env vars — already set)
 Photos: CompanyCam (project photos still need to be added to commercial pages)
 Financing: Wisetack
-Email: smiroofingcompany@gmail.com (active), info@smiroof.com (not confirmed)
+Email: smiroofingcompany@gmail.com (active), info@smiroof.com (not confirmed active)
 
 ---
 
@@ -220,16 +79,13 @@ Email: smiroofingcompany@gmail.com (active), info@smiroof.com (not confirmed)
 Fix these when they come up. Do not wait for a separate session.
 
 - SMTP env vars not set in Vercel — internal email notifications not sending
-- Cloudinary account dzypmhsh7 disabled — investigate why, but site no longer
-  depends on it so not urgent
-- Commercial project photos not yet on live pages (Cory provides via CompanyCam)
-- Correct LSA profile: wrong phone number and website URL on Local Services Ads
-- Domain email setup: info@smiroof.com and cory@smiroof.com not confirmed active
-- Directory listings: GAF, Owens Corning, BBB, Angi, HomeAdvisor, Chamber —
-  Cory must claim these manually
-- Google Business Profile: needs weekly posts (1-2x/week using CompanyCam photos)
-- Google Search Console: submit 26 new commercial city URLs + 31 new blog URLs
-  (fastest: submit sitemap.xml in GSC, queues everything automatically)
+- Commercial project photos not on live pages yet (Cory provides via CompanyCam)
+- LSA profile has wrong phone number and website URL
+- info@smiroof.com and cory@smiroof.com not confirmed active
+- Directory listings (GAF, Owens Corning, BBB, Angi, HomeAdvisor, Chamber)
+  — Cory must claim these manually with his login
+- Google Business Profile: needs 1-2 posts/week using CompanyCam photos
+- Google Search Console: submit sitemap.xml to queue all new URLs
 - Twilio A2P campaign registration outcome still pending
 
 ---
@@ -238,35 +94,16 @@ Fix these when they come up. Do not wait for a separate session.
 
 Do not start without explicit instruction from Cory.
 
-- 9th commercial service page: commercial roof inspections / preventive
-  maintenance. Needs clarification before building.
+- 9th commercial service page: commercial roof inspections / preventive maintenance
 - GBP post content calendar: 4 weeks of draft posts
 - Blog expansion: additional local market posts for NW Arkansas cities
 - Replace placeholder /assets/ photos with real CompanyCam project photos
-  once Cory provides them
-
----
-
-## STRUCTURAL INTEGRITY RULES
-
-These apply to every session, every edit, every push:
-
-1. Pull before you touch anything.
-2. Edit only the files explicitly in scope for the task.
-3. Verify nav (desktop AND mobile) before every push.
-4. Verify the A2P compliance block is intact before every push.
-5. Never push a partial file set. All files must be committed together.
-6. Never deploy via CLI. GitHub push only.
-7. After pushing, confirm the Vercel build succeeded before closing the session.
-8. If a page existed before the session, it must exist after the session.
-9. Never add external image or CDN dependencies. All assets go in /assets/.
-10. Update CLAUDE.md before the final commit of every session.
 
 ---
 
 ## COMPETITORS (FOR SEO CONTEXT)
 
-Griffin's Roofing: Will Griffin, operates 3 brands from a home address. Weak.
+Griffin's Roofing: Will Griffin, 3 brands from a home address. Weak.
 Miller Roofing: GAF Master Elite, 35 years, 109 reviews at 4.5. Legitimate.
 BRS Inc.: Ghost company names, broken website. Not a real threat.
 Freedom Roofing: Minimal digital presence.
@@ -275,70 +112,59 @@ SMI's moat: 231 reviews at 5.0, 35 years, 1,700+ roofs. Lead with this everywher
 
 ---
 
-## SYNC RULE — BOTH FILES MUST STAY IN LOCK STEP
+## SYNC RULE (CLAUDE-SPECIFIC)
 
-`CLAUDE.md` and `AGENTS.md` are sister files. Any time one is updated,
-the other must be updated in the same commit to reflect the change.
-
-- **Claude** owns `CLAUDE.md` — sign your edits in the change log as `Claude`
-- **Codex** owns `AGENTS.md` — edits there are signed as `Codex`
-- Either agent updating their file must also propagate relevant changes
-  to the other file before committing
-
-If CLAUDE.md is out of date vs AGENTS.md or vice versa, fix both before
-doing any other work that session.
+Shared rules live in `AGENTS.md`. Do not duplicate them here.
+When updating shared rules, edit `AGENTS.md` first, then commit both files.
+Claude-specific content (session protocol, Cory's context, integrations,
+broken items, competitors) stays here only.
 
 ---
 
-## CHANGE LOG
+## INSTRUCTION FILE CHANGE LOG
 
-Format: `YYYY-MM-DD | Agent | What changed`
+Every edit to either instruction file must be logged here AND in AGENTS.md.
+Format: `YYYY-MM-DD | Agent | File(s) | What changed`
 
-| Date | Agent | Change |
-|------|-------|--------|
-| 2026-04-05 | Claude | Built 26 commercial city pages, cost FAQs on 30 residential pages, blog cross-links, sitemap rebuild |
-| 2026-04-05 | Claude | Built /api/contact.js serverless function, set Twilio env vars |
-| 2026-04-06 | Claude | Self-hosted all assets in /assets/, removed Cloudinary dependency |
-| 2026-04-06 | Claude | Added hero video to all 58 city pages, fixed video glitch with fade-in |
-| 2026-04-07 | Claude | Created AGENTS.md as sanitized mirror |
-| 2026-04-07 | Claude | Added SYNC RULE, CHANGE LOG, and attribution convention to both files |
+| Date | Agent | File(s) | Change |
+|------|-------|---------|--------|
+| 2026-04-05 | Claude | CLAUDE.md | Initial session — 26 commercial city pages, cost FAQs, blog cross-links, sitemap |
+| 2026-04-05 | Claude | CLAUDE.md | Built /api/contact.js, set Twilio env vars |
+| 2026-04-06 | Claude | CLAUDE.md | Self-hosted all assets in /assets/, removed Cloudinary |
+| 2026-04-06 | Claude | CLAUDE.md | Hero video on 58 city pages, fade-in glitch fix |
+| 2026-04-07 | Claude | AGENTS.md | Created AGENTS.md as sanitized mirror |
+| 2026-04-07 | Claude | AGENTS.md + CLAUDE.md | Sync rule, change log, attribution convention |
+| 2026-04-07 | Claude | AGENTS.md + CLAUDE.md | Restructured: AGENTS.md is source of truth, CLAUDE.md imports via @AGENTS.md |
 
 ---
 
 ## LAST UPDATED
 
-April 7, 2026.
+April 7, 2026 — Claude
 
 ---
 
 ## END-OF-SESSION UPDATE INSTRUCTIONS (PERMANENT — DO NOT REMOVE)
 
-At the end of every session, before the final commit, update BOTH this file
-and AGENTS.md. Follow these rules exactly.
+Before the final commit of every session, update BOTH files.
 
-**CLAUDE.md:**
-- Add a row to the CHANGE LOG: `YYYY-MM-DD | Claude | What changed`
-- Update LAST UPDATED date
-- Add anything new that was built, any new patterns, new known issues,
-  new protected files
-- Move anything from "on the horizon" that is now live to the right section
-- Remove completed one-time tasks, stale info, redundant content
-- Trim: lean and accurate, not an archive. Under 2 minutes to read.
+**AGENTS.md (shared rules — source of truth):**
+- Add a row to INSTRUCTION FILE CHANGE LOG: `YYYY-MM-DD | Claude | Files | What changed`
+- Update LAST UPDATED line
+- Update any shared rules that changed (deployment, coding, structure, SEO, protected files)
 
-**AGENTS.md:**
-- Add a matching row to its CHANGE LOG: `YYYY-MM-DD | Claude | What changed`
-- Update LAST UPDATED date
-- Propagate any structural, stack, or rule changes that affect other agents
-- Keep it sanitized — no credentials, no internal business data
+**CLAUDE.md (Claude-specific notes):**
+- Add a matching row to INSTRUCTION FILE CHANGE LOG
+- Update LAST UPDATED line
+- Update broken/incomplete list, on the horizon, integrations, or session context
+- Do NOT duplicate shared rules from AGENTS.md here
 
-**Commit both files together** as the final commit of every session:
-`chore: update CLAUDE.md + AGENTS.md`
+**Commit both together:**
+`chore: update AGENTS.md + CLAUDE.md`
 
 Never close a session without updating both files.
 
-The file should always answer exactly three questions: what is this project,
-what is the current state right now, and what are the rules.
+The file should always answer: what is this project, what is the current state,
+and what are the rules. Trim anything that doesn't serve those three questions.
 
-This update instruction is permanent and must never be removed during pruning.
-When updating this file, always preserve this entire end-of-session block
-verbatim at the bottom of the file no matter what else gets trimmed.
+This block is permanent. Never remove it during pruning. Preserve it verbatim.
