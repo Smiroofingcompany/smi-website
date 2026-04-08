@@ -529,7 +529,7 @@ footer{background:var(--navy);border-top:1px solid rgba(0,200,240,.08);padding:8
 <!-- A2P 10DLC COMPLIANCE BLOCK — DO NOT MODIFY OR REMOVE -->
 <div style="display:flex;align-items:flex-start;gap:10px;margin-top:16px;padding:14px 16px;background:rgba(0,200,240,.05);border:1px solid rgba(0,200,240,.15);border-radius:10px">
 <input type="checkbox" id="cf_sms_consent" style="margin-top:3px;width:18px;height:18px;flex-shrink:0;accent-color:var(--cyan);cursor:pointer">
-<label for="cf_sms_consent" style="font-size:12px;color:var(--gray-400);line-height:1.5;cursor:pointer">By checking this box, I agree to receive SMS text messages from SMI Roofing regarding my estimate, project updates, and service requests. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out. Reply HELP for help. View our <a href="/privacy-policy/" style="color:var(--cyan);text-decoration:underline" target="_blank">Privacy Policy</a> and <a href="/sms-terms/" style="color:var(--cyan);text-decoration:underline" target="_blank">SMS Terms</a>.</label>
+<label for="cf_sms_consent" style="font-size:12px;color:var(--gray-400);line-height:1.5;cursor:pointer">I agree to receive text messages from CAS Management Inc. dba SMI Roofing regarding estimates, appointment reminders, and service updates. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out. Reply HELP for help. View our <a href="/privacy-policy/" style="color:var(--cyan);text-decoration:underline" target="_blank">Privacy Policy</a> and <a href="/sms-terms/" style="color:var(--cyan);text-decoration:underline" target="_blank">SMS Terms</a>. Consent is not a condition of purchase.</label>
 </div>
 <!-- END A2P 10DLC COMPLIANCE BLOCK -->
 <button onclick="submitContactForm()" id="cf_submit" style="width:100%;margin-top:20px;padding:18px;background:var(--cyan);color:var(--navy);border:none;border-radius:60px;font-family:var(--font-body);font-size:16px;font-weight:800;cursor:pointer;letter-spacing:.5px;transition:all .3s;box-shadow:0 4px 30px rgba(0,200,240,.3)" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Get My Free Inspection →</button>
@@ -758,7 +758,7 @@ footer{background:var(--navy);border-top:1px solid rgba(0,200,240,.08);padding:8
 <div class="footer-col"><h4>Resources</h4><a href="/blog/metal-roof-vs-shingles-arkansas/">GAF HDZ Shingles</a><a href="https://clienthub.getjobber.com/booking/31b1fe0c-4da6-49e9-ad15-2e9a8cefa5fb">Financing Options</a><a href="https://clienthub.getjobber.com/booking/31b1fe0c-4da6-49e9-ad15-2e9a8cefa5fb">Free Estimate</a><a href="/privacy-policy/">Privacy Policy</a><a href="/sms-terms/">SMS Terms</a><a href="/roof-inspections/">Roof Inspections</a></div>
 </div>
 <div class="footer-bottom">
-<span>&copy; 2026 SMI Roofing. All rights reserved.</span>
+<span>&copy; 2026 CAS Management Inc. dba SMI Roofing. All rights reserved.</span>
 <span>Licensed & Insured | Russellville, AR</span>
 </div>
 </div>
@@ -851,7 +851,6 @@ function submitContactForm(){
   var service=document.getElementById('cf_service').value;
   if(!fn||!ln||!phone){alert('Please enter your first name, last name, and phone number.');return;}
   var smsConsent=document.getElementById('cf_sms_consent');
-  if(!smsConsent||!smsConsent.checked){alert('Please check the box to consent to SMS messages before submitting.');return;}
   var btn=document.getElementById('cf_submit');
   btn.textContent='Sending...';btn.disabled=true;btn.style.opacity='.6';
   fetch('/api/contact',{
