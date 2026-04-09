@@ -406,6 +406,12 @@ footer{background:var(--navy);border-top:1px solid rgba(0,200,240,.08);padding:8
 <div><label style="display:block;font-size:12px;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Phone *</label><input type="tel" id="cf_phone" required placeholder="(501) 555-1234" style="width:100%;padding:14px 16px;background:var(--navy);border:1px solid rgba(0,200,240,.12);border-radius:10px;color:var(--white);font-size:15px;font-family:var(--font-body);outline:none;transition:border-color .3s" onfocus="this.style.borderColor='var(--cyan)'" onblur="this.style.borderColor='rgba(0,200,240,.12)'"></div>
 <div><label style="display:block;font-size:12px;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Service Needed</label><select id="cf_service" style="width:100%;padding:14px 16px;background:var(--navy);border:1px solid rgba(0,200,240,.12);border-radius:10px;color:var(--gray-300);font-size:15px;font-family:var(--font-body);outline:none;cursor:pointer;-webkit-appearance:none;appearance:none"><option value="">Select a service</option><option>Commercial Roof Replacement</option><option>Commercial Roof Repair</option><option>TPO Roofing</option><option>Standing Seam Metal</option><option>Metal Panel Systems</option><option>EPDM Roofing</option><option>Roof Coatings</option><option>Commercial Roof Inspection</option><option>Roof Maintenance Program</option><option>Storm Damage</option><option>Other</option></select></div>
 </div>
+<!-- A2P 10DLC COMPLIANCE BLOCK — DO NOT MODIFY OR REMOVE -->
+<div style="display:flex;align-items:flex-start;gap:10px;margin-top:16px;padding:14px 16px;background:rgba(0,200,240,.05);border:1px solid rgba(0,200,240,.15);border-radius:10px">
+<input type="checkbox" id="cf_sms_consent" style="margin-top:3px;width:18px;height:18px;flex-shrink:0;accent-color:var(--cyan);cursor:pointer">
+<label for="cf_sms_consent" style="font-size:12px;color:var(--gray-400);line-height:1.5;cursor:pointer">By checking this box, you agree to receive SMS messages from SMI Roofing related to estimates, appointment reminders, inspection scheduling, project updates, service follow-up, and customer care. Message frequency varies. Message and data rates may apply. Reply STOP to opt out. Reply HELP for help. Consent is not a condition of purchase. View our <a href="/privacy-policy/" style="color:var(--cyan);text-decoration:underline" target="_blank">Privacy Policy</a> and <a href="/sms-terms/" style="color:var(--cyan);text-decoration:underline" target="_blank">SMS Terms</a>.</label>
+</div>
+<!-- END A2P 10DLC COMPLIANCE BLOCK -->
 <button onclick="submitContactForm()" id="cf_submit" style="width:100%;margin-top:20px;padding:18px;background:var(--cyan);color:var(--navy);border:none;border-radius:60px;font-family:var(--font-body);font-size:16px;font-weight:800;cursor:pointer;letter-spacing:.5px;transition:all .3s;box-shadow:0 4px 30px rgba(0,200,240,.3)" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Get My Free Assessment &rarr;</button>
 <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-top:16px;flex-wrap:wrap"><span style="font-size:12px;color:var(--gray-500)">&#128737; Licensed & Insured</span><span style="font-size:12px;color:var(--gray-500)">&#11088; 231+ Five-Star Reviews</span><span style="font-size:12px;color:var(--gray-500)">&#128176; $0 Out of Pocket*</span></div>
 </div>
@@ -499,6 +505,7 @@ function submitContactForm(){
   var addr=document.getElementById('cf_address').value.trim();
   var phone=document.getElementById('cf_phone').value.trim();
   var service=document.getElementById('cf_service').value;
+  var smsConsent=document.getElementById('cf_sms_consent');
   if(!fn||!ln||!phone){alert('Please enter your first name, last name, and phone number.');return;}
   var btn=document.getElementById('cf_submit');
   btn.textContent='Sending...';btn.disabled=true;btn.style.opacity='.6';
@@ -512,6 +519,7 @@ function submitContactForm(){
       service:service||'commercial_assessment',
       serviceLabel:service||'Commercial Roof Assessment',
       preferredDate:'',preferredTime:'anytime',
+      smsConsent:smsConsent?smsConsent.checked:false,
       notes:'Lead from commercial roofing page'
     })
   }).then(function(r){return r.json()}).then(function(d){
