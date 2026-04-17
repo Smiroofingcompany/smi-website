@@ -98,6 +98,10 @@ Do not start without explicit instruction from Cory.
 - GBP post content calendar: 4 weeks of draft posts
 - Blog expansion: additional local market posts for NW Arkansas cities
 - Replace placeholder /assets/ photos with real CompanyCam project photos
+- Add CompanyCam project photos to the 13 commercial city pages still missing them (P0 from 2026-04-17 audit — Pottsville, Rogers, Springdale, Bentonville, Fayetteville, Siloam Springs, Little Rock, North Little Rock, Maumelle/Sherwood, Searcy, Conway, Bryant, Benton). Van Buren, Jacksonville, Cabot are templates.
+- Fix Google Business Profile service-area settings so prospects searching "SMI Roofing [city]" from door-knock towns see local presence, not just Russellville HQ
+- Submit updated sitemap.xml to Google Search Console and request indexing on top 10 city pages
+- Consider extracting shared inline CSS into /assets/site.css — would cut repeat page weight ~30% but breaks the "no build step" model; confirm with Cory before doing
 
 ---
 
@@ -135,12 +139,13 @@ Format: `YYYY-MM-DD | Agent | File(s) | What changed`
 | 2026-04-07 | Claude | AGENTS.md | Created AGENTS.md as sanitized mirror |
 | 2026-04-07 | Claude | AGENTS.md + CLAUDE.md | Sync rule, change log, attribution convention |
 | 2026-04-07 | Claude | AGENTS.md + CLAUDE.md | Restructured: AGENTS.md is source of truth, CLAUDE.md imports via @AGENTS.md |
+| 2026-04-17 | Claude | AGENTS.md + CLAUDE.md | Full site audit pass (P0-P2 #1-20): localized footer/legal/hero banner 58 city pages, Nearby + Related Blog on 32 residential, neighborhoods on top 10, Russellville expansion, sitemap dates, schema fixes, image compression, contact form microcopy |
 
 ---
 
 ## LAST UPDATED
 
-April 7, 2026 — Claude
+April 17, 2026 — Claude
 
 ---
 
