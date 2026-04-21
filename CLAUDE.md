@@ -68,7 +68,7 @@ Touching this could invalidate the entire registration.
 CRM: crm.smiroof.com (custom React app, separate repo)
 Jobber booking: clienthub.getjobber.com/booking/31b1fe0c-4da6-49e9-ad15-2e9a8cefa5fb
 SMS: Twilio (credentials in Vercel env vars — already set)
-Photos: CompanyCam (project photos still need to be added to commercial pages)
+Photos: SMI Cam (built into the SMI CRM at crm.smiroof.com — replaced CompanyCam). Project photos still need to be added to commercial pages.
 Financing: Wisetack
 Email: smiroofingcompany@gmail.com (active), info@smiroof.com (not confirmed active)
 
@@ -79,12 +79,12 @@ Email: smiroofingcompany@gmail.com (active), info@smiroof.com (not confirmed act
 Fix these when they come up. Do not wait for a separate session.
 
 - SMTP env vars not set in Vercel — internal email notifications not sending
-- Commercial project photos not on live pages yet (Cory provides via CompanyCam)
+- Commercial project photos not on live pages yet (Cory provides via SMI Cam in the CRM)
 - LSA profile has wrong phone number and website URL
 - info@smiroof.com and cory@smiroof.com not confirmed active
 - Directory listings (GAF, Owens Corning, BBB, Angi, HomeAdvisor, Chamber)
   — Cory must claim these manually with his login
-- Google Business Profile: needs 1-2 posts/week using CompanyCam photos
+- Google Business Profile: needs 1-2 posts/week using SMI Cam photos from the CRM
 - Google Search Console: submit sitemap.xml to queue all new URLs
 - Twilio A2P campaign registration outcome still pending
 
@@ -97,8 +97,8 @@ Do not start without explicit instruction from Cory.
 - 9th commercial service page: commercial roof inspections / preventive maintenance
 - GBP post content calendar: 4 weeks of draft posts
 - Blog expansion: additional local market posts for NW Arkansas cities
-- Replace placeholder /assets/ photos with real CompanyCam project photos
-- Add CompanyCam project photos to the 13 commercial city pages still missing them (P0 from 2026-04-17 audit — Pottsville, Rogers, Springdale, Bentonville, Fayetteville, Siloam Springs, Little Rock, North Little Rock, Maumelle/Sherwood, Searcy, Conway, Bryant, Benton). Van Buren, Jacksonville, Cabot are templates.
+- Replace placeholder /assets/ photos with real SMI Cam project photos from the CRM
+- Add SMI Cam project photos (from the CRM) to the 13 commercial city pages still missing them (P0 from 2026-04-17 audit — Pottsville, Rogers, Springdale, Bentonville, Fayetteville, Siloam Springs, Little Rock, North Little Rock, Maumelle/Sherwood, Searcy, Conway, Bryant, Benton). Van Buren, Jacksonville, Cabot are templates.
 - Fix Google Business Profile service-area settings so prospects searching "SMI Roofing [city]" from door-knock towns see local presence, not just Russellville HQ
 - Submit updated sitemap.xml to Google Search Console and request indexing on top 10 city pages
 - Consider extracting shared inline CSS into /assets/site.css — would cut repeat page weight ~30% but breaks the "no build step" model; confirm with Cory before doing
@@ -140,12 +140,13 @@ Format: `YYYY-MM-DD | Agent | File(s) | What changed`
 | 2026-04-07 | Claude | AGENTS.md + CLAUDE.md | Sync rule, change log, attribution convention |
 | 2026-04-07 | Claude | AGENTS.md + CLAUDE.md | Restructured: AGENTS.md is source of truth, CLAUDE.md imports via @AGENTS.md |
 | 2026-04-17 | Claude | AGENTS.md + CLAUDE.md | Full site audit pass (P0-P2 #1-20): localized footer/legal/hero banner 58 city pages, Nearby + Related Blog on 32 residential, neighborhoods on top 10, Russellville expansion, sitemap dates, schema fixes, image compression, contact form microcopy |
+| 2026-04-21 | Claude | AGENTS.md + CLAUDE.md | Installed Meta (Facebook) Pixel ID 2124552908380703 in `<head>` of all 120 HTML files — fires PageView on every page sitewide |
 
 ---
 
 ## LAST UPDATED
 
-April 17, 2026 — Claude
+April 21, 2026 — Claude
 
 ---
 
