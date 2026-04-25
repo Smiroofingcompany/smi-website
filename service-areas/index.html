@@ -204,6 +204,69 @@ footer{background:var(--navy);border-top:1px solid rgba(0,200,240,.08);padding:8
 .area-card:hover .area-card-arrow{opacity:1}
 @media(max-width:768px){.areas-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.areas-grid{grid-template-columns:1fr}}
+
+/* Customer-first service areas refresh */
+:root{--ink:#111827;--muted:#59677a;--line:#dce3eb;--soft:#f6f8fb}
+body{color:var(--ink);background:var(--soft)}
+a{color:var(--cyan-dark)}
+nav{position:sticky;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);box-shadow:0 10px 30px rgba(17,24,39,.04)}
+nav.scrolled{background:rgba(255,255,255,.98);border-bottom:1px solid var(--line)}
+.nav-logo-text{color:var(--ink)}
+.nav-links a{color:#314155;font-weight:800}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan-dark)}
+.nav-cta{border-radius:7px!important;box-shadow:0 12px 30px rgba(0,200,240,.2)}
+.nav-toggle span{background:var(--ink)}
+.nav-mobile{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 24px 50px rgba(17,24,39,.12)}
+.nav-mobile a{color:var(--ink);border-bottom:1px solid var(--line)}
+.page-hero{padding:72px 0 54px;background:#fff;color:var(--ink)}
+.page-hero-bg img{object-position:center}
+.page-hero-bg::after{background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.96) 44%,rgba(255,255,255,.76) 68%,rgba(255,255,255,.25) 100%)}
+.hero-video,.hero-video-overlay{display:none}
+.page-hero-layout{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:46px;align-items:center}
+.page-hero-content{max-width:720px}
+.page-hero .breadcrumb,.page-hero .breadcrumb a{color:var(--muted)}
+.page-hero .breadcrumb .current{color:var(--cyan-dark)}
+.page-hero h1{color:var(--ink);letter-spacing:0}
+.page-hero h1 .highlight{color:var(--cyan-dark)}
+.page-hero-desc{color:var(--muted);font-size:19px}
+.hero-stats-strip{gap:10px;margin-bottom:30px}
+.hero-stat{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 14px;box-shadow:0 10px 24px rgba(17,24,39,.05)}
+.hero-stat-num{color:var(--cyan-dark)}
+.hero-stat-label{color:var(--muted)}
+.btn-primary{border-radius:7px;color:#06131d;box-shadow:0 12px 30px rgba(0,200,240,.24)}
+.btn-secondary{border-radius:7px;background:#fff;color:var(--ink);border:1px solid var(--line);backdrop-filter:none}
+.btn-secondary:hover{border-color:var(--cyan);color:var(--ink);box-shadow:0 12px 24px rgba(17,24,39,.08)}
+.hero-city-panel{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:8px;padding:26px;box-shadow:0 24px 70px rgba(17,24,39,.12)}
+.status-pill{display:inline-flex;align-items:center;gap:9px;margin-bottom:18px;padding:8px 10px;border-radius:999px;background:#eefcf7;color:#0c7a57;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.status-pill span{position:relative;width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(16,185,129,.16)}
+.hero-city-panel h2{font-family:var(--font-display);font-size:30px;line-height:1.05;color:var(--ink);margin-bottom:12px}
+.hero-city-panel p{color:var(--muted);line-height:1.65;margin-bottom:18px}
+.hero-city-links{display:flex;flex-wrap:wrap;gap:8px}
+.hero-city-links a{display:inline-flex;align-items:center;min-height:38px;padding:9px 12px;border-radius:6px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:13px;font-weight:900;text-decoration:none}
+.hero-city-links a:hover{border-color:var(--cyan);background:#eafaff}
+.content-section{padding:72px 0 84px;background:var(--soft);color:var(--ink)}
+.section-tag{color:var(--cyan-dark)}
+.section-tag::before{background:var(--cyan)}
+.section-title{color:var(--ink);letter-spacing:0}
+.city-intro{color:var(--muted);font-size:17px;line-height:1.7;max-width:720px;margin-bottom:24px}
+.city-search{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;margin:28px 0 4px;padding:18px;border:1px solid var(--line);border-radius:8px;background:#fff;box-shadow:0 16px 40px rgba(17,24,39,.06)}
+.city-search label{font-family:var(--font-display);font-weight:900;color:var(--ink)}
+.city-search input{width:100%;min-height:48px;border:1px solid var(--line);border-radius:7px;padding:0 15px;color:var(--ink);font:inherit;font-weight:700;background:#f8fafc}
+.city-search input:focus{outline:2px solid rgba(0,200,240,.25);border-color:var(--cyan)}
+.areas-grid{grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 0}
+.area-card{min-height:70px;background:#fff;border:1px solid var(--line);border-radius:8px;color:var(--ink);box-shadow:0 10px 24px rgba(17,24,39,.04)}
+.area-card:hover{border-color:var(--cyan);background:#eafaff;box-shadow:0 14px 30px rgba(0,200,240,.12)}
+.area-card-arrow{color:var(--cyan-dark);opacity:1}
+.no-city-match{margin-top:18px;padding:16px;border-radius:8px;border:1px dashed var(--line);background:#fff;color:var(--muted);font-weight:800}
+.cta-section{padding:76px 0;background:#fff}
+.cta-card{background:#f6f8fb;border:1px solid var(--line);border-radius:8px;padding:48px;text-align:center;box-shadow:0 18px 45px rgba(17,24,39,.06)}
+.cta-glow{display:none}
+.cta-card h2{color:var(--ink);letter-spacing:0}
+.cta-card p{color:var(--muted)}
+.footer-brand .nav-logo-text,footer .nav-logo-text{color:#fff}
+@media(max-width:1040px){.page-hero-layout{grid-template-columns:1fr}.hero-city-panel{max-width:640px}.areas-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.areas-grid{grid-template-columns:1fr 1fr}.city-search{grid-template-columns:1fr}.page-hero{padding-top:42px}}
+@media(max-width:520px){.areas-grid{grid-template-columns:1fr}.hero-stat{width:100%}.cta-card{padding:34px 20px}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smiroof.com/"},{"@type":"ListItem","position":2,"name":"Service Areas","item":"https://smiroof.com/service-areas/"}]}
@@ -235,8 +298,8 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
 <li><a href="/commercial-roofing/">Commercial</a></li>
 <li><a href="/residential-roofing/">Residential</a></li>
 <li><a href="/#reviews">Reviews</a></li>
-<li><a href="/#areas" class="active">Areas</a></li>
-<li><a href="tel:+15014645139" class="nav-cta">Free Assessment</a></li>
+<li><a href="/service-areas/" class="active">Areas</a></li>
+<li><a href="https://clienthub.getjobber.com/booking/31b1fe0c-4da6-49e9-ad15-2e9a8cefa5fb" class="nav-cta">Free Inspection</a></li>
 </ul>
 <button class="nav-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('open')"><span></span><span></span><span></span></button>
 </div></nav>
@@ -245,22 +308,20 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
 <a href="/commercial-roofing/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Commercial Roofing</a>
 <a href="/residential-roofing/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Residential</a>
 <a href="/#reviews" onclick="document.getElementById('mobileMenu').classList.remove('open')">Reviews</a>
-<a href="/#areas" onclick="document.getElementById('mobileMenu').classList.remove('open')">Areas We Serve</a>
+<a href="/service-areas/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Areas We Serve</a>
 <a href="tel:+15014645139" class="mobile-cta">Call (501) 464-5139</a>
 </div>
 
 <section class="page-hero">
 <div class="page-hero-bg">
-<video class="hero-video" autoplay muted loop playsinline poster="/assets/commercial.jpg">
-<source src="/video-roofing.mp4" type="video/mp4">
-</video>
-<div class="hero-video-overlay"></div>
+<img src="/assets/smi-active-roof-documentation-aerial.jpg" alt="SMI Roofing crew working on an Arkansas roof">
 </div>
 <div class="container">
+<div class="page-hero-layout">
 <div class="page-hero-content">
 <div class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><span class="current">Service Areas</span></div>
-<h1>Roofing Services Across <span class="highlight">All of Arkansas</span></h1>
-<p class="page-hero-desc">Based in Russellville and serving the entire state. From the River Valley to Northwest Arkansas, Central Arkansas to Fort Smith, SMI Roofing delivers five-star residential and commercial roofing wherever you are.</p>
+<h1>Find the SMI roofing page for <span class="highlight">your Arkansas city.</span></h1>
+<p class="page-hero-desc">SMI is based in Russellville, but your roof problem should not feel like it belongs to another town. Choose the local page closest to you for service details, examples, and the fastest next step.</p>
 <div class="hero-stats-strip">
 <div class="hero-stat"><span class="hero-stat-num">231+</span><span class="hero-stat-label">5-Star Reviews</span></div>
 <div class="hero-stat"><span class="hero-stat-num">32+</span><span class="hero-stat-label">Cities Served</span></div>
@@ -271,6 +332,19 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
 <a href="tel:+15014645139" class="btn-secondary">(501) 464-5139</a>
 </div>
 </div>
+<div class="hero-city-panel">
+<div class="status-pill"><span></span> Online now</div>
+<h2>Not just Russellville.</h2>
+<p>If you landed here from another Arkansas market, jump straight to the city page that matches where the roof is.</p>
+<div class="hero-city-links" aria-label="Popular service area links">
+<a href="/service-areas/russellville-ar/">Russellville</a>
+<a href="/service-areas/conway-ar/">Conway</a>
+<a href="/service-areas/little-rock-ar/">Little Rock</a>
+<a href="/service-areas/fort-smith-ar/">Fort Smith</a>
+<a href="/service-areas/fayetteville-ar/">Fayetteville</a>
+</div>
+</div>
+</div>
 </div>
 </section>
 
@@ -278,7 +352,11 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
 <div class="container">
 <div class="section-tag">Where We Work</div>
 <h2 class="section-title">Find Your <span class="text-cyan">City</span></h2>
-<p style="color:var(--gray-300);font-size:16px;line-height:1.7;max-width:700px;margin-bottom:16px">Click your city below to see local roofing services, project details, and coverage information specific to your area.</p>
+<p class="city-intro">Search or click your city below to see local roofing services, project details, and coverage information specific to your area.</p>
+<div class="city-search">
+<label for="citySearch">Search service areas</label>
+<input id="citySearch" type="search" placeholder="Type your city, like Conway or Fayetteville" autocomplete="off">
+</div>
 <div class="areas-grid">
 <a href="/service-areas/russellville-ar/" class="area-card"><span class="area-card-name">Russellville</span><span class="area-card-arrow">→</span></a>
 <a href="/service-areas/conway-ar/" class="area-card"><span class="area-card-name">Conway</span><span class="area-card-arrow">→</span></a>
@@ -314,6 +392,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
 <a href="/service-areas/booneville-ar/" class="area-card"><span class="area-card-name">Booneville</span><span class="area-card-arrow">→</span></a>
 
 </div>
+<p class="no-city-match" id="noCityMatch" hidden>No matching city yet. Call SMI and we can point you to the closest local page.</p>
 </div>
 </section>
 
@@ -359,7 +438,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
 <div class="footer-col"><h4>Company</h4>
 <a href="/#why">About Us</a>
 <a href="/#reviews">Reviews</a>
-<a href="/#areas">Service Areas</a>
+<a href="/service-areas/">Service Areas</a>
 <a href="tel:+15014645139">Contact</a>
 <a href="/privacy-policy/">Privacy Policy</a>
 <a href="/sms-terms/">SMS Terms</a>
@@ -377,15 +456,22 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
 <script>
 window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)});
 document.querySelectorAll('.faq-question').forEach(btn=>{btn.addEventListener('click',()=>{btn.classList.toggle('open');btn.nextElementSibling.classList.toggle('open')})});
+const citySearch=document.getElementById('citySearch');
+const noCityMatch=document.getElementById('noCityMatch');
+if(citySearch){
+  citySearch.addEventListener('input',()=>{
+    const query=citySearch.value.trim().toLowerCase();
+    let matches=0;
+    document.querySelectorAll('.area-card').forEach(card=>{
+      const isMatch=card.textContent.toLowerCase().includes(query);
+      card.style.display=isMatch?'flex':'none';
+      if(isMatch)matches++;
+    });
+    if(noCityMatch)noCityMatch.hidden=matches!==0;
+  });
+}
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:.1});
-document.querySelectorAll('.comm-service-card,.content-body h2,.faq-item').forEach((el,i)=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition=`all .5s ease ${i*.04}s`;obs.observe(el)});
-</script>
-
-</body>
-
-
-<script>
-window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)});
+document.querySelectorAll('.area-card,.cta-card').forEach((el,i)=>{el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition=`all .45s ease ${i*.025}s`;obs.observe(el)});
 </script>
 </body>
 </html>
