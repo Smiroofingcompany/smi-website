@@ -241,9 +241,10 @@ nav.scrolled{background:rgba(255,255,255,.98);border-bottom:1px solid var(--line
 .status-pill span{position:relative;width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(16,185,129,.16)}
 .hero-city-panel h2{font-family:var(--font-display);font-size:30px;line-height:1.05;color:var(--ink);margin-bottom:12px}
 .hero-city-panel p{color:var(--muted);line-height:1.65;margin-bottom:18px}
-.hero-city-links{display:flex;flex-wrap:wrap;gap:8px}
-.hero-city-links a{display:inline-flex;align-items:center;min-height:38px;padding:9px 12px;border-radius:6px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:13px;font-weight:900;text-decoration:none}
-.hero-city-links a:hover{border-color:var(--cyan);background:#eafaff}
+.hero-city-cta{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:15px 24px;border-radius:8px;background:var(--cyan);border:1px solid var(--cyan);color:#06131d;font-size:14px;font-weight:900;text-decoration:none;box-shadow:0 16px 34px rgba(0,200,240,.24);transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.hero-city-cta::after{content:'→';margin-left:10px;font-size:18px;transition:transform .2s ease}
+.hero-city-cta:hover{background:#58dcff;color:#06131d;transform:translateY(-2px);box-shadow:0 20px 42px rgba(0,200,240,.3)}
+.hero-city-cta:hover::after{transform:translateX(3px)}
 .content-section{padding:72px 0 84px;background:var(--soft);color:var(--ink)}
 .section-tag{color:var(--cyan-dark)}
 .section-tag::before{background:var(--cyan)}
@@ -334,28 +335,15 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
 </div>
 <div class="hero-city-panel">
 <div class="status-pill"><span></span> Online now</div>
-<h2>SMI is in 35+ cities.</h2>
-<p>See your city below and jump straight to the local roofing page that matches where the roof is.</p>
-<div class="hero-city-links" aria-label="Popular service area links">
-<a href="/service-areas/russellville-ar/">Russellville</a>
-<a href="/service-areas/glenwood-ar/">Glenwood</a>
-<a href="/service-areas/nashville-ar/">Nashville</a>
-<a href="/service-areas/jonesboro-ar/">Jonesboro</a>
-<a href="/service-areas/ozark-ar/">Ozark</a>
-<a href="/service-areas/booneville-ar/">Booneville</a>
-<a href="/service-areas/cabot-ar/">Cabot</a>
-<a href="/service-areas/beebe-ar/">Beebe</a>
-<a href="/service-areas/conway-ar/">Conway</a>
-<a href="/service-areas/little-rock-ar/">Little Rock</a>
-<a href="/service-areas/fayetteville-ar/">Fayetteville</a>
-<a href="/service-areas/fort-smith-ar/">Fort Smith</a>
-</div>
+<h2>Find your city below.</h2>
+<p>Use the search and city list below to open the local SMI roofing page for your roof address.</p>
+<a class="hero-city-cta" href="#city-list">Find Your City</a>
 </div>
 </div>
 </div>
 </section>
 
-<section class="content-section">
+<section class="content-section" id="city-list">
 <div class="container">
 <div class="section-tag">Where We Work</div>
 <h2 class="section-title">Find Your <span class="text-cyan">City</span></h2>

@@ -115,6 +115,10 @@ button,input,select{font:inherit}
 .area-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 15px;border-radius:6px;background:#fff;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:13px;font-weight:900}
 .area-link:hover{border-color:var(--cyan);background:#eafaff;color:#062233}
 .area-link.featured{background:var(--navy);border-color:var(--navy);color:#fff}
+.area-link.area-cta{min-height:56px;padding:16px 26px;border-radius:8px;background:linear-gradient(135deg,var(--cyan),#58dcff);border-color:var(--cyan);color:#06131d;box-shadow:0 18px 38px rgba(0,200,240,.24);font-size:14px}
+.area-link.area-cta::after{content:'→';margin-left:10px;font-size:18px;transition:transform .2s ease}
+.area-link.area-cta:hover{background:linear-gradient(135deg,#58dcff,var(--cyan));color:#06131d;transform:translateY(-2px);box-shadow:0 22px 44px rgba(0,200,240,.3)}
+.area-link.area-cta:hover::after{transform:translateX(3px)}
 .coverage{background:#fff;border-bottom:1px solid var(--line)}
 .coverage-header{display:grid;grid-template-columns:.85fr 1.15fr;gap:34px;align-items:end;margin-bottom:34px}
 .coverage-note{background:#f6f8fb;border:1px solid var(--line);border-radius:8px;padding:22px}
@@ -482,11 +486,11 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
   <section class="area-router" aria-label="Local roofing service areas">
     <div class="container area-router-grid">
       <div>
-        <h2>From a different city?</h2>
-        <p>Check out all of our locations and find the SMI page for your roof address.</p>
+        <h2>SMI Roofing is in 31 other cities.</h2>
+        <p>Find the local SMI page for your roof address and get details that match your city.</p>
       </div>
       <div class="area-links">
-        <a class="area-link featured" href="/service-areas/">View All Locations</a>
+        <a class="area-link area-cta" href="/service-areas/">Find My City</a>
       </div>
     </div>
   </section>
