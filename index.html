@@ -488,6 +488,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
       <div class="area-links">
         <a class="area-link featured" href="/service-areas/">All Service Areas</a>
         <a class="area-link" href="/service-areas/russellville-ar/">Russellville</a>
+        <a class="area-link" href="/service-areas/glenwood-ar/">Glenwood</a>
         <a class="area-link" href="/service-areas/conway-ar/">Conway</a>
         <a class="area-link" href="/service-areas/little-rock-ar/">Little Rock</a>
         <a class="area-link" href="/service-areas/fort-smith-ar/">Fort Smith</a>
@@ -804,6 +805,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
       <div class="coverage-list">
         <a href="/service-areas/" class="featured">All Service Areas</a>
         <a href="/service-areas/russellville-ar/">Russellville</a>
+        <a href="/service-areas/glenwood-ar/">Glenwood</a>
         <a href="/service-areas/conway-ar/">Conway</a>
         <a href="/service-areas/little-rock-ar/">Little Rock</a>
         <a href="/service-areas/fort-smith-ar/">Fort Smith</a>
@@ -953,7 +955,7 @@ function initCoverageMap(){
   const el=document.getElementById('demoServiceMap');
   if(!el)return;
   if(!window.L){
-    el.innerHTML='<div class="map-fallback">The map could not load, but SMI serves Arkansas communities including Fayetteville, Russellville, Conway, Little Rock, Fort Smith, Springdale, Bentonville, and El Dorado.</div>';
+    el.innerHTML='<div class="map-fallback">The map could not load, but SMI serves Arkansas communities including Glenwood, Fayetteville, Russellville, Conway, Little Rock, Fort Smith, Springdale, Bentonville, and El Dorado.</div>';
     return;
   }
   const map=L.map('demoServiceMap',{scrollWheelZoom:false,zoomControl:true}).setView([34.75,-93.3],7);
@@ -962,6 +964,7 @@ function initCoverageMap(){
   const hqIcon=L.icon({iconUrl:'/assets/logo.png',iconSize:[52,52],iconAnchor:[26,26],popupAnchor:[0,-30],className:'smi-map-pin-hq'});
   const locs=[
     {name:'Russellville (HQ)',lat:35.278,lng:-93.134,hq:true,desc:'302 E Parkway Dr — (501) 464-5139',url:'/service-areas/russellville-ar/'},
+    {name:'Glenwood',lat:34.327,lng:-93.550,desc:'Storm response near the Caddo River',url:'/service-areas/glenwood-ar/'},
     {name:'Fayetteville',lat:36.062,lng:-94.158,desc:'Northwest Arkansas roofing page',url:'/service-areas/fayetteville-ar/'},
     {name:'Springdale',lat:36.188,lng:-94.130,desc:'Serving Northwest Arkansas',url:'/service-areas/springdale-ar/'},
     {name:'Bentonville',lat:36.372,lng:-94.209,desc:'Serving Benton County',url:'/service-areas/bentonville-ar/'},
