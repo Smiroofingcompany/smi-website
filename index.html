@@ -489,6 +489,12 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
         <a class="area-link featured" href="/service-areas/">All Service Areas</a>
         <a class="area-link" href="/service-areas/russellville-ar/">Russellville</a>
         <a class="area-link" href="/service-areas/glenwood-ar/">Glenwood</a>
+        <a class="area-link" href="/service-areas/nashville-ar/">Nashville</a>
+        <a class="area-link" href="/service-areas/jonesboro-ar/">Jonesboro</a>
+        <a class="area-link" href="/service-areas/ozark-ar/">Ozark</a>
+        <a class="area-link" href="/service-areas/booneville-ar/">Booneville</a>
+        <a class="area-link" href="/service-areas/cabot-ar/">Cabot</a>
+        <a class="area-link" href="/service-areas/beebe-ar/">Beebe</a>
         <a class="area-link" href="/service-areas/conway-ar/">Conway</a>
         <a class="area-link" href="/service-areas/little-rock-ar/">Little Rock</a>
         <a class="area-link" href="/service-areas/fort-smith-ar/">Fort Smith</a>
@@ -804,18 +810,41 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
       <div id="demoServiceMap" class="coverage-map" aria-label="SMI Roofing Arkansas service area map"></div>
       <div class="coverage-list">
         <a href="/service-areas/" class="featured">All Service Areas</a>
-        <a href="/service-areas/russellville-ar/">Russellville</a>
-        <a href="/service-areas/glenwood-ar/">Glenwood</a>
-        <a href="/service-areas/conway-ar/">Conway</a>
-        <a href="/service-areas/little-rock-ar/">Little Rock</a>
-        <a href="/service-areas/fort-smith-ar/">Fort Smith</a>
-        <a href="/service-areas/fayetteville-ar/">Fayetteville</a>
-        <a href="/service-areas/springdale-ar/">Springdale</a>
+        <a href="/service-areas/alma-ar/">Alma</a>
+        <a href="/service-areas/atkins-ar/">Atkins</a>
+        <a href="/service-areas/beebe-ar/">Beebe</a>
+        <a href="/service-areas/benton-ar/">Benton</a>
         <a href="/service-areas/bentonville-ar/">Bentonville</a>
-        <a href="/service-areas/el-dorado-ar/">El Dorado</a>
-        <a href="/service-areas/morrilton-ar/">Morrilton</a>
+        <a href="/service-areas/booneville-ar/">Booneville</a>
+        <a href="/service-areas/bryant-ar/">Bryant</a>
         <a href="/service-areas/cabot-ar/">Cabot</a>
+        <a href="/service-areas/clarksville-ar/">Clarksville</a>
+        <a href="/service-areas/conway-ar/">Conway</a>
+        <a href="/service-areas/dardanelle-ar/">Dardanelle</a>
+        <a href="/service-areas/dover-ar/">Dover</a>
+        <a href="/service-areas/el-dorado-ar/">El Dorado</a>
+        <a href="/service-areas/fayetteville-ar/">Fayetteville</a>
+        <a href="/service-areas/fort-smith-ar/">Fort Smith</a>
+        <a href="/service-areas/glenwood-ar/">Glenwood</a>
+        <a href="/service-areas/greenbrier-ar/">Greenbrier</a>
+        <a href="/service-areas/jacksonville-ar/">Jacksonville</a>
+        <a href="/service-areas/jonesboro-ar/">Jonesboro</a>
+        <a href="/service-areas/little-rock-ar/">Little Rock</a>
+        <a href="/service-areas/london-ar/">London</a>
+        <a href="/service-areas/maumelle-sherwood-ar/">Maumelle / Sherwood</a>
+        <a href="/service-areas/mena-ar/">Mena</a>
+        <a href="/service-areas/morrilton-ar/">Morrilton</a>
+        <a href="/service-areas/nashville-ar/">Nashville</a>
+        <a href="/service-areas/north-little-rock-ar/">North Little Rock</a>
+        <a href="/service-areas/ozark-ar/">Ozark</a>
+        <a href="/service-areas/pottsville-ar/">Pottsville</a>
+        <a href="/service-areas/rogers-ar/">Rogers</a>
+        <a href="/service-areas/russellville-ar/">Russellville</a>
+        <a href="/service-areas/searcy-ar/">Searcy</a>
         <a href="/service-areas/siloam-springs-ar/">Siloam Springs</a>
+        <a href="/service-areas/springdale-ar/">Springdale</a>
+        <a href="/service-areas/van-buren-ar/">Van Buren</a>
+        <a href="/service-areas/vilonia-ar/">Vilonia</a>
       </div>
     </div>
   </section>
@@ -955,7 +984,7 @@ function initCoverageMap(){
   const el=document.getElementById('demoServiceMap');
   if(!el)return;
   if(!window.L){
-    el.innerHTML='<div class="map-fallback">The map could not load, but SMI serves Arkansas communities including Glenwood, Fayetteville, Russellville, Conway, Little Rock, Fort Smith, Springdale, Bentonville, and El Dorado.</div>';
+    el.innerHTML='<div class="map-fallback">The map could not load, but SMI serves Arkansas communities including Nashville, Jonesboro, Ozark, Booneville, Cabot, Beebe, Russellville, Glenwood, Conway, Little Rock, Fort Smith, and Fayetteville.</div>';
     return;
   }
   const map=L.map('demoServiceMap',{scrollWheelZoom:false,zoomControl:true}).setView([34.75,-93.3],7);
@@ -963,19 +992,24 @@ function initCoverageMap(){
   const smiIcon=L.icon({iconUrl:'/assets/logo.png',iconSize:[36,36],iconAnchor:[18,18],popupAnchor:[0,-22],className:'smi-map-pin'});
   const hqIcon=L.icon({iconUrl:'/assets/logo.png',iconSize:[52,52],iconAnchor:[26,26],popupAnchor:[0,-30],className:'smi-map-pin-hq'});
   const locs=[
-    {name:'Russellville (HQ)',lat:35.278,lng:-93.134,hq:true,desc:'302 E Parkway Dr — (501) 464-5139',url:'/service-areas/russellville-ar/'},
-    {name:'Glenwood',lat:34.327,lng:-93.550,desc:'Storm response near the Caddo River',url:'/service-areas/glenwood-ar/'},
-    {name:'Fayetteville',lat:36.062,lng:-94.158,desc:'Northwest Arkansas roofing page',url:'/service-areas/fayetteville-ar/'},
-    {name:'Springdale',lat:36.188,lng:-94.130,desc:'Serving Northwest Arkansas',url:'/service-areas/springdale-ar/'},
-    {name:'Bentonville',lat:36.372,lng:-94.209,desc:'Serving Benton County',url:'/service-areas/bentonville-ar/'},
-    {name:'Fort Smith',lat:35.384,lng:-94.421,desc:'Serving the River Valley',url:'/service-areas/fort-smith-ar/'},
-    {name:'Conway',lat:35.092,lng:-92.437,desc:'Serving Faulkner County',url:'/service-areas/conway-ar/'},
-    {name:'Little Rock',lat:34.743,lng:-92.276,desc:'Serving Central Arkansas',url:'/service-areas/little-rock-ar/'},
-    {name:'El Dorado',lat:33.207,lng:-92.666,desc:'Serving South Arkansas',url:'/service-areas/el-dorado-ar/'},
-    {name:'Morrilton',lat:35.151,lng:-92.744,desc:'Serving Conway County',url:'/service-areas/morrilton-ar/'},
-    {name:'Clarksville',lat:35.471,lng:-93.469,desc:'Serving Johnson County',url:'/service-areas/clarksville-ar/'},
-    {name:'Cabot',lat:34.974,lng:-92.016,desc:'Serving Lonoke County',url:'/service-areas/cabot-ar/'},
-    {name:'Siloam Springs',lat:36.188,lng:-94.540,desc:'Serving Benton County',url:'/service-areas/siloam-springs-ar/'}
+    {name:'Russellville (HQ)',lat:35.2842,lng:-93.1315,hq:true,desc:'302 E Parkway Dr — (501) 464-5139',url:'/service-areas/russellville-ar/'},
+    {name:'Glenwood',lat:34.3192,lng:-93.5559,desc:'Pike and Montgomery Counties · 71943',url:'/service-areas/glenwood-ar/'},
+    {name:'Fayetteville',lat:36.052,lng:-94.1534,desc:'Washington County · 72701, 72703, 72704',url:'/service-areas/fayetteville-ar/'},
+    {name:'Springdale',lat:36.1835,lng:-94.1762,desc:'Washington and Benton Counties · 72762, 72764',url:'/service-areas/springdale-ar/'},
+    {name:'Bentonville',lat:36.3577,lng:-94.2224,desc:'Benton County · 72712, 72716',url:'/service-areas/bentonville-ar/'},
+    {name:'Fort Smith',lat:35.3653,lng:-94.411,desc:'Sebastian County · 72901, 72903, 72904 and nearby ZIPs',url:'/service-areas/fort-smith-ar/'},
+    {name:'Conway',lat:35.0842,lng:-92.4236,desc:'Faulkner County · 72032, 72034, 72035',url:'/service-areas/conway-ar/'},
+    {name:'Little Rock',lat:34.7465,lng:-92.2896,desc:'Pulaski County · 72201, 72202, 72204 and nearby ZIPs',url:'/service-areas/little-rock-ar/'},
+    {name:'El Dorado',lat:33.2074,lng:-92.6629,desc:'Union County · 71730, 71731',url:'/service-areas/el-dorado-ar/'},
+    {name:'Morrilton',lat:35.1692,lng:-92.7354,desc:'Conway County · 72110',url:'/service-areas/morrilton-ar/'},
+    {name:'Clarksville',lat:35.4908,lng:-93.4911,desc:'Johnson County · 72830',url:'/service-areas/clarksville-ar/'},
+    {name:'Cabot',lat:34.9457,lng:-92.0318,desc:'Lonoke County · 72023',url:'/service-areas/cabot-ar/'},
+    {name:'Siloam Springs',lat:36.18,lng:-94.528,desc:'Benton County · 72761',url:'/service-areas/siloam-springs-ar/'},
+    {name:'Nashville',lat:33.9576,lng:-93.8707,desc:'Howard County · 71852',url:'/service-areas/nashville-ar/'},
+    {name:'Jonesboro',lat:35.8423,lng:-90.7043,desc:'Craighead County · 72401, 72404, 72405',url:'/service-areas/jonesboro-ar/'},
+    {name:'Ozark',lat:35.5246,lng:-93.8374,desc:'Franklin County · 72949',url:'/service-areas/ozark-ar/'},
+    {name:'Booneville',lat:35.1364,lng:-93.9274,desc:'Logan County · 72927',url:'/service-areas/booneville-ar/'},
+    {name:'Beebe',lat:35.0706,lng:-91.8796,desc:'White County · 72012',url:'/service-areas/beebe-ar/'},
   ];
   locs.forEach(l=>{
     const popup='<div style="font-family:Plus Jakarta Sans,sans-serif;min-width:150px"><strong style="font-size:14px">'+l.name+'</strong><br><span style="font-size:12px;color:#667085">'+l.desc+'</span><br><a href="'+l.url+'" style="display:inline-block;margin-top:8px;color:#00a5c7;font-weight:800;text-decoration:none">Open local page →</a></div>';
