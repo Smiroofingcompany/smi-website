@@ -85,6 +85,7 @@ button,input,select{font:inherit}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 56%}
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,13,24,.7) 0%,rgba(6,13,24,.46) 48%,rgba(6,13,24,.14) 100%),linear-gradient(0deg,rgba(6,13,24,.7) 0%,rgba(6,13,24,.06) 40%,rgba(6,13,24,.16) 100%)}
 .hero-inner{position:relative;z-index:2;width:min(1180px,calc(100% - 40px));margin:0 auto;padding:86px 0 34px}
+.hero-layout{display:grid;grid-template-columns:minmax(0,760px) minmax(310px,1fr);gap:54px;align-items:end}
 .hero-copy{max-width:760px}
 .hero-kicker{display:inline-flex;align-items:center;gap:10px;max-width:100%;margin-bottom:20px;padding:9px 12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:6px;color:#fff;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;line-height:1.35}
 .hero-kicker span{position:relative;width:9px;height:9px;background:var(--green);border-radius:50%;box-shadow:0 0 0 5px rgba(15,159,110,.18);animation:onlineDot 1.6s ease-out infinite;flex:0 0 auto}
@@ -96,10 +97,10 @@ button,input,select{font:inherit}
 .hero h1{margin:0;font-family:var(--font-display);font-size:clamp(44px,7vw,82px);line-height:.96;font-weight:900;letter-spacing:0;max-width:880px}
 .hero h1 strong{color:#8beaff}
 .hero p{max-width:680px;margin:22px 0 0;font-size:20px;line-height:1.65;color:rgba(255,255,255,.9)}
-.hero-area-card{display:flex;align-items:center;justify-content:space-between;gap:18px;max-width:700px;margin-top:24px;padding:18px 20px;border-radius:8px;background:rgba(8,18,33,.74);border:1px solid rgba(139,234,255,.35);border-left:4px solid var(--cyan);box-shadow:0 18px 48px rgba(0,0,0,.24);backdrop-filter:blur(14px)}
-.hero-area-card strong{display:block;font-family:var(--font-display);font-size:clamp(22px,2.4vw,32px);line-height:1.05;font-weight:900;color:#fff}
-.hero-area-card span{display:block;margin-top:5px;color:rgba(255,255,255,.78);font-size:14px;font-weight:800;line-height:1.45}
-.hero-area-card .btn{min-height:48px;padding:13px 18px;white-space:nowrap;box-shadow:0 12px 30px rgba(0,200,240,.25)}
+.hero-area-card{display:flex;flex-direction:column;justify-content:space-between;justify-self:end;width:310px;aspect-ratio:1;margin-bottom:10px;padding:24px;border-radius:8px;background:rgba(8,18,33,.78);border:1px solid rgba(139,234,255,.42);border-top:5px solid var(--cyan);box-shadow:0 22px 54px rgba(0,0,0,.28);backdrop-filter:blur(14px)}
+.hero-area-card strong{display:block;font-family:var(--font-display);font-size:30px;line-height:1.02;font-weight:900;color:#fff}
+.hero-area-card span{display:block;margin-top:10px;color:rgba(255,255,255,.78);font-size:14px;font-weight:800;line-height:1.45}
+.hero-area-card .btn{width:100%;min-height:50px;padding:14px 16px;box-shadow:0 12px 30px rgba(0,200,240,.25)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
 .hero-proof{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:64px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.18);border-radius:8px;overflow:hidden;backdrop-filter:blur(14px)}
 .proof-item{background:rgba(8,18,33,.58);padding:20px}
@@ -293,6 +294,8 @@ button,input,select{font:inherit}
 @media(max-width:1040px){
   .nav-links{display:none}
   .nav-toggle{display:block}
+  .hero-layout{grid-template-columns:1fr;gap:24px}
+  .hero-area-card{width:min(100%,360px);aspect-ratio:auto;min-height:0;margin:0;padding:20px}
   .hero-proof,.quick-paths,.process-grid,.project-grid{grid-template-columns:1fr 1fr}
   .problem-band .container,.area-router-grid,.coverage-header,.answer-grid,.promise-grid,.cost-grid,.faq-grid,.reviews-top,.claim-grid,.contact-form-grid{grid-template-columns:1fr}
   .area-links{justify-content:flex-start}
@@ -308,8 +311,7 @@ button,input,select{font:inherit}
   .hero{min-height:calc(100vh - 122px)}
   .hero-inner{padding:68px 0 26px}
   .hero p{font-size:17px}
-  .hero-area-card{display:grid;padding:16px;margin-top:22px}
-  .hero-area-card .btn{width:100%}
+  .hero-area-card{width:100%;padding:16px}
   .hero-actions{display:grid}
   .reviews-aggregate{display:grid;text-align:center;width:100%;gap:8px}
   .hero-proof,.quick-paths,.promise-cards,.process-grid,.project-grid,.review-grid,.claim-list,.footer-grid{grid-template-columns:1fr}
@@ -459,20 +461,22 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
   <section class="hero" id="top">
     <div class="hero-bg"><img src="/assets/smi-luxury-roof-finished.jpg" alt="Finished roof system on an Arkansas home"></div>
     <div class="hero-inner">
-      <div class="hero-copy">
-        <div class="hero-kicker"><span></span><em>Online now. Serving 31 other cities.</em></div>
-        <h1>Get a straight answer about your roof <strong>before you spend a dollar.</strong></h1>
-        <p>SMI Roofing inspects, photographs, explains, and gives you the next best step. If your roof is fine, we say that. If it needs work, you will know exactly why.</p>
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <div class="hero-kicker"><span></span><em>Online now. Serving 31 other cities.</em></div>
+          <h1>Get a straight answer about your roof <strong>before you spend a dollar.</strong></h1>
+          <p>SMI Roofing inspects, photographs, explains, and gives you the next best step. If your roof is fine, we say that. If it needs work, you will know exactly why.</p>
+          <div class="hero-actions">
+            <a href="#contact-form" class="btn btn-primary">Schedule free inspection</a>
+            <a href="#paths" class="btn btn-secondary">Tell us what's going on</a>
+          </div>
+        </div>
         <div class="hero-area-card">
           <div>
             <strong>SMI Roofing covers 31 other cities.</strong>
             <span>Find your local SMI Roofing page fast.</span>
           </div>
           <a href="/service-areas/" class="btn btn-primary">Find My City</a>
-        </div>
-        <div class="hero-actions">
-          <a href="#contact-form" class="btn btn-primary">Schedule free inspection</a>
-          <a href="#paths" class="btn btn-secondary">Tell us what's going on</a>
         </div>
       </div>
       <div class="hero-proof" aria-label="SMI Roofing trust signals">
