@@ -87,7 +87,8 @@ button,input,select{font:inherit}
 .hero-inner{position:relative;z-index:2;width:min(1180px,calc(100% - 40px));margin:0 auto;padding:86px 0 34px}
 .hero-layout{display:grid;grid-template-columns:minmax(0,760px) minmax(310px,1fr);gap:54px;align-items:end}
 .hero-copy{max-width:760px}
-.hero-kicker{display:inline-flex;align-items:center;gap:10px;max-width:100%;margin-bottom:20px;padding:9px 12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:6px;color:#fff;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;line-height:1.35}
+.hero-location-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;max-width:100%;padding:9px 12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:6px;color:#fff;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;line-height:1.35}
 .hero-kicker span{position:relative;width:9px;height:9px;background:var(--green);border-radius:50%;box-shadow:0 0 0 5px rgba(15,159,110,.18);animation:onlineDot 1.6s ease-out infinite;flex:0 0 auto}
 .hero-kicker em{font-style:normal;min-width:0}
 .hero-kicker span::after{content:"";position:absolute;inset:-7px;border:1px solid rgba(15,159,110,.48);border-radius:50%;animation:onlineRing 1.6s ease-out infinite}
@@ -97,7 +98,8 @@ button,input,select{font:inherit}
 .hero h1{margin:0;font-family:var(--font-display);font-size:clamp(44px,7vw,82px);line-height:.96;font-weight:900;letter-spacing:0;max-width:880px}
 .hero h1 strong{color:#8beaff}
 .hero p{max-width:680px;margin:22px 0 0;font-size:20px;line-height:1.65;color:rgba(255,255,255,.9)}
-.hero-area-card{display:flex;flex-direction:column;justify-content:space-between;justify-self:end;width:310px;aspect-ratio:1;margin-bottom:10px;padding:24px;border-radius:8px;background:rgba(8,18,33,.78);border:1px solid rgba(139,234,255,.42);border-top:5px solid var(--cyan);box-shadow:0 22px 54px rgba(0,0,0,.28);backdrop-filter:blur(14px)}
+.hero-area-card{display:flex;flex-direction:column;justify-content:space-between;justify-self:end;width:310px;aspect-ratio:1;margin-bottom:10px;padding:24px;border-radius:8px;background:rgba(8,18,33,.82);border:1px solid rgba(139,234,255,.42);border-top:5px solid var(--cyan);box-shadow:0 22px 54px rgba(0,0,0,.28);backdrop-filter:blur(14px)}
+.hero-area-label{display:block;margin-bottom:12px;color:#8beaff;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.12em}
 .hero-area-card strong{display:block;font-family:var(--font-display);font-size:30px;line-height:1.02;font-weight:900;color:#fff}
 .hero-area-card span{display:block;margin-top:10px;color:rgba(255,255,255,.78);font-size:14px;font-weight:800;line-height:1.45}
 .hero-area-card .btn{width:100%;min-height:50px;padding:14px 16px;box-shadow:0 12px 30px rgba(0,200,240,.25)}
@@ -113,18 +115,6 @@ button,input,select{font:inherit}
 .path-btn{appearance:none;border:1px solid var(--line);background:#fff;border-radius:7px;padding:14px 12px;min-height:74px;color:var(--ink);font-size:13px;font-weight:900;text-align:left;cursor:pointer;transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease}
 .path-btn span{display:block;margin-top:7px;color:var(--muted);font-size:11px;font-weight:800;line-height:1.35}
 .path-btn:hover,.path-btn.active{border-color:var(--cyan);background:#eefbff;box-shadow:0 10px 22px rgba(0,200,240,.12);transform:translateY(-2px)}
-.area-router{background:#f6f8fb;border-bottom:1px solid var(--line);padding:30px 0}
-.area-router-grid{display:grid;grid-template-columns:330px 1fr;gap:24px;align-items:center}
-.area-router h2{margin:0;font-family:var(--font-display);font-size:28px;line-height:1.05;color:var(--ink)}
-.area-router p{margin:8px 0 0;color:var(--muted);line-height:1.6}
-.area-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
-.area-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 15px;border-radius:6px;background:#fff;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:13px;font-weight:900}
-.area-link:hover{border-color:var(--cyan);background:#eafaff;color:#062233}
-.area-link.featured{background:var(--navy);border-color:var(--navy);color:#fff}
-.area-link.area-cta{min-height:56px;padding:16px 26px;border-radius:8px;background:linear-gradient(135deg,var(--cyan),#58dcff);border-color:var(--cyan);color:#06131d;box-shadow:0 18px 38px rgba(0,200,240,.24);font-size:14px}
-.area-link.area-cta::after{content:'→';margin-left:10px;font-size:18px;transition:transform .2s ease}
-.area-link.area-cta:hover{background:linear-gradient(135deg,#58dcff,var(--cyan));color:#06131d;transform:translateY(-2px);box-shadow:0 22px 44px rgba(0,200,240,.3)}
-.area-link.area-cta:hover::after{transform:translateX(3px)}
 .coverage{background:#fff;border-bottom:1px solid var(--line)}
 .coverage-header{display:grid;grid-template-columns:.85fr 1.15fr;gap:34px;align-items:end;margin-bottom:34px}
 .coverage-note{background:#f6f8fb;border:1px solid var(--line);border-radius:8px;padding:22px}
@@ -297,8 +287,7 @@ button,input,select{font:inherit}
   .hero-layout{grid-template-columns:1fr;gap:24px}
   .hero-area-card{width:min(100%,360px);aspect-ratio:auto;min-height:0;margin:0;padding:20px}
   .hero-proof,.quick-paths,.process-grid,.project-grid{grid-template-columns:1fr 1fr}
-  .problem-band .container,.area-router-grid,.coverage-header,.answer-grid,.promise-grid,.cost-grid,.faq-grid,.reviews-top,.claim-grid,.contact-form-grid{grid-template-columns:1fr}
-  .area-links{justify-content:flex-start}
+  .problem-band .container,.coverage-header,.answer-grid,.promise-grid,.cost-grid,.faq-grid,.reviews-top,.claim-grid,.contact-form-grid{grid-template-columns:1fr}
   .estimate-card{position:relative;top:auto}
   .project-grid{gap:14px}
 }
@@ -310,8 +299,10 @@ button,input,select{font:inherit}
   .mobile-menu{top:122px}
   .hero{min-height:calc(100vh - 122px)}
   .hero-inner{padding:68px 0 26px}
+  .hero-location-row{gap:8px}
   .hero p{font-size:17px}
-  .hero-area-card{width:100%;padding:16px}
+  .hero-area-card{width:100%;padding:18px;gap:18px}
+  .hero-area-label{margin-bottom:8px}
   .hero-actions{display:grid}
   .reviews-aggregate{display:grid;text-align:center;width:100%;gap:8px}
   .hero-proof,.quick-paths,.promise-cards,.process-grid,.project-grid,.review-grid,.claim-list,.footer-grid{grid-template-columns:1fr}
@@ -463,7 +454,9 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
     <div class="hero-inner">
       <div class="hero-layout">
         <div class="hero-copy">
-          <div class="hero-kicker"><span></span><em>Online now. Serving 31 other cities.</em></div>
+          <div class="hero-location-row">
+            <div class="hero-kicker"><span></span><em>Russellville, AR</em></div>
+          </div>
           <h1>Get a straight answer about your roof <strong>before you spend a dollar.</strong></h1>
           <p>SMI Roofing inspects, photographs, explains, and gives you the next best step. If your roof is fine, we say that. If it needs work, you will know exactly why.</p>
           <div class="hero-actions">
@@ -473,8 +466,9 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
         </div>
         <div class="hero-area-card">
           <div>
-            <strong>SMI Roofing covers 31 other cities.</strong>
-            <span>Find your local SMI Roofing page fast.</span>
+            <b class="hero-area-label">Service area</b>
+            <strong>Russellville, AR + 31 other cities.</strong>
+            <span>Find your local SMI Roofing page for service details in your area.</span>
           </div>
           <a href="/service-areas/" class="btn btn-primary">Find My City</a>
         </div>
@@ -497,18 +491,6 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
         <button class="path-btn" type="button" data-path="claim">Insurance is confusing<span>Know what is missing.</span></button>
         <button class="path-btn" type="button" data-path="cost">I need a roof estimate<span>Get a real range.</span></button>
         <button class="path-btn" type="button" data-path="commercial">I manage a building<span>Protect operations.</span></button>
-      </div>
-    </div>
-  </section>
-
-  <section class="area-router" aria-label="Local roofing service areas">
-    <div class="container area-router-grid">
-      <div>
-        <h2>SMI Roofing is in 31 other cities.</h2>
-        <p>Find the local SMI page for your roof address and get details that match your city.</p>
-      </div>
-      <div class="area-links">
-        <a class="area-link area-cta" href="/service-areas/">Find My City</a>
       </div>
     </div>
   </section>
