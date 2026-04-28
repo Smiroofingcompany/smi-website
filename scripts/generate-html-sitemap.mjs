@@ -45,10 +45,12 @@ function titleCaseSegment(segment) {
     ['ar', 'AR'],
     ['epdm', 'EPDM'],
     ['faq', 'FAQ'],
+    ['dfw', 'DFW'],
     ['gaf', 'GAF'],
     ['hdz', 'HDZ'],
     ['rcv', 'RCV'],
     ['sms', 'SMS'],
+    ['tn', 'TN'],
     ['tpo', 'TPO']
   ]);
 
@@ -83,7 +85,7 @@ const html = `<!DOCTYPE html>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Site Map | All SMI Roofing URLs</title>
-<meta name="description" content="Browse every public SMI Roofing page in one flat HTML sitemap, including service hubs, Arkansas city hubs, city-service pages, commercial roofing pages, and blog articles.">
+<meta name="description" content="Browse every public SMI Roofing page in one flat HTML sitemap, including service hubs, city hubs, city-service pages, commercial roofing pages, and blog articles.">
 <meta property="og:title" content="Site Map | SMI Roofing">
 <meta property="og:description" content="A flat HTML sitemap listing every public SMI Roofing URL for customers and search crawlers.">
 <meta property="og:image" content="/assets/og-image.jpg">
@@ -167,6 +169,9 @@ h1 strong{color:var(--cyan-dark);font-weight:900}
 .footer a:hover{color:#8beaff}
 .footer .brand-text{color:#fff}
 .footer-bottom{display:flex;justify-content:space-between;gap:20px;margin-top:46px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.52);font-size:13px}
+.mobile-sticky-cta{display:none}
+@media(max-width:768px){body{padding-bottom:calc(78px + env(safe-area-inset-bottom,0px))}#smi-instant-inspection-widget{bottom:calc(92px + env(safe-area-inset-bottom,0px))!important}.mobile-sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:2147482500;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));background:rgba(9,19,34,.96);border-top:1px solid rgba(0,200,240,.25);box-shadow:0 -12px 30px rgba(6,13,24,.22);backdrop-filter:blur(14px)}.mobile-sticky-cta a{min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:7px;text-decoration:none;font:800 15px/1 'Plus Jakarta Sans',Arial,sans-serif;letter-spacing:0}.mobile-sticky-cta-call{background:#fff;color:#0a1628}.mobile-sticky-cta-quote{background:#00C8F0;color:#06131d}.mobile-sticky-cta a:focus-visible{outline:3px solid rgba(0,200,240,.42);outline-offset:2px}}
+@media print{.mobile-sticky-cta{display:none!important}}
 @media(max-width:980px){.nav-links{display:none}.nav-toggle{display:flex}.hero-grid{grid-template-columns:1fr}.stat-panel{max-width:420px}.section-head,.cta-wrap{display:block}.search-box{margin-top:18px}.url-list{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.topbar-inner{display:block}.topbar a{display:block;margin-top:6px}.hero-inner{padding-top:54px}.mobile-menu{top:118px}.url-list{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:10px}}
 </style>
@@ -190,7 +195,7 @@ fbq('track', 'PageView');
 <!-- End Meta Pixel Code -->
 </head>
 <body>
-<div class="topbar"><div class="topbar-inner"><div>Arkansas roofing pages in one place. <strong>${urls.length} public URLs listed.</strong></div><a href="tel:+15014645139">(501) 464-5139</a></div></div>
+<div class="topbar"><div class="topbar-inner"><div>SMI Roofing pages in one place. <strong>${urls.length} public URLs listed.</strong></div><a href="tel:+15014645139">(501) 464-5139</a></div></div>
 <nav class="nav" id="siteNav">
 <div class="nav-inner">
 <a href="/" class="brand" aria-label="SMI Roofing home"><img src="/assets/logo.png" alt="SMI Roofing"><div class="brand-text">SMI <span>Roofing</span></div></a>
@@ -216,7 +221,7 @@ fbq('track', 'PageView');
 </div>
 <main>
 <section class="hero">
-<div class="hero-bg"><img src="/assets/smi-active-roof-documentation-aerial.jpg" alt="SMI Roofing crew documenting an Arkansas roof"></div>
+<div class="hero-bg"><img src="/assets/smi-active-roof-documentation-aerial.jpg" alt="SMI Roofing crew documenting a roof"></div>
 <div class="container hero-inner">
 <div class="breadcrumb"><a href="/">Home</a><span>/</span><span>Site Map</span></div>
 <div class="hero-grid">
@@ -248,7 +253,7 @@ ${urlList}
 <section class="cta">
 <div class="container">
 <div class="cta-wrap">
-<div><h2>Need roof help in Arkansas?</h2><p>Call SMI Roofing or book a free inspection. We will inspect the roof, show you the photos, and explain the next best step.</p></div>
+<div><h2>Need roof help?</h2><p>Call SMI Roofing or book a free inspection. We will inspect the roof, show you the photos, and explain the next best step.</p></div>
 <a class="btn" href="https://clienthub.getjobber.com/booking/31b1fe0c-4da6-49e9-ad15-2e9a8cefa5fb">Book Free Inspection</a>
 </div>
 </div>
@@ -259,7 +264,7 @@ ${urlList}
 <div class="footer-grid">
 <div>
 <a href="/" class="brand" aria-label="SMI Roofing home"><img src="/assets/logo.png" alt="SMI Roofing"><div class="brand-text">SMI <span>Roofing</span></div></a>
-<p>Arkansas roofing help built around straight answers, photo documentation, and local accountability.</p>
+<p>Roofing help built around straight answers, photo documentation, and local accountability.</p>
 <p>302 East Parkway Drive, Suite C<br>Russellville, Arkansas 72801<br>(501) 464-5139</p>
 </div>
 <div><h3>Services</h3><a href="/residential-roofing/">Residential Roofing</a><a href="/commercial-roofing/">Commercial Roofing</a><a href="/metal-roofs/">Metal Roofing</a><a href="/storm-damage/">Storm Damage</a></div>
@@ -287,6 +292,8 @@ if(search){
   });
 }
 </script>
+<script src="/assets/instant-inspection-widget.js" defer></script>
+<nav class="mobile-sticky-cta" aria-label="Mobile quick actions"><a class="mobile-sticky-cta-call" href="tel:+15014645139" aria-label="Call SMI Roofing">Call</a><a class="mobile-sticky-cta-quote" href="https://clienthub.getjobber.com/booking/31b1fe0c-4da6-49e9-ad15-2e9a8cefa5fb" aria-label="Request a free roofing quote">Quote</a></nav>
 </body>
 </html>
 `;
