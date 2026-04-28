@@ -89,11 +89,11 @@ button,input,select{font:inherit}
 .hero-copy{max-width:760px}
 .hero-location-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:20px}
 .hero-kicker{display:inline-flex;align-items:center;gap:10px;max-width:100%;padding:9px 12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:6px;color:#fff;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;line-height:1.35}
-.hero-kicker span{position:relative;width:9px;height:9px;background:var(--green);border-radius:50%;box-shadow:0 0 0 5px rgba(15,159,110,.18);animation:onlineDot 1.6s ease-out infinite;flex:0 0 auto}
+.hero-kicker span{position:relative;width:11px;height:11px;background:#16d98f;border-radius:50%;box-shadow:0 0 0 5px rgba(22,217,143,.2),0 0 16px rgba(22,217,143,.55);animation:onlineGlow 1.45s ease-in-out infinite;flex:0 0 auto}
 .hero-kicker em{font-style:normal;min-width:0}
-.hero-kicker span::after{content:"";position:absolute;inset:-7px;border:1px solid rgba(15,159,110,.48);border-radius:50%;animation:onlineRing 1.6s ease-out infinite}
-@keyframes onlineDot{0%,100%{transform:scale(1)}50%{transform:scale(1.28)}}
-@keyframes onlineRing{0%{transform:scale(.55);opacity:.75}100%{transform:scale(1.8);opacity:0}}
+.hero-kicker span::after{content:"";position:absolute;inset:-9px;border:1px solid rgba(22,217,143,.62);border-radius:50%;animation:onlineRing 1.45s ease-out infinite}
+@keyframes onlineGlow{0%,100%{transform:scale(1);box-shadow:0 0 0 5px rgba(22,217,143,.2),0 0 14px rgba(22,217,143,.5)}50%{transform:scale(1.18);box-shadow:0 0 0 8px rgba(22,217,143,.3),0 0 30px rgba(22,217,143,.85)}}
+@keyframes onlineRing{0%{transform:scale(.58);opacity:.85}100%{transform:scale(1.9);opacity:0}}
 @media(prefers-reduced-motion:reduce){.hero-kicker span,.hero-kicker span::after{animation:none}}
 .hero h1{margin:0;font-family:var(--font-display);font-size:clamp(44px,7vw,82px);line-height:.96;font-weight:900;letter-spacing:0;max-width:880px}
 .hero h1 strong{color:#8beaff}
@@ -455,7 +455,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
       <div class="hero-layout">
         <div class="hero-copy">
           <div class="hero-location-row">
-            <div class="hero-kicker"><span></span><em>Russellville, AR</em></div>
+            <div class="hero-kicker"><span></span><em>Online Now · Russellville, Arkansas</em></div>
           </div>
           <h1>Get a straight answer about your roof <strong>before you spend a dollar.</strong></h1>
           <p>SMI Roofing inspects, photographs, explains, and gives you the next best step. If your roof is fine, we say that. If it needs work, you will know exactly why.</p>
