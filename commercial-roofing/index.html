@@ -129,6 +129,18 @@ nav.scrolled{background:rgba(10,22,40,.98);border-bottom:1px solid rgba(0,200,24
 .partner-badge{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 24px;font-family:var(--font-display);font-weight:800;font-size:16px;transition:all .3s}
 .partner-badge:hover{background:rgba(255,255,255,.1);border-color:rgba(0,200,240,.2)}
 
+
+/* SERVICE CITY LINKS */
+.service-city-section{background:var(--navy-light);border-top:1px solid rgba(0,200,240,.06);border-bottom:1px solid rgba(0,200,240,.06)}
+.service-city-intro{font-size:17px;color:var(--gray-400);line-height:1.7;max-width:760px;margin-bottom:30px}
+.service-city-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.service-city-link{display:flex;align-items:center;justify-content:space-between;min-height:48px;background:var(--navy-mid);border:1px solid rgba(0,200,240,.12);border-radius:8px;padding:12px 14px;color:var(--gray-300);font-size:14px;font-weight:700;text-decoration:none;transition:all .3s}
+.service-city-link::after{content:'\2192';color:var(--cyan);margin-left:10px;transition:transform .3s}
+.service-city-link:hover{border-color:rgba(0,200,240,.35);color:var(--white);transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.18)}
+.service-city-link:hover::after{transform:translateX(3px)}
+@media(max-width:900px){.service-city-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.service-city-grid{grid-template-columns:1fr}.service-city-link{min-height:46px}}
+
 /* FAQ */
 .faq-section{padding:80px 0}
 .faq-item{border:1px solid rgba(0,200,240,.1);border-radius:16px;margin-bottom:12px;overflow:hidden;background:var(--navy-mid)}
@@ -371,35 +383,41 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
 </div>
 </section>
 
-<section class="content-section">
+<section class="content-section service-city-section" data-service-city-links="commercial-roofing">
 <div class="container">
-<div style="text-align:center;max-width:700px;margin:0 auto">
-<div class="section-tag">Service Areas</div>
-<h2 class="section-title">Commercial Roofing Across <span class="text-cyan">Arkansas</span></h2>
-<p style="font-size:17px;color:var(--gray-400);line-height:1.7;margin-bottom:40px">From our Russellville headquarters, we serve commercial properties throughout the state. Our coverage includes the Arkansas River Valley, Central Arkansas, Northwest Arkansas, and the Fort Smith metro.</p>
-</div>
-<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px">
-<span style="background:rgba(0,200,240,.15);border:1px solid rgba(0,200,240,.3);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:700;color:var(--cyan)">Russellville</span>
-<span style="background:rgba(0,200,240,.06);border:1px solid rgba(0,200,240,.12);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:600;color:var(--gray-300)">Conway</span>
-<span style="background:rgba(0,200,240,.06);border:1px solid rgba(0,200,240,.12);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:600;color:var(--gray-300)">Little Rock</span>
-<span style="background:rgba(0,200,240,.06);border:1px solid rgba(0,200,240,.12);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:600;color:var(--gray-300)">North Little Rock</span>
-<span style="background:rgba(0,200,240,.06);border:1px solid rgba(0,200,240,.12);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:600;color:var(--gray-300)">Fort Smith</span>
-<span style="background:rgba(0,200,240,.06);border:1px solid rgba(0,200,240,.12);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:600;color:var(--gray-300)">Fayetteville</span>
-<span style="background:rgba(0,200,240,.06);border:1px solid rgba(0,200,240,.12);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:600;color:var(--gray-300)">Springdale</span>
-<span style="background:rgba(0,200,240,.06);border:1px solid rgba(0,200,240,.12);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:600;color:var(--gray-300)">Bentonville</span>
-<span style="background:rgba(0,200,240,.06);border:1px solid rgba(0,200,240,.12);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:600;color:var(--gray-300)">Rogers</span>
-<span style="background:rgba(0,200,240,.06);border:1px solid rgba(0,200,240,.12);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:600;color:var(--gray-300)">Benton</span>
-<span style="background:rgba(0,200,240,.06);border:1px solid rgba(0,200,240,.12);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:600;color:var(--gray-300)">Bryant</span>
-<span style="background:rgba(0,200,240,.06);border:1px solid rgba(0,200,240,.12);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:600;color:var(--gray-300)">Clarksville</span>
-<span style="background:rgba(0,200,240,.06);border:1px solid rgba(0,200,240,.12);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:600;color:var(--gray-300)">Ozark</span>
-<span style="background:rgba(0,200,240,.06);border:1px solid rgba(0,200,240,.12);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:600;color:var(--gray-300)">Dardanelle</span>
-<span style="background:rgba(0,200,240,.06);border:1px solid rgba(0,200,240,.12);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:600;color:var(--gray-300)">Van Buren</span>
-<span style="background:rgba(0,200,240,.06);border:1px solid rgba(0,200,240,.12);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:600;color:var(--gray-300)">Morrilton</span>
+<div class="section-tag">Commercial Service Areas</div>
+<h2 class="section-title">Commercial Roofing Across <span class="text-cyan">Arkansas Cities</span></h2>
+<p class="service-city-intro">Each commercial city hub connects property owners and facility managers with local TPO, metal, EPDM, roof coating, repair, and maintenance coverage.</p>
+<div class="service-city-grid">
+<a href="/commercial-roofing/alma-ar/" class="service-city-link">Commercial roofing in Alma</a>
+<a href="/commercial-roofing/atkins-ar/" class="service-city-link">Commercial roofing in Atkins</a>
+<a href="/commercial-roofing/benton-ar/" class="service-city-link">Commercial roofing in Benton</a>
+<a href="/commercial-roofing/bentonville-ar/" class="service-city-link">Commercial roofing in Bentonville</a>
+<a href="/commercial-roofing/bryant-ar/" class="service-city-link">Commercial roofing in Bryant</a>
+<a href="/commercial-roofing/cabot-ar/" class="service-city-link">Commercial roofing in Cabot</a>
+<a href="/commercial-roofing/clarksville-ar/" class="service-city-link">Commercial roofing in Clarksville</a>
+<a href="/commercial-roofing/conway-ar/" class="service-city-link">Commercial roofing in Conway</a>
+<a href="/commercial-roofing/dardanelle-ar/" class="service-city-link">Commercial roofing in Dardanelle</a>
+<a href="/commercial-roofing/el-dorado-ar/" class="service-city-link">Commercial roofing in El Dorado</a>
+<a href="/commercial-roofing/fayetteville-ar/" class="service-city-link">Commercial roofing in Fayetteville</a>
+<a href="/commercial-roofing/fort-smith-ar/" class="service-city-link">Commercial roofing in Fort Smith</a>
+<a href="/commercial-roofing/greenbrier-ar/" class="service-city-link">Commercial roofing in Greenbrier</a>
+<a href="/commercial-roofing/jacksonville-ar/" class="service-city-link">Commercial roofing in Jacksonville</a>
+<a href="/commercial-roofing/little-rock-ar/" class="service-city-link">Commercial roofing in Little Rock</a>
+<a href="/commercial-roofing/maumelle-sherwood-ar/" class="service-city-link">Commercial roofing in Maumelle / Sherwood</a>
+<a href="/commercial-roofing/morrilton-ar/" class="service-city-link">Commercial roofing in Morrilton</a>
+<a href="/commercial-roofing/north-little-rock-ar/" class="service-city-link">Commercial roofing in North Little Rock</a>
+<a href="/commercial-roofing/ozark-ar/" class="service-city-link">Commercial roofing in Ozark</a>
+<a href="/commercial-roofing/pottsville-ar/" class="service-city-link">Commercial roofing in Pottsville</a>
+<a href="/commercial-roofing/rogers-ar/" class="service-city-link">Commercial roofing in Rogers</a>
+<a href="/commercial-roofing/russellville-ar/" class="service-city-link">Commercial roofing in Russellville</a>
+<a href="/commercial-roofing/searcy-ar/" class="service-city-link">Commercial roofing in Searcy</a>
+<a href="/commercial-roofing/siloam-springs-ar/" class="service-city-link">Commercial roofing in Siloam Springs</a>
+<a href="/commercial-roofing/springdale-ar/" class="service-city-link">Commercial roofing in Springdale</a>
+<a href="/commercial-roofing/van-buren-ar/" class="service-city-link">Commercial roofing in Van Buren</a>
 </div>
 </div>
 </section>
-
-
 
 <section id="free-estimate" style="background:var(--navy-light);border-top:1px solid rgba(0,200,240,.06);border-bottom:1px solid rgba(0,200,240,.06);padding:80px 0">
 <div class="container" style="max-width:680px">
@@ -485,7 +503,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
 <div class="footer-col"><h4>Residential</h4>
 <a href="/residential-roofing/">Roof Replacement</a>
 <a href="/storm-damage/">Storm Damage</a>
-<a href="/metal-roofing/">Metal Roofing</a>
+<a href="/metal-roofs/">Metal Roofing</a>
 <a href="/roof-repair/">Repairs & Inspections</a>
 <a href="/insurance-claims/">Insurance Claims</a>
 <a href="#free-estimate">Free Estimate</a>

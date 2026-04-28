@@ -30,6 +30,16 @@
       "statusCode": 301
     },
     {
+      "source": "/metal-roofing",
+      "destination": "/metal-roofs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/metal-roofing/",
+      "destination": "/metal-roofs/",
+      "statusCode": 301
+    },
+    {
       "source": "/roofing-blog/f/metal-roofing-benefits-for-arkansas-homeowners",
       "destination": "/blog/metal-roof-vs-shingles-arkansas/",
       "statusCode": 301
