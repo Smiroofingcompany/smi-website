@@ -90,7 +90,17 @@
       "statusCode": 301
     },
     {
+      "source": "/dardanelle-ar-72834/",
+      "destination": "/dardanelle/",
+      "statusCode": 301
+    },
+    {
       "source": "/conway-ar-72032",
+      "destination": "/conway/",
+      "statusCode": 301
+    },
+    {
+      "source": "/conway-ar-72032/",
       "destination": "/conway/",
       "statusCode": 301
     },
@@ -100,7 +110,17 @@
       "statusCode": 301
     },
     {
+      "source": "/pottsville-ar-72858/",
+      "destination": "/pottsville/",
+      "statusCode": 301
+    },
+    {
       "source": "/atkins-ar-72823",
+      "destination": "/atkins/",
+      "statusCode": 301
+    },
+    {
+      "source": "/atkins-ar-72823/",
       "destination": "/atkins/",
       "statusCode": 301
     },
@@ -110,7 +130,17 @@
       "statusCode": 301
     },
     {
+      "source": "/greenbrier-ar-72058/",
+      "destination": "/greenbrier/",
+      "statusCode": 301
+    },
+    {
       "source": "/dover-ar-72837",
+      "destination": "/dover/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dover-ar-72837/",
       "destination": "/dover/",
       "statusCode": 301
     },
@@ -120,7 +150,17 @@
       "statusCode": 301
     },
     {
+      "source": "/russellville-ar-72801/",
+      "destination": "/russellville/",
+      "statusCode": 301
+    },
+    {
       "source": "/london-ar-72847",
+      "destination": "/london/",
+      "statusCode": 301
+    },
+    {
+      "source": "/london-ar-72847/",
       "destination": "/london/",
       "statusCode": 301
     },
@@ -130,12 +170,27 @@
       "statusCode": 301
     },
     {
+      "source": "/morrilton-ar-72110/",
+      "destination": "/morrilton/",
+      "statusCode": 301
+    },
+    {
       "source": "/clarksville-ar-72830",
       "destination": "/clarksville/",
       "statusCode": 301
     },
     {
+      "source": "/clarksville-ar-72830/",
+      "destination": "/clarksville/",
+      "statusCode": 301
+    },
+    {
       "source": "/ozark-ar-72949",
+      "destination": "/ozark/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ozark-ar-72949/",
       "destination": "/ozark/",
       "statusCode": 301
     },
@@ -165,7 +220,17 @@
       "statusCode": 301
     },
     {
+      "source": "/fort-smith-ar-72901/",
+      "destination": "/fort-smith/",
+      "statusCode": 301
+    },
+    {
       "source": "/fort-smith-ar-:zip",
+      "destination": "/fort-smith/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fort-smith-ar-:zip/",
       "destination": "/fort-smith/",
       "statusCode": 301
     },
@@ -175,7 +240,17 @@
       "statusCode": 301
     },
     {
+      "source": "/little-rock-ar-:zip/",
+      "destination": "/little-rock/",
+      "statusCode": 301
+    },
+    {
       "source": "/fayetteville-ar-:zip",
+      "destination": "/fayetteville/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fayetteville-ar-:zip/",
       "destination": "/fayetteville/",
       "statusCode": 301
     },
@@ -185,7 +260,17 @@
       "statusCode": 301
     },
     {
+      "source": "/springdale-ar-:zip/",
+      "destination": "/springdale/",
+      "statusCode": 301
+    },
+    {
       "source": "/rogers-ar-:zip",
+      "destination": "/rogers/",
+      "statusCode": 301
+    },
+    {
+      "source": "/rogers-ar-:zip/",
       "destination": "/rogers/",
       "statusCode": 301
     },
@@ -195,7 +280,17 @@
       "statusCode": 301
     },
     {
+      "source": "/bentonville-ar-:zip/",
+      "destination": "/bentonville/",
+      "statusCode": 301
+    },
+    {
       "source": "/benton-ar-:zip",
+      "destination": "/benton/",
+      "statusCode": 301
+    },
+    {
+      "source": "/benton-ar-:zip/",
       "destination": "/benton/",
       "statusCode": 301
     },
@@ -205,7 +300,17 @@
       "statusCode": 301
     },
     {
+      "source": "/bryant-ar-:zip/",
+      "destination": "/bryant/",
+      "statusCode": 301
+    },
+    {
       "source": "/cabot-ar-:zip",
+      "destination": "/cabot/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cabot-ar-:zip/",
       "destination": "/cabot/",
       "statusCode": 301
     },
@@ -215,7 +320,17 @@
       "statusCode": 301
     },
     {
+      "source": "/searcy-ar-:zip/",
+      "destination": "/searcy/",
+      "statusCode": 301
+    },
+    {
       "source": "/jacksonville-ar-:zip",
+      "destination": "/jacksonville/",
+      "statusCode": 301
+    },
+    {
+      "source": "/jacksonville-ar-:zip/",
       "destination": "/jacksonville/",
       "statusCode": 301
     },
@@ -225,7 +340,17 @@
       "statusCode": 301
     },
     {
+      "source": "/mena-ar-:zip/",
+      "destination": "/mena/",
+      "statusCode": 301
+    },
+    {
       "source": "/nashville-ar-:zip",
+      "destination": "/nashville/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nashville-ar-:zip/",
       "destination": "/nashville/",
       "statusCode": 301
     },
@@ -235,7 +360,17 @@
       "statusCode": 301
     },
     {
+      "source": "/booneville-ar-:zip/",
+      "destination": "/booneville/",
+      "statusCode": 301
+    },
+    {
       "source": "/van-buren-ar-:zip",
+      "destination": "/van-buren/",
+      "statusCode": 301
+    },
+    {
+      "source": "/van-buren-ar-:zip/",
       "destination": "/van-buren/",
       "statusCode": 301
     },
@@ -245,7 +380,17 @@
       "statusCode": 301
     },
     {
+      "source": "/vilonia-ar-:zip/",
+      "destination": "/vilonia/",
+      "statusCode": 301
+    },
+    {
       "source": "/alma-ar-:zip",
+      "destination": "/alma/",
+      "statusCode": 301
+    },
+    {
+      "source": "/alma-ar-:zip/",
       "destination": "/alma/",
       "statusCode": 301
     },
@@ -255,7 +400,17 @@
       "statusCode": 301
     },
     {
+      "source": "/el-dorado-ar-:zip/",
+      "destination": "/el-dorado/",
+      "statusCode": 301
+    },
+    {
       "source": "/north-little-rock-ar-:zip",
+      "destination": "/north-little-rock/",
+      "statusCode": 301
+    },
+    {
+      "source": "/north-little-rock-ar-:zip/",
       "destination": "/north-little-rock/",
       "statusCode": 301
     },
@@ -265,7 +420,17 @@
       "statusCode": 301
     },
     {
+      "source": "/siloam-springs-ar-:zip/",
+      "destination": "/siloam-springs/",
+      "statusCode": 301
+    },
+    {
       "source": "/hope-ar-:zip",
+      "destination": "/hope/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hope-ar-:zip/",
       "destination": "/hope/",
       "statusCode": 301
     },
@@ -275,7 +440,17 @@
       "statusCode": 301
     },
     {
+      "source": "/hot-springs-ar-:zip/",
+      "destination": "/hot-springs/",
+      "statusCode": 301
+    },
+    {
       "source": "/malvern-ar-:zip",
+      "destination": "/malvern/",
+      "statusCode": 301
+    },
+    {
+      "source": "/malvern-ar-:zip/",
       "destination": "/malvern/",
       "statusCode": 301
     },
@@ -285,12 +460,27 @@
       "statusCode": 301
     },
     {
+      "source": "/arkadelphia-ar-:zip/",
+      "destination": "/arkadelphia/",
+      "statusCode": 301
+    },
+    {
       "source": "/gurdon-ar-:zip",
       "destination": "/gurdon/",
       "statusCode": 301
     },
     {
+      "source": "/gurdon-ar-:zip/",
+      "destination": "/gurdon/",
+      "statusCode": 301
+    },
+    {
       "source": "/hartford-ar-:zip",
+      "destination": "/hartford/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hartford-ar-:zip/",
       "destination": "/hartford/",
       "statusCode": 301
     },
