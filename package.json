@@ -2,6 +2,9 @@
   "name": "smi-roofing",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "generate:site-map": "node scripts/generate-html-sitemap.mjs"
+  },
   "dependencies": {
     "nodemailer": "^6.9.14"
   }
