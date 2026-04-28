@@ -139,6 +139,22 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+
+<!-- MOBILE STICKY CTA BAR STYLES -->
+<style>
+.mobile-sticky-cta{display:none}
+@media(max-width:760px){
+  body{padding-bottom:calc(86px + env(safe-area-inset-bottom,0px))}
+  #smi-instant-inspection-widget{bottom:calc(92px + env(safe-area-inset-bottom,0px))!important}
+  .mobile-sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:2147482500;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));background:rgba(9,19,34,.96);border-top:1px solid rgba(0,200,240,.25);box-shadow:0 -12px 30px rgba(6,13,24,.22);backdrop-filter:blur(14px)}
+  .mobile-sticky-cta a{min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:7px;text-decoration:none;font:800 15px/1 'Plus Jakarta Sans',Arial,sans-serif;letter-spacing:0}
+  .mobile-sticky-cta-call{background:#fff;color:#0a1628}
+  .mobile-sticky-cta-quote{background:#00C8F0;color:#06131d}
+  .mobile-sticky-cta a:focus-visible{outline:3px solid rgba(0,200,240,.42);outline-offset:2px}
+}
+@media print{.mobile-sticky-cta{display:none!important}}
+</style>
+<!-- END MOBILE STICKY CTA BAR STYLES -->
 </head><body>
 <nav id="navbar"><div class="nav-inner">
 <a href="/" class="nav-logo"><img src="/assets/logo.png" class="nav-logo-img" alt="SMI Roofing"><div class="nav-logo-text">SMI <span>Roofing</span></div></a>
@@ -256,4 +272,11 @@ document.querySelectorAll('.faq-question').forEach(btn=>{btn.addEventListener('c
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:.1});
 document.querySelectorAll('.content-body h2,.faq-item').forEach((el,i)=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition=`all .5s ease ${i*.04}s`;obs.observe(el)});
 </script>
+
+<!-- MOBILE STICKY CTA BAR -->
+<nav class="mobile-sticky-cta" aria-label="Mobile quick actions">
+  <a class="mobile-sticky-cta-call" href="tel:+15014645139" aria-label="Call SMI Roofing">Call</a>
+  <a class="mobile-sticky-cta-quote" href="https://clienthub.getjobber.com/booking/31b1fe0c-4da6-49e9-ad15-2e9a8cefa5fb" aria-label="Request a free roofing quote">Quote</a>
+</nav>
+<!-- END MOBILE STICKY CTA BAR -->
 </body></html>

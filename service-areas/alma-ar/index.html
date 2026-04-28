@@ -443,6 +443,22 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+
+<!-- MOBILE STICKY CTA BAR STYLES -->
+<style>
+.mobile-sticky-cta{display:none}
+@media(max-width:760px){
+  body{padding-bottom:calc(86px + env(safe-area-inset-bottom,0px))}
+  #smi-instant-inspection-widget{bottom:calc(92px + env(safe-area-inset-bottom,0px))!important}
+  .mobile-sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:2147482500;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));background:rgba(9,19,34,.96);border-top:1px solid rgba(0,200,240,.25);box-shadow:0 -12px 30px rgba(6,13,24,.22);backdrop-filter:blur(14px)}
+  .mobile-sticky-cta a{min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:7px;text-decoration:none;font:800 15px/1 'Plus Jakarta Sans',Arial,sans-serif;letter-spacing:0}
+  .mobile-sticky-cta-call{background:#fff;color:#0a1628}
+  .mobile-sticky-cta-quote{background:#00C8F0;color:#06131d}
+  .mobile-sticky-cta a:focus-visible{outline:3px solid rgba(0,200,240,.42);outline-offset:2px}
+}
+@media print{.mobile-sticky-cta{display:none!important}}
+</style>
+<!-- END MOBILE STICKY CTA BAR STYLES -->
 </head>
 <body>
 <div class="topbar">
@@ -781,5 +797,12 @@ document.addEventListener('click',event=>{const menu=document.getElementById('mo
 function submitContactForm(){var fn=document.getElementById('cf_fname').value.trim();var ln=document.getElementById('cf_lname').value.trim();var addr=document.getElementById('cf_address').value.trim();var phone=document.getElementById('cf_phone').value.trim();var service=document.getElementById('cf_service').value;if(!fn||!ln||!phone){alert('Please enter your first name, last name, and phone number.');return;}var btn=document.getElementById('cf_submit');btn.textContent='Sending...';btn.disabled=true;btn.style.opacity='.6';fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:fn+' '+ln,phone:phone,email:'',service:service||'',message:addr?'Address: '+addr:'',smsConsent:document.getElementById('cf_sms_consent').checked,page:window.location.pathname})}).then(function(r){return r.json()}).then(function(d){if(d.success){document.getElementById('formContainer').style.display='none';document.getElementById('formSuccess').style.display='block';}else{throw new Error(d.error||'error');}}).catch(function(){btn.textContent='Request Free Inspection';btn.disabled=false;btn.style.opacity='1';alert('Something went wrong. Please call us directly at (501) 464-5139.');});}
 </script>
 <script src="/assets/instant-inspection-widget.js" defer></script>
+
+<!-- MOBILE STICKY CTA BAR -->
+<nav class="mobile-sticky-cta" aria-label="Mobile quick actions">
+  <a class="mobile-sticky-cta-call" href="tel:+15014645139" aria-label="Call SMI Roofing">Call</a>
+  <a class="mobile-sticky-cta-quote" href="https://clienthub.getjobber.com/booking/31b1fe0c-4da6-49e9-ad15-2e9a8cefa5fb" aria-label="Request a free roofing quote">Quote</a>
+</nav>
+<!-- END MOBILE STICKY CTA BAR -->
 </body>
 </html>
