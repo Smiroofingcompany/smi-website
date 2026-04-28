@@ -450,5 +450,6 @@ document.querySelectorAll('.faq-question').forEach(btn=>{btn.addEventListener('c
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:.1});
 document.querySelectorAll('.content-body h2,.faq-item').forEach((el,i)=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition=`all .5s ease ${i*.04}s`;obs.observe(el)});
 </script>
+<script src="/assets/instant-inspection-widget.js" defer></script>
 </body>
 </html>

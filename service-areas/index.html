@@ -476,5 +476,6 @@ if(citySearch){
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:.1});
 document.querySelectorAll('.area-card,.cta-card').forEach((el,i)=>{el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition=`all .45s ease ${i*.025}s`;obs.observe(el)});
 </script>
+<script src="/assets/instant-inspection-widget.js" defer></script>
 </body>
 </html>
