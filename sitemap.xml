@@ -278,9 +278,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- Residential Service Area Pages -->
+  <!-- Areas We Serve + Residential City Pages -->
   <url>
-    <loc>https://smiroof.com/service-areas/</loc>
+    <loc>https://smiroof.com/areas-we-serve/</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
