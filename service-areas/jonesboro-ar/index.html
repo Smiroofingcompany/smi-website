@@ -536,6 +536,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
       <div class="area-links">
         <a class="area-link featured" href="/service-areas/">All Service Areas</a>
         <a class="area-link" href="/service-areas/alma-ar/">Alma</a>
+        <a class="area-link" href="/service-areas/arkadelphia-ar/">Arkadelphia</a>
         <a class="area-link" href="/service-areas/atkins-ar/">Atkins</a>
         <a class="area-link" href="/service-areas/beebe-ar/">Beebe</a>
         <a class="area-link" href="/service-areas/benton-ar/">Benton</a>
@@ -552,10 +553,15 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
         <a class="area-link" href="/service-areas/fort-smith-ar/">Fort Smith</a>
         <a class="area-link" href="/service-areas/glenwood-ar/">Glenwood</a>
         <a class="area-link" href="/service-areas/greenbrier-ar/">Greenbrier</a>
+        <a class="area-link" href="/service-areas/gurdon-ar/">Gurdon</a>
+        <a class="area-link" href="/service-areas/hartford-ar/">Hartford</a>
+        <a class="area-link" href="/service-areas/hope-ar/">Hope</a>
+        <a class="area-link" href="/service-areas/hot-springs-ar/">Hot Springs</a>
         <a class="area-link" href="/service-areas/jacksonville-ar/">Jacksonville</a>
         <a class="area-link current" href="/service-areas/jonesboro-ar/">Jonesboro</a>
         <a class="area-link" href="/service-areas/little-rock-ar/">Little Rock</a>
         <a class="area-link" href="/service-areas/london-ar/">London</a>
+        <a class="area-link" href="/service-areas/malvern-ar/">Malvern</a>
         <a class="area-link" href="/service-areas/maumelle-sherwood-ar/">Maumelle / Sherwood</a>
         <a class="area-link" href="/service-areas/mena-ar/">Mena</a>
         <a class="area-link" href="/service-areas/morrilton-ar/">Morrilton</a>
@@ -722,6 +728,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
       <div class="coverage-list">
         <a href="/service-areas/" class="featured">All Service Areas</a>
         <a href="/service-areas/alma-ar/">Alma</a>
+        <a href="/service-areas/arkadelphia-ar/">Arkadelphia</a>
         <a href="/service-areas/atkins-ar/">Atkins</a>
         <a href="/service-areas/beebe-ar/">Beebe</a>
         <a href="/service-areas/benton-ar/">Benton</a>
@@ -738,10 +745,15 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
         <a href="/service-areas/fort-smith-ar/">Fort Smith</a>
         <a href="/service-areas/glenwood-ar/">Glenwood</a>
         <a href="/service-areas/greenbrier-ar/">Greenbrier</a>
+        <a href="/service-areas/gurdon-ar/">Gurdon</a>
+        <a href="/service-areas/hartford-ar/">Hartford</a>
+        <a href="/service-areas/hope-ar/">Hope</a>
+        <a href="/service-areas/hot-springs-ar/">Hot Springs</a>
         <a href="/service-areas/jacksonville-ar/">Jacksonville</a>
         <a href="/service-areas/jonesboro-ar/" class="current">Jonesboro</a>
         <a href="/service-areas/little-rock-ar/">Little Rock</a>
         <a href="/service-areas/london-ar/">London</a>
+        <a href="/service-areas/malvern-ar/">Malvern</a>
         <a href="/service-areas/maumelle-sherwood-ar/">Maumelle / Sherwood</a>
         <a href="/service-areas/mena-ar/">Mena</a>
         <a href="/service-areas/morrilton-ar/">Morrilton</a>
@@ -789,13 +801,14 @@ function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('op
 function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
 function initCoverageMap(){
   const el=document.getElementById('demoServiceMap'); if(!el)return;
-  if(!window.L){el.innerHTML='<div class="map-fallback">The map could not load, but SMI serves Arkansas communities including Jonesboro, Beebe, Nashville, Ozark, Booneville, Cabot, Russellville, Conway, Little Rock, and Fayetteville.</div>';return;}
+  if(!window.L){el.innerHTML='<div class="map-fallback">The map could not load, but SMI serves Arkansas communities including Russellville, Benton, Hot Springs, Hope, Arkadelphia, Malvern, Gurdon, Hartford, Conway, Little Rock, Fort Smith, Fayetteville, Jonesboro, Nashville, and more.</div>';return;}
   const map=L.map('demoServiceMap',{scrollWheelZoom:false,zoomControl:true}).setView([35.8423,-90.7043],8);
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CARTO',maxZoom:18}).addTo(map);
   const smiIcon=L.icon({iconUrl:'/assets/logo.png',iconSize:[36,36],iconAnchor:[18,18],popupAnchor:[0,-22],className:'smi-map-pin'});
   const activeIcon=L.icon({iconUrl:'/assets/logo.png',iconSize:[54,54],iconAnchor:[27,27],popupAnchor:[0,-31],className:'smi-map-pin-hq'});
   const locs=[
     {name:"Alma",lat:35.5,lng:-94.2073,active:false,desc:"Crawford County · 72921",url:"/service-areas/alma-ar/"},
+    {name:"Arkadelphia",lat:34.1209,lng:-93.0538,active:false,desc:"Clark County · 71923",url:"/service-areas/arkadelphia-ar/"},
     {name:"Atkins",lat:35.2462,lng:-92.9362,active:false,desc:"Pope County · 72822, 72823",url:"/service-areas/atkins-ar/"},
     {name:"Beebe",lat:35.0706,lng:-91.8796,active:false,desc:"White County · 72012",url:"/service-areas/beebe-ar/"},
     {name:"Benton",lat:34.4933,lng:-92.5896,active:false,desc:"Saline County · 72015, 72019",url:"/service-areas/benton-ar/"},
@@ -812,10 +825,15 @@ function initCoverageMap(){
     {name:"Fort Smith",lat:35.3653,lng:-94.411,active:false,desc:"Sebastian County · 72901, 72903, 72904 and nearby ZIPs",url:"/service-areas/fort-smith-ar/"},
     {name:"Glenwood",lat:34.3192,lng:-93.5559,active:false,desc:"Pike and Montgomery Counties · 71943",url:"/service-areas/glenwood-ar/"},
     {name:"Greenbrier",lat:35.2295,lng:-92.3578,active:false,desc:"Faulkner County · 72058",url:"/service-areas/greenbrier-ar/"},
+    {name:"Gurdon",lat:33.9209,lng:-93.1541,active:false,desc:"Clark County · 71743",url:"/service-areas/gurdon-ar/"},
+    {name:"Hartford",lat:35.022,lng:-94.3777,active:false,desc:"Sebastian County · 72938",url:"/service-areas/hartford-ar/"},
+    {name:"Hope",lat:33.6671,lng:-93.5916,active:false,desc:"Hempstead County · 71801, 71802",url:"/service-areas/hope-ar/"},
+    {name:"Hot Springs",lat:34.5037,lng:-93.0552,active:false,desc:"Garland County · 71901, 71913",url:"/service-areas/hot-springs-ar/"},
     {name:"Jacksonville",lat:34.919,lng:-92.1419,active:false,desc:"Pulaski County · 72076, 72078",url:"/service-areas/jacksonville-ar/"},
     {name:"Jonesboro",lat:35.8423,lng:-90.7043,active:true,desc:"Craighead County · 72401, 72404, 72405",url:"/service-areas/jonesboro-ar/"},
     {name:"Little Rock",lat:34.7465,lng:-92.2896,active:false,desc:"Pulaski County · 72201, 72202, 72204 and nearby ZIPs",url:"/service-areas/little-rock-ar/"},
     {name:"London",lat:35.3744,lng:-93.2736,active:false,desc:"Pope County · 72847",url:"/service-areas/london-ar/"},
+    {name:"Malvern",lat:34.3623,lng:-92.8129,active:false,desc:"Hot Spring County · 72104",url:"/service-areas/malvern-ar/"},
     {name:"Maumelle / Sherwood",lat:34.865,lng:-92.318,active:false,desc:"Pulaski County · 72113, 72120",url:"/service-areas/maumelle-sherwood-ar/"},
     {name:"Mena",lat:34.5814,lng:-94.221,active:false,desc:"Polk County · 71953",url:"/service-areas/mena-ar/"},
     {name:"Morrilton",lat:35.1692,lng:-92.7354,active:false,desc:"Conway County · 72110",url:"/service-areas/morrilton-ar/"},

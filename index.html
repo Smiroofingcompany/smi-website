@@ -465,7 +465,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
         <div class="hero-area-card">
           <div>
             <b class="hero-area-label">Service area</b>
-            <strong>Russellville, AR + 31 other cities.</strong>
+            <strong>Russellville, AR + 40 other cities.</strong>
             <span>Find your local SMI Roofing page for service details in your area.</span>
           </div>
           <a href="/service-areas/" class="btn btn-primary">Find My City</a>
@@ -799,6 +799,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
       <div class="coverage-list">
         <a href="/service-areas/" class="featured">All Service Areas</a>
         <a href="/service-areas/alma-ar/">Alma</a>
+        <a href="/service-areas/arkadelphia-ar/">Arkadelphia</a>
         <a href="/service-areas/atkins-ar/">Atkins</a>
         <a href="/service-areas/beebe-ar/">Beebe</a>
         <a href="/service-areas/benton-ar/">Benton</a>
@@ -815,10 +816,15 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
         <a href="/service-areas/fort-smith-ar/">Fort Smith</a>
         <a href="/service-areas/glenwood-ar/">Glenwood</a>
         <a href="/service-areas/greenbrier-ar/">Greenbrier</a>
+        <a href="/service-areas/gurdon-ar/">Gurdon</a>
+        <a href="/service-areas/hartford-ar/">Hartford</a>
+        <a href="/service-areas/hope-ar/">Hope</a>
+        <a href="/service-areas/hot-springs-ar/">Hot Springs</a>
         <a href="/service-areas/jacksonville-ar/">Jacksonville</a>
         <a href="/service-areas/jonesboro-ar/">Jonesboro</a>
         <a href="/service-areas/little-rock-ar/">Little Rock</a>
         <a href="/service-areas/london-ar/">London</a>
+        <a href="/service-areas/malvern-ar/">Malvern</a>
         <a href="/service-areas/maumelle-sherwood-ar/">Maumelle / Sherwood</a>
         <a href="/service-areas/mena-ar/">Mena</a>
         <a href="/service-areas/morrilton-ar/">Morrilton</a>
@@ -972,7 +978,7 @@ function initCoverageMap(){
   const el=document.getElementById('demoServiceMap');
   if(!el)return;
   if(!window.L){
-    el.innerHTML='<div class="map-fallback">The map could not load, but SMI serves Arkansas communities including Nashville, Jonesboro, Ozark, Booneville, Cabot, Beebe, Russellville, Glenwood, Conway, Little Rock, Fort Smith, and Fayetteville.</div>';
+    el.innerHTML='<div class="map-fallback">The map could not load, but SMI serves Arkansas communities including Russellville, Benton, Hot Springs, Hope, Arkadelphia, Malvern, Gurdon, Hartford, Conway, Little Rock, Fort Smith, Fayetteville, Jonesboro, Nashville, and more.</div>';
     return;
   }
   const map=L.map('demoServiceMap',{scrollWheelZoom:false,zoomControl:true}).setView([34.75,-93.3],7);
@@ -980,24 +986,47 @@ function initCoverageMap(){
   const smiIcon=L.icon({iconUrl:'/assets/logo.png',iconSize:[36,36],iconAnchor:[18,18],popupAnchor:[0,-22],className:'smi-map-pin'});
   const hqIcon=L.icon({iconUrl:'/assets/logo.png',iconSize:[52,52],iconAnchor:[26,26],popupAnchor:[0,-30],className:'smi-map-pin-hq'});
   const locs=[
-    {name:'Russellville (HQ)',lat:35.2842,lng:-93.1315,hq:true,desc:'302 E Parkway Dr — (501) 464-5139',url:'/service-areas/russellville-ar/'},
-    {name:'Glenwood',lat:34.3192,lng:-93.5559,desc:'Pike and Montgomery Counties · 71943',url:'/service-areas/glenwood-ar/'},
-    {name:'Fayetteville',lat:36.052,lng:-94.1534,desc:'Washington County · 72701, 72703, 72704',url:'/service-areas/fayetteville-ar/'},
-    {name:'Springdale',lat:36.1835,lng:-94.1762,desc:'Washington and Benton Counties · 72762, 72764',url:'/service-areas/springdale-ar/'},
-    {name:'Bentonville',lat:36.3577,lng:-94.2224,desc:'Benton County · 72712, 72716',url:'/service-areas/bentonville-ar/'},
-    {name:'Fort Smith',lat:35.3653,lng:-94.411,desc:'Sebastian County · 72901, 72903, 72904 and nearby ZIPs',url:'/service-areas/fort-smith-ar/'},
-    {name:'Conway',lat:35.0842,lng:-92.4236,desc:'Faulkner County · 72032, 72034, 72035',url:'/service-areas/conway-ar/'},
-    {name:'Little Rock',lat:34.7465,lng:-92.2896,desc:'Pulaski County · 72201, 72202, 72204 and nearby ZIPs',url:'/service-areas/little-rock-ar/'},
-    {name:'El Dorado',lat:33.2074,lng:-92.6629,desc:'Union County · 71730, 71731',url:'/service-areas/el-dorado-ar/'},
-    {name:'Morrilton',lat:35.1692,lng:-92.7354,desc:'Conway County · 72110',url:'/service-areas/morrilton-ar/'},
-    {name:'Clarksville',lat:35.4908,lng:-93.4911,desc:'Johnson County · 72830',url:'/service-areas/clarksville-ar/'},
-    {name:'Cabot',lat:34.9457,lng:-92.0318,desc:'Lonoke County · 72023',url:'/service-areas/cabot-ar/'},
-    {name:'Siloam Springs',lat:36.18,lng:-94.528,desc:'Benton County · 72761',url:'/service-areas/siloam-springs-ar/'},
-    {name:'Nashville',lat:33.9576,lng:-93.8707,desc:'Howard County · 71852',url:'/service-areas/nashville-ar/'},
-    {name:'Jonesboro',lat:35.8423,lng:-90.7043,desc:'Craighead County · 72401, 72404, 72405',url:'/service-areas/jonesboro-ar/'},
-    {name:'Ozark',lat:35.5246,lng:-93.8374,desc:'Franklin County · 72949',url:'/service-areas/ozark-ar/'},
-    {name:'Booneville',lat:35.1364,lng:-93.9274,desc:'Logan County · 72927',url:'/service-areas/booneville-ar/'},
-    {name:'Beebe',lat:35.0706,lng:-91.8796,desc:'White County · 72012',url:'/service-areas/beebe-ar/'},
+    {name:"Alma",lat:35.5,lng:-94.2073,desc:"Crawford County · 72921",url:"/service-areas/alma-ar/"},
+    {name:"Arkadelphia",lat:34.1209,lng:-93.0538,desc:"Clark County · 71923",url:"/service-areas/arkadelphia-ar/"},
+    {name:"Atkins",lat:35.2462,lng:-92.9362,desc:"Pope County · 72822, 72823",url:"/service-areas/atkins-ar/"},
+    {name:"Beebe",lat:35.0706,lng:-91.8796,desc:"White County · 72012",url:"/service-areas/beebe-ar/"},
+    {name:"Benton",lat:34.4933,lng:-92.5896,desc:"Saline County · 72015, 72019",url:"/service-areas/benton-ar/"},
+    {name:"Bentonville",lat:36.3577,lng:-94.2224,desc:"Benton County · 72712, 72716",url:"/service-areas/bentonville-ar/"},
+    {name:"Booneville",lat:35.1364,lng:-93.9274,desc:"Logan County · 72927",url:"/service-areas/booneville-ar/"},
+    {name:"Bryant",lat:34.6068,lng:-92.492,desc:"Saline County · 72022, 72089",url:"/service-areas/bryant-ar/"},
+    {name:"Cabot",lat:34.9457,lng:-92.0318,desc:"Lonoke County · 72023",url:"/service-areas/cabot-ar/"},
+    {name:"Clarksville",lat:35.4908,lng:-93.4911,desc:"Johnson County · 72830",url:"/service-areas/clarksville-ar/"},
+    {name:"Conway",lat:35.0842,lng:-92.4236,desc:"Faulkner County · 72032, 72034, 72035",url:"/service-areas/conway-ar/"},
+    {name:"Dardanelle",lat:35.1955,lng:-93.1873,desc:"Yell County · 72834",url:"/service-areas/dardanelle-ar/"},
+    {name:"Dover",lat:35.4074,lng:-93.1355,desc:"Pope County · 72837",url:"/service-areas/dover-ar/"},
+    {name:"El Dorado",lat:33.2074,lng:-92.6629,desc:"Union County · 71730, 71731",url:"/service-areas/el-dorado-ar/"},
+    {name:"Fayetteville",lat:36.052,lng:-94.1534,desc:"Washington County · 72701, 72703, 72704",url:"/service-areas/fayetteville-ar/"},
+    {name:"Fort Smith",lat:35.3653,lng:-94.411,desc:"Sebastian County · 72901, 72903, 72904 and nearby ZIPs",url:"/service-areas/fort-smith-ar/"},
+    {name:"Glenwood",lat:34.3192,lng:-93.5559,desc:"Pike and Montgomery Counties · 71943",url:"/service-areas/glenwood-ar/"},
+    {name:"Greenbrier",lat:35.2295,lng:-92.3578,desc:"Faulkner County · 72058",url:"/service-areas/greenbrier-ar/"},
+    {name:"Gurdon",lat:33.9209,lng:-93.1541,desc:"Clark County · 71743",url:"/service-areas/gurdon-ar/"},
+    {name:"Hartford",lat:35.022,lng:-94.3777,desc:"Sebastian County · 72938",url:"/service-areas/hartford-ar/"},
+    {name:"Hope",lat:33.6671,lng:-93.5916,desc:"Hempstead County · 71801, 71802",url:"/service-areas/hope-ar/"},
+    {name:"Hot Springs",lat:34.5037,lng:-93.0552,desc:"Garland County · 71901, 71913",url:"/service-areas/hot-springs-ar/"},
+    {name:"Jacksonville",lat:34.919,lng:-92.1419,desc:"Pulaski County · 72076, 72078",url:"/service-areas/jacksonville-ar/"},
+    {name:"Jonesboro",lat:35.8423,lng:-90.7043,desc:"Craighead County · 72401, 72404, 72405",url:"/service-areas/jonesboro-ar/"},
+    {name:"Little Rock",lat:34.7465,lng:-92.2896,desc:"Pulaski County · 72201, 72202, 72204 and nearby ZIPs",url:"/service-areas/little-rock-ar/"},
+    {name:"London",lat:35.3744,lng:-93.2736,desc:"Pope County · 72847",url:"/service-areas/london-ar/"},
+    {name:"Malvern",lat:34.3623,lng:-92.8129,desc:"Hot Spring County · 72104",url:"/service-areas/malvern-ar/"},
+    {name:"Maumelle / Sherwood",lat:34.865,lng:-92.318,desc:"Pulaski County · 72113, 72120",url:"/service-areas/maumelle-sherwood-ar/"},
+    {name:"Mena",lat:34.5814,lng:-94.221,desc:"Polk County · 71953",url:"/service-areas/mena-ar/"},
+    {name:"Morrilton",lat:35.1692,lng:-92.7354,desc:"Conway County · 72110",url:"/service-areas/morrilton-ar/"},
+    {name:"Nashville",lat:33.9576,lng:-93.8707,desc:"Howard County · 71852",url:"/service-areas/nashville-ar/"},
+    {name:"North Little Rock",lat:34.7666,lng:-92.2629,desc:"Pulaski County · 72114, 72116, 72117 and nearby ZIPs",url:"/service-areas/north-little-rock-ar/"},
+    {name:"Ozark",lat:35.5246,lng:-93.8374,desc:"Franklin County · 72949",url:"/service-areas/ozark-ar/"},
+    {name:"Pottsville",lat:35.2398,lng:-93.0564,desc:"Pope County · 72858",url:"/service-areas/pottsville-ar/"},
+    {name:"Rogers",lat:36.3363,lng:-94.1148,desc:"Benton County · 72756, 72758",url:"/service-areas/rogers-ar/"},
+    {name:"Russellville (HQ)",lat:35.2842,lng:-93.1315,hq:true,desc:"302 E Parkway Dr — (501) 464-5139",url:"/service-areas/russellville-ar/"},
+    {name:"Searcy",lat:35.2436,lng:-91.7317,desc:"White County · 72143, 72145",url:"/service-areas/searcy-ar/"},
+    {name:"Siloam Springs",lat:36.18,lng:-94.528,desc:"Benton County · 72761",url:"/service-areas/siloam-springs-ar/"},
+    {name:"Springdale",lat:36.1835,lng:-94.1762,desc:"Washington and Benton Counties · 72762, 72764",url:"/service-areas/springdale-ar/"},
+    {name:"Van Buren",lat:35.454,lng:-94.3278,desc:"Crawford County · 72956, 72957",url:"/service-areas/van-buren-ar/"},
+    {name:"Vilonia",lat:35.0719,lng:-92.1832,desc:"Faulkner County · 72173",url:"/service-areas/vilonia-ar/"},
   ];
   locs.forEach(l=>{
     const popup='<div style="font-family:Plus Jakarta Sans,sans-serif;min-width:150px"><strong style="font-size:14px">'+l.name+'</strong><br><span style="font-size:12px;color:#667085">'+l.desc+'</span><br><a href="'+l.url+'" style="display:inline-block;margin-top:8px;color:#00a5c7;font-weight:800;text-decoration:none">Open local page →</a></div>';

@@ -227,6 +227,36 @@
       "statusCode": 301
     },
     {
+      "source": "/hope-ar-:zip",
+      "destination": "/service-areas/hope-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hot-springs-ar-:zip",
+      "destination": "/service-areas/hot-springs-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/malvern-ar-:zip",
+      "destination": "/service-areas/malvern-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/arkadelphia-ar-:zip",
+      "destination": "/service-areas/arkadelphia-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/gurdon-ar-:zip",
+      "destination": "/service-areas/gurdon-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hartford-ar-:zip",
+      "destination": "/service-areas/hartford-ar/",
+      "statusCode": 301
+    },
+    {
       "source": "/privacy",
       "destination": "/privacy-policy/",
       "statusCode": 301
