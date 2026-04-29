@@ -1,0 +1,202 @@
+{
+  "version": "2026-04-29",
+  "status": "active_refresh_log",
+  "purpose": "People Also Ask refresh record for SMI Roofing FAQ publishing batches. Update this file before publishing each city/service FAQ batch so page questions stay tied to live search demand.",
+  "valid_for_days": 14,
+  "last_refreshed": "2026-04-29",
+  "refresh_rule": "Before publishing a new FAQ batch, pull current People Also Ask or related-question data for each city/service target, record the source queries and questions here, then localize selected questions into visible FAQs and run node scripts/sync-faq-schema.mjs --write.",
+  "acceptable_sources": [
+    "Google People Also Ask manual capture",
+    "SERP API related_questions export",
+    "AlsoAsked / similar question graph export",
+    "Search Console query export",
+    "Current search-result question refresh when PAA is unavailable"
+  ],
+  "priority_markets": [
+    "Russellville, AR",
+    "Ozark, AR",
+    "Clarksville, AR",
+    "Pottsville, AR",
+    "Dardanelle, AR",
+    "Conway, AR"
+  ],
+  "source_notes": [
+    {
+      "id": "russellville-cost-refresh",
+      "source_type": "current_search_result",
+      "url": "https://www.instantroofer.com/arkansas-roof-replacement-cost/russellville/",
+      "used_for": ["roof replacement cost", "metal roof cost", "Russellville cost intent"],
+      "note": "Current 2026 Russellville roof replacement cost result used to confirm cost-focused FAQ demand."
+    },
+    {
+      "id": "arkansas-cost-refresh",
+      "source_type": "current_search_result",
+      "url": "https://roofobservations.com/arkansas-roof-cost-guide/",
+      "used_for": ["Arkansas roof cost", "commercial roof cost", "material cost comparisons"],
+      "note": "Current Arkansas cost guide result used to confirm statewide price and material FAQ demand."
+    },
+    {
+      "id": "hail-repair-refresh",
+      "source_type": "current_search_result",
+      "url": "https://modernize.com/roof/repair-cost/hail",
+      "used_for": ["hail damage repair cost", "storm repair inspection cost"],
+      "note": "Current hail repair cost result used to confirm storm-cost FAQ demand."
+    },
+    {
+      "id": "arkansas-insurance-dept-storm-tips",
+      "source_type": "official_reference",
+      "url": "https://insurance.arkansas.gov/insurance-commissioner-provides-post-storm-tips-to-consumers/",
+      "used_for": ["insurance claim timing", "trusted contractor guidance", "deductible threshold"],
+      "note": "Official Arkansas Insurance Department post-storm guidance used to keep claim FAQs careful and compliant."
+    }
+  ],
+  "batches": [
+    {
+      "id": "core-arkansas-roofing-faq-refresh-2026-04-29",
+      "refreshed_at": "2026-04-29",
+      "owner": "Codex",
+      "source_method": "Current search/PAA-style refresh using priority city and service queries. Exact PAA panels should be re-captured before the next publishing batch.",
+      "markets": [
+        "Russellville, AR",
+        "Ozark, AR",
+        "Clarksville, AR",
+        "Pottsville, AR",
+        "Dardanelle, AR",
+        "Conway, AR"
+      ],
+      "service_focus": [
+        "residential-roofing",
+        "roof-repair",
+        "storm-damage",
+        "insurance-claims",
+        "metal-roofs",
+        "commercial-roofing"
+      ],
+      "source_queries": [
+        "roof repair Russellville AR people also ask roof repair cost insurance hail",
+        "roof replacement cost Russellville AR questions roof replacement cost Arkansas",
+        "storm damage roof repair Arkansas insurance claim questions",
+        "commercial roofing Russellville AR TPO roof repair questions"
+      ],
+      "question_sets": [
+        {
+          "id": "roof-replacement-cost",
+          "service": "residential-roofing",
+          "paa_questions": [
+            "How much does a roof replacement cost in {city}, {state}?",
+            "What affects the price of a new roof in {city}?",
+            "Is it cheaper to repair or replace a roof in {city}?",
+            "How long should an asphalt shingle roof last in Arkansas?",
+            "Does a metal roof cost more than shingles in {city}?"
+          ],
+          "recommended_library_ids": [
+            "residential-roofing/residential-cost",
+            "cost-and-pricing/cost-why-varies",
+            "cost-and-pricing/cost-repair-vs-replacement",
+            "metal-roofs/metal-vs-shingle"
+          ],
+          "publishing_notes": "Use only supported pricing ranges, and add city weather or housing-stock context before publishing."
+        },
+        {
+          "id": "roof-repair",
+          "service": "roof-repair",
+          "paa_questions": [
+            "What should I do if my roof is leaking in {city}?",
+            "How much does roof repair cost in {city}?",
+            "Can a leaking roof be repaired instead of replaced?",
+            "How do I know if missing shingles caused a leak?",
+            "Will insurance pay for roof repair after wind or hail?"
+          ],
+          "recommended_library_ids": [
+            "roof-repair/repair-active-leak",
+            "roof-repair/repair-cost",
+            "roof-repair/repair-symptoms",
+            "roof-repair/repair-insurance"
+          ],
+          "publishing_notes": "Add local symptoms such as hail, wind, tree cover, or heavy rain when accurate."
+        },
+        {
+          "id": "storm-damage-insurance",
+          "service": "storm-damage",
+          "paa_questions": [
+            "Should I have my roof inspected after hail in {city}?",
+            "What does hail damage look like on shingles?",
+            "Should I call insurance or a roofer first after storm damage?",
+            "How long do I have to file a roof damage claim in Arkansas?",
+            "What if my roof damage is below my deductible?"
+          ],
+          "recommended_library_ids": [
+            "storm-damage/storm-inspection-timing",
+            "storm-damage/storm-signs",
+            "storm-damage/storm-claim-before-inspection",
+            "insurance-claims/claim-deductible"
+          ],
+          "publishing_notes": "Keep insurance language neutral. SMI documents roof facts; the carrier and policy decide coverage."
+        },
+        {
+          "id": "insurance-claim-help",
+          "service": "insurance-claims",
+          "paa_questions": [
+            "Can a roofer meet the insurance adjuster at my {city} home?",
+            "What is recoverable depreciation on a roof claim?",
+            "Can SMI help if my roof claim is underpaid?",
+            "What is a supplement on a roof insurance claim?",
+            "Do I have to pay my deductible for a storm damage roof claim?"
+          ],
+          "recommended_library_ids": [
+            "insurance-claims/claim-adjuster",
+            "insurance-claims/claim-denied-underpaid",
+            "insurance-claims/claim-supplement",
+            "insurance-claims/claim-deductible"
+          ],
+          "publishing_notes": "Do not promise approvals, waived deductibles, or coverage outcomes."
+        },
+        {
+          "id": "metal-roofs",
+          "service": "metal-roofs",
+          "paa_questions": [
+            "Is a metal roof worth it in {city}?",
+            "Is metal roofing better than shingles in Arkansas?",
+            "Can hail damage a metal roof?",
+            "Are metal roofs loud when it rains?",
+            "What is the difference between standing seam and exposed-fastener metal roofing?"
+          ],
+          "recommended_library_ids": [
+            "metal-roofs/metal-worth-it",
+            "metal-roofs/metal-vs-shingle",
+            "metal-roofs/metal-hail",
+            "metal-roofs/metal-noise",
+            "metal-roofs/metal-panel-choice"
+          ],
+          "publishing_notes": "Mention HOA, heat, hail, or rural property exposure only when it is accurate for the city."
+        },
+        {
+          "id": "commercial-roofing",
+          "service": "commercial-roofing",
+          "paa_questions": [
+            "Which commercial roof system is best for my {city} building?",
+            "How often should a commercial roof be inspected?",
+            "Can a roof coating cost less than replacement?",
+            "Does SMI handle emergency commercial roof leaks in {city}?",
+            "How much does commercial roofing cost in Arkansas?"
+          ],
+          "recommended_library_ids": [
+            "commercial-roofing/commercial-system-choice",
+            "commercial-roofing/commercial-inspection-frequency",
+            "commercial-roofing/commercial-coating-vs-replacement",
+            "commercial-roofing/commercial-leak-response",
+            "cost-and-pricing/cost-commercial"
+          ],
+          "publishing_notes": "Localize by property type, such as warehouse, school, church, retail, medical, industrial, or multifamily."
+        }
+      ],
+      "publishing_checklist": [
+        "Replace every {city}, {state}, and service token before publishing.",
+        "Select 4-6 questions per page, prioritizing the freshest PAA questions.",
+        "Use the FAQ answer library as a draft only; localize every answer.",
+        "Run node scripts/sync-faq-schema.mjs --write after visible FAQ edits.",
+        "Run npm run validate:paa-refresh and npm run validate:faq-library before commit."
+      ]
+    }
+  ]
+}

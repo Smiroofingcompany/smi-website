@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "generate:site-map": "node scripts/generate-html-sitemap.mjs",
-    "validate:faq-library": "node scripts/validate-faq-library.mjs"
+    "validate:faq-library": "node scripts/validate-faq-library.mjs",
+    "validate:paa-refresh": "node scripts/validate-paa-refresh.mjs"
   },
   "dependencies": {
     "nodemailer": "^6.9.14"
