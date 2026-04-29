@@ -6,7 +6,7 @@ const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const sitemapPath = join(root, 'sitemap.xml');
 const outputPath = join(root, 'site-map', 'index.html');
 const siteUrl = 'https://smiroof.com';
-const generatedDate = '2026-04-28';
+const generatedDate = '2026-04-29';
 
 const xml = readFileSync(sitemapPath, 'utf8');
 
