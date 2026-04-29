@@ -14,6 +14,8 @@
     "validate:service-schema": "node scripts/sync-service-schema.mjs",
     "validate:review-schema": "node scripts/sync-review-schema.mjs",
     "validate:blogposting-schema": "node scripts/sync-blogposting-schema.mjs",
+    "validate:schema-release": "node scripts/validate-schema-release.mjs",
+    "validate:predeploy": "npm run validate:schema-release",
     "validate:faq-library": "node scripts/validate-faq-library.mjs",
     "validate:paa-refresh": "node scripts/validate-paa-refresh.mjs"
   },
