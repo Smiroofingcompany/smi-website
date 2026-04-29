@@ -25,6 +25,75 @@ const SAME_AS = [
   'https://www.google.com/search?q=SMI+Roofing+Russellville+AR+reviews',
 ];
 
+const AGGREGATE_RATING = {
+  '@type': 'AggregateRating',
+  ratingValue: '5.0',
+  bestRating: '5',
+  worstRating: '1',
+  ratingCount: '231',
+  reviewCount: '231',
+};
+
+const REVIEWS = [
+  {
+    '@type': 'Review',
+    author: {
+      '@type': 'Person',
+      name: 'Lisa R.',
+    },
+    reviewBody:
+      'Two other roofers told me I needed a full replacement. SMI inspected it and said I just needed a repair. I trust these guys completely.',
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: '5',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Google',
+    },
+  },
+  {
+    '@type': 'Review',
+    author: {
+      '@type': 'Person',
+      name: 'Marcus T.',
+    },
+    reviewBody:
+      'SMI handled every part of the insurance claim after hail hit our roof. They met the adjuster, filed supplements, and kept us updated.',
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: '5',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Google',
+    },
+  },
+  {
+    '@type': 'Review',
+    author: {
+      '@type': 'Person',
+      name: 'Ashley C.',
+    },
+    reviewBody:
+      'The crew showed up on time, protected the landscaping, and cleaned up every nail. Professional from first call to final walkthrough.',
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: '5',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Google',
+    },
+  },
+];
+
 const OPENING_HOURS = [
   {
     '@type': 'OpeningHoursSpecification',
@@ -146,7 +215,8 @@ function cityHubSchemaFrom(existingSchema, html) {
     },
     openingHoursSpecification: OPENING_HOURS,
     sameAs: SAME_AS,
-    aggregateRating: existingSchema?.aggregateRating,
+    aggregateRating: AGGREGATE_RATING,
+    review: REVIEWS,
     parentOrganization: {
       '@id': `${SITE_URL}/#organization`,
     },
