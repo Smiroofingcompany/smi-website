@@ -21,6 +21,7 @@ const externalTestUrls = [
   'https://smiroof.com/russellville/',
   'https://smiroof.com/russellville/roof-repair/',
   'https://smiroof.com/roof-repair/',
+  'https://smiroof.com/reviews/',
   'https://smiroof.com/blog/how-to-choose-roofing-contractor-arkansas/',
 ];
 

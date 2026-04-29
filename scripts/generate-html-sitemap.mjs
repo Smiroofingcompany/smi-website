@@ -269,7 +269,7 @@ ${urlList}
 </div>
 <div><h3>Services</h3><a href="/residential-roofing/">Residential Roofing</a><a href="/commercial-roofing/">Commercial Roofing</a><a href="/metal-roofs/">Metal Roofing</a><a href="/storm-damage/">Storm Damage</a></div>
 <div><h3>Help</h3><a href="/roof-repair/">Roof Repair</a><a href="/roof-inspections/">Roof Inspections</a><a href="/insurance-claims/">Insurance Claims</a><a href="/areas-we-serve/">Service Areas</a></div>
-<div><h3>Company</h3><a href="/#reviews">Reviews</a><a href="/blog/">Blog</a><a href="/site-map/">Site Map</a><a href="/privacy-policy/">Privacy Policy</a><a href="/sms-terms/">SMS Terms</a></div>
+<div><h3>Company</h3><a href="/reviews/">Reviews</a><a href="/blog/">Blog</a><a href="/site-map/">Site Map</a><a href="/privacy-policy/">Privacy Policy</a><a href="/sms-terms/">SMS Terms</a></div>
 </div>
 <div class="footer-bottom"><span>&copy; 2026 CAS Management Inc. dba SMI Roofing. All rights reserved.</span><span>Licensed &amp; Insured | Russellville, AR</span></div>
 </div>
