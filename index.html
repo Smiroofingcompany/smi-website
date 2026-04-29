@@ -323,27 +323,84 @@ button,input,select{font:inherit}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "RoofingContractor",
-  "@id": "https://smiroof.com/#organization",
-  "name": "SMI Roofing",
-  "url": "https://smiroof.com",
-  "image": "https://smiroof.com/assets/og-image.jpg",
-  "telephone": "+15014645139",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "302 East Parkway Drive, Suite C",
-    "addressLocality": "Russellville",
-    "addressRegion": "AR",
-    "postalCode": "72801",
-    "addressCountry": "US"
-  },
-  "areaServed": "Arkansas",
-  "priceRange": "$$",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "231"
-  }
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "RoofingContractor"
+      ],
+      "@id": "https://smiroof.com/#organization",
+      "name": "SMI Roofing",
+      "legalName": "CAS Management Inc. dba SMI Roofing",
+      "url": "https://smiroof.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://smiroof.com/assets/logo.png"
+      },
+      "image": "https://smiroof.com/assets/og-image.jpg",
+      "telephone": "+1-501-464-5139",
+      "email": "info@smiroof.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "302 East Parkway Drive, Suite C",
+        "addressLocality": "Russellville",
+        "addressRegion": "AR",
+        "postalCode": "72801",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Arkansas"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "07:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "14:00"
+        }
+      ],
+      "sameAs": [
+        "https://smiroof.com/",
+        "https://www.google.com/search?q=SMI+Roofing+Russellville+AR+reviews"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "231",
+        "reviewCount": "231"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://smiroof.com/#website",
+      "name": "SMI Roofing",
+      "alternateName": [
+        "SMI Roofing Arkansas",
+        "SMI Roof"
+      ],
+      "url": "https://smiroof.com/",
+      "publisher": {
+        "@id": "https://smiroof.com/#organization"
+      },
+      "inLanguage": "en-US"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
