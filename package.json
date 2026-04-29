@@ -5,8 +5,10 @@
   "scripts": {
     "generate:site-map": "node scripts/generate-html-sitemap.mjs",
     "sync:city-schema": "node scripts/sync-city-roofingcontractor-schema.mjs --write",
+    "sync:breadcrumb-schema": "node scripts/sync-breadcrumb-schema.mjs --write",
     "sync:service-schema": "node scripts/sync-service-schema.mjs --write",
     "validate:city-schema": "node scripts/sync-city-roofingcontractor-schema.mjs",
+    "validate:breadcrumb-schema": "node scripts/sync-breadcrumb-schema.mjs",
     "validate:service-schema": "node scripts/sync-service-schema.mjs",
     "validate:faq-library": "node scripts/validate-faq-library.mjs",
     "validate:paa-refresh": "node scripts/validate-paa-refresh.mjs"
