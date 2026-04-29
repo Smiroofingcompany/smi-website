@@ -104,9 +104,9 @@ button,input,select{font:inherit}
 .problem-band{background:#fff;border-bottom:1px solid var(--line);padding:30px 0}
 .problem-band .container{display:grid;grid-template-columns:270px 1fr;gap:22px;align-items:center}
 .problem-band h2{margin:0;font-family:var(--font-display);font-size:22px;line-height:1.08}
-.quick-paths{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.path-btn{appearance:none;border:1px solid var(--line);background:#fff;border-radius:7px;padding:14px 12px;min-height:74px;color:var(--ink);font-size:13px;font-weight:900;text-align:left;cursor:pointer;transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease}
-.path-btn span{display:block;margin-top:7px;color:var(--muted);font-size:11px;font-weight:800;line-height:1.35}
+.quick-paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.path-btn{appearance:none;border:1px solid var(--line);background:#fff;border-radius:7px;padding:10px 12px;min-height:58px;color:var(--ink);font-size:12px;font-weight:900;text-align:left;cursor:pointer;transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.path-btn span{display:block;margin-top:5px;color:var(--muted);font-size:10px;font-weight:800;line-height:1.25}.path-btn:last-child{grid-column:span 2}
 .path-btn:hover,.path-btn.active{border-color:var(--cyan);background:#eefbff;box-shadow:0 10px 22px rgba(0,200,240,.12);transform:translateY(-2px)}
 .area-router{background:#f6f8fb;border-bottom:1px solid var(--line);padding:30px 0}
 .area-router-grid{display:grid;grid-template-columns:330px 1fr;gap:24px;align-items:center}
@@ -285,7 +285,7 @@ button,input,select{font:inherit}
 @media(max-width:1040px){
   .nav-links{display:none}
   .nav-toggle{display:block}
-  .hero-proof,.quick-paths,.process-grid,.project-grid{grid-template-columns:1fr 1fr}
+  .hero-proof,.process-grid,.project-grid{grid-template-columns:1fr 1fr}
   .problem-band .container,.area-router-grid,.coverage-header,.answer-grid,.promise-grid,.cost-grid,.faq-grid,.reviews-top,.claim-grid,.contact-form-grid{grid-template-columns:1fr}
   .area-links{justify-content:flex-start}
   .estimate-card{position:relative;top:auto}
@@ -302,7 +302,7 @@ button,input,select{font:inherit}
   .hero p{font-size:17px}
   .hero-actions{display:grid}
   .reviews-aggregate{display:grid;text-align:center;width:100%;gap:8px}
-  .hero-proof,.quick-paths,.promise-cards,.process-grid,.project-grid,.review-grid,.claim-list,.footer-grid{grid-template-columns:1fr}
+  .hero-proof,.promise-cards,.process-grid,.project-grid,.review-grid,.claim-list,.footer-grid{grid-template-columns:1fr}
   .problem-band{padding:24px 0}
   .coverage-map{height:390px}
   .answer-photo{min-height:340px}
@@ -459,7 +459,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
       <li><a href="#proof">Our Work</a></li>
       <li><a href="/reviews/">Reviews</a></li>
       <li><a href="tel:+15014645139" class="nav-phone">(501) 464-5139</a></li>
-      <li><a href="#contact-form" class="nav-cta">Free Inspection</a></li>
+      <li><a data-open-inspection-form href="#contact-form" class="nav-cta">Free Inspection</a></li>
     </ul>
     <button class="nav-toggle" type="button" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </div>
@@ -484,8 +484,8 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
         <h1>Roofing Contractor in <strong>Conway, AR</strong></h1>
         <p>SMI Roofing inspects roof addresses in Conway, photographs what we find, explains the options, and gives you the next best step for repair, replacement, storm damage, or insurance.</p>
         <div class="hero-actions">
-          <a href="#contact-form" class="btn btn-primary">Schedule free inspection</a>
-          <a href="#paths" class="btn btn-secondary">Tell us what's going on</a>
+          <a href="tel:+15014645139" class="btn btn-primary">Call Us</a>
+          <a data-open-inspection-form href="#contact-form" class="btn btn-secondary">Fill out form</a>
         </div>
         <div class="emergency-cta" style="margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;max-width:760px;color:rgba(255,255,255,.9);font-size:14px;font-weight:800;line-height:1.5"><span style="color:#8beaff">24/7 emergency roofing</span><a href="tel:+15014645139" style="color:#fff;text-decoration:underline">Call now</a><span>After-hours leak and storm calls route through this number first.</span></div>
       </div>
@@ -500,7 +500,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
 
   <section class="problem-band" id="paths" aria-label="Roofing problem paths">
     <div class="container">
-      <h2>What are you worried about?</h2>
+      <h2>How can we help you?</h2>
       <div class="quick-paths">
         <button class="path-btn active" type="button" data-path="leak">My roof is leaking<span>Stop the water first.</span></button>
         <button class="path-btn" type="button" data-path="storm">A storm hit my home<span>Document damage fast.</span></button>
@@ -562,13 +562,13 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
           <h2 class="section-title">A Conway roof problem should feel handled, not mysterious.</h2>
           <p class="section-lede">From first call to final walkthrough, you know what happens next and why it matters.</p>
         </div>
-        <div class="process-cta"><a href="tel:+15014645139" class="btn btn-dark">Call now</a><a href="#contact-form" class="btn btn-quiet">Schedule inspection</a></div>
+        <div class="process-cta"><a href="tel:+15014645139" class="btn btn-dark">Call now</a><a data-open-inspection-form href="#contact-form" class="btn btn-quiet">Fill out form</a></div>
       </div>
       <div class="process-grid">
-        <div class="step"><div class="step-num">1</div><h3>Tell us what happened.</h3><p>Leak, hail, wind, old roof, denied claim, or commercial issue. We route the inspection around the real problem.</p><div class="step-actions"><a href="tel:+15014645139">Call now</a><a href="#contact-form">Fill out form</a></div></div>
-        <div class="step"><div class="step-num">2</div><h3>We inspect and photograph.</h3><p>We climb the roof, check the system, document concerns, and explain what the photos mean.</p><div class="step-actions"><a href="tel:+15014645139">Call now</a><a href="#contact-form">Fill out form</a></div></div>
-        <div class="step"><div class="step-num">3</div><h3>You get clear choices.</h3><p>Repair price, replacement estimate, insurance direction, or a simple "your roof is okay."</p><div class="step-actions"><a href="tel:+15014645139">Call now</a><a href="#contact-form">Fill out form</a></div></div>
-        <div class="step"><div class="step-num">4</div><h3>SMI handles the roof.</h3><p>Materials, scheduling, protection, cleanup, warranty, and final walkthrough stay organized.</p><div class="step-actions"><a href="tel:+15014645139">Call now</a><a href="#contact-form">Fill out form</a></div></div>
+        <div class="step"><div class="step-num">1</div><h3>Tell us what happened.</h3><p>Leak, hail, wind, old roof, denied claim, or commercial issue. We route the inspection around the real problem.</p><div class="step-actions"><a href="tel:+15014645139">Call now</a><a data-open-inspection-form href="#contact-form">Fill out form</a></div></div>
+        <div class="step"><div class="step-num">2</div><h3>We inspect and photograph.</h3><p>We climb the roof, check the system, document concerns, and explain what the photos mean.</p><div class="step-actions"><a href="tel:+15014645139">Call now</a><a data-open-inspection-form href="#contact-form">Fill out form</a></div></div>
+        <div class="step"><div class="step-num">3</div><h3>You get clear choices.</h3><p>Repair price, replacement estimate, insurance direction, or a simple "your roof is okay."</p><div class="step-actions"><a href="tel:+15014645139">Call now</a><a data-open-inspection-form href="#contact-form">Fill out form</a></div></div>
+        <div class="step"><div class="step-num">4</div><h3>SMI handles the roof.</h3><p>Materials, scheduling, protection, cleanup, warranty, and final walkthrough stay organized.</p><div class="step-actions"><a href="tel:+15014645139">Call now</a><a data-open-inspection-form href="#contact-form">Fill out form</a></div></div>
       </div>
     </div>
   </section>
@@ -589,7 +589,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
       <div class="estimate-card">
         <h3>Estimated replacement range</h3><div class="estimate-number" id="estimateNumber">$7k-$9k</div>
         <p id="estimateNote">This is a planning range, not a quote. Decking, pitch, ventilation, access, material selection, and insurance scope can change the final number.</p>
-        <div class="estimate-actions"><a href="#contact-form" class="btn btn-primary">Get exact inspection price</a><a href="tel:+15014645139" class="btn btn-secondary">Call SMI</a></div>
+        <div class="estimate-actions"><a data-open-inspection-form href="#contact-form" class="btn btn-primary">Fill out form</a><a href="tel:+15014645139" class="btn btn-secondary">Call SMI</a></div>
         <p class="estimate-disclaimer">A free inspection is required before SMI can confirm exact pricing or insurance scope.</p>
       </div>
     </div>
@@ -706,7 +706,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
           <button onclick="submitContactForm()" id="cf_submit" class="form-submit">Request Free Inspection</button><div class="form-note">Licensed & insured · 231+ reviews · No pressure</div></div></div></div>
   </section>
 
-  <section class="final-cta" id="contact"><div class="container"><div class="cta-wrap"><img src="/assets/smi-aerial-roof-detail.jpg" alt="Completed SMI Roofing shingle roof from above"><div class="cta-copy"><h2>Start with pictures, answers, and a clear Conway next step.</h2><p>Call SMI Roofing or schedule your free inspection. We will look at the roof, show you what we find, and help you decide what makes sense. For active leaks or storm openings, <a href="tel:+15014645139" style="color:var(--cyan);text-decoration:underline;font-weight:800">call (501) 464-5139</a> now; after-hours urgent calls route through the same number first.</p><div class="hero-actions"><a href="#contact-form" class="btn btn-primary">Schedule free inspection</a><a href="tel:+15014645139" class="btn btn-secondary">Call (501) 464-5139</a></div></div></div></div></section>
+  <section class="final-cta" id="contact"><div class="container"><div class="cta-wrap"><img src="/assets/smi-aerial-roof-detail.jpg" alt="Completed SMI Roofing shingle roof from above"><div class="cta-copy"><h2>Start with pictures, answers, and a clear Conway next step.</h2><p>Call SMI Roofing or schedule your free inspection. We will look at the roof, show you what we find, and help you decide what makes sense. For active leaks or storm openings, <a href="tel:+15014645139" style="color:var(--cyan);text-decoration:underline;font-weight:800">call (501) 464-5139</a> now; after-hours urgent calls route through the same number first.</p><div class="hero-actions"><a data-open-inspection-form href="#contact-form" class="btn btn-primary">Fill out form</a><a href="tel:+15014645139" class="btn btn-secondary">Call (501) 464-5139</a></div></div></div></div></section>
 </main>
 
 <footer class="footer"><div class="container"><div class="footer-grid"><div><a href="/" class="brand" aria-label="SMI Roofing home"><img src="/assets/logo.png" alt="SMI Roofing"><div class="brand-text" style="color:#fff">SMI <span>Roofing</span></div></a><p>Roofing help in Conway, AR built around straight answers, photo documentation, and local accountability.</p><p>Serving Conway, AR 72032, 72034, 72035<br>Faulkner County<br><a href="tel:+15014645139">(501) 464-5139</a></p></div><div><h3>Services</h3><a href="/residential-roofing/">Residential Roofing</a><a href="/commercial-roofing/">Commercial Roofing</a><a href="/metal-roofs/">Metal Roofing</a><a href="/storm-damage/">Storm Damage</a></div><div><h3>Help</h3><a href="/roof-repair/">Roof Repair</a><a href="/roof-inspections/">Roof Inspections</a><a href="/insurance-claims/">Insurance Claims</a><a href="/areas-we-serve/">Service Areas</a></div><div><h3>Nearby</h3><a href="/service-areas/greenbrier-ar/">Greenbrier</a><a href="/service-areas/vilonia-ar/">Vilonia</a><a href="/service-areas/maumelle-sherwood-ar/">Maumelle / Sherwood</a><a href="/service-areas/morrilton-ar/">Morrilton</a></div></div><div class="footer-bottom"><span>&copy; 2026 CAS Management Inc. dba SMI Roofing. All rights reserved.</span><span>Licensed &amp; Insured | Serving Conway, AR</span></div></div></footer>
@@ -790,7 +790,7 @@ function submitContactForm(){var fn=document.getElementById('cf_fname').value.tr
 <!-- MOBILE STICKY CTA BAR -->
 <nav class="mobile-sticky-cta" aria-label="Mobile quick actions">
   <a class="mobile-sticky-cta-call" href="tel:+15014645139" aria-label="Call SMI Roofing">Call</a>
-  <a class="mobile-sticky-cta-quote" href="https://clienthub.getjobber.com/booking/31b1fe0c-4da6-49e9-ad15-2e9a8cefa5fb" aria-label="Request a free roofing quote">Quote</a>
+  <a class="mobile-sticky-cta-quote" href="#contact-form" data-open-inspection-form aria-label="Open roofing form">Form</a>
 </nav>
 <!-- END MOBILE STICKY CTA BAR -->
 </body>

@@ -120,6 +120,7 @@ async function sendInternalEmail({ name, phone, email, service, message, page })
   const SMTP_HOST = process.env.SMTP_HOST;
   const SMTP_USER = process.env.SMTP_USER;
   const SMTP_PASS = process.env.SMTP_PASS;
+  const LEAD_NOTIFY_TO = process.env.LEAD_NOTIFY_TO || 'dmcorysmith@gmaill.com';
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
     console.warn('SMTP env vars not set — skipping internal email');
     return;
@@ -144,7 +145,7 @@ async function sendInternalEmail({ name, phone, email, service, message, page })
 
   await transporter.sendMail({
     from: `"SMI Roofing Website" <${SMTP_USER}>`,
-    to: 'info@smiroof.com',
+    to: LEAD_NOTIFY_TO,
     subject: `🏠 New Lead: ${name} — ${service || 'General Inquiry'}`,
     text: [
       `Name: ${name}`,

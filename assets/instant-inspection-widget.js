@@ -179,6 +179,17 @@
       }
     }
 
+    window.openSMIInstantInspectionWidget = function () {
+      setOpen(true);
+    };
+
+    document.addEventListener('click', function (event) {
+      var trigger = event.target.closest && event.target.closest('[data-open-inspection-form]');
+      if (!trigger) return;
+      event.preventDefault();
+      setOpen(true);
+    });
+
     function setStep(step) {
       currentStep = Math.max(1, Math.min(3, step));
       steps.forEach(function (node) {

@@ -104,6 +104,8 @@ button,input,select{font:inherit}
 .hero-area-card span{display:block;margin-top:10px;color:rgba(255,255,255,.78);font-size:14px;font-weight:800;line-height:1.45}
 .hero-area-card .btn{width:100%;min-height:50px;padding:14px 16px;box-shadow:0 12px 30px rgba(0,200,240,.25)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.conversion-actions{display:grid;grid-template-columns:repeat(2,minmax(0,190px));gap:12px;align-items:center}
+.conversion-actions .btn{width:100%}
 .hero-proof{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:64px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.18);border-radius:8px;overflow:hidden;backdrop-filter:blur(14px)}
 .proof-item{background:rgba(8,18,33,.58);padding:20px}
 .proof-value{font-family:var(--font-display);font-size:28px;font-weight:900;color:#fff;line-height:1}
@@ -111,9 +113,10 @@ button,input,select{font:inherit}
 .problem-band{background:#fff;border-bottom:1px solid var(--line);padding:30px 0}
 .problem-band .container{display:grid;grid-template-columns:270px 1fr;gap:22px;align-items:center}
 .problem-band h2{margin:0;font-family:var(--font-display);font-size:22px;line-height:1.08}
-.quick-paths{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.path-btn{appearance:none;border:1px solid var(--line);background:#fff;border-radius:7px;padding:14px 12px;min-height:74px;color:var(--ink);font-size:13px;font-weight:900;text-align:left;cursor:pointer;transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease}
-.path-btn span{display:block;margin-top:7px;color:var(--muted);font-size:11px;font-weight:800;line-height:1.35}
+.quick-paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.path-btn{appearance:none;border:1px solid var(--line);background:#fff;border-radius:7px;padding:10px 12px;min-height:58px;color:var(--ink);font-size:12px;font-weight:900;text-align:left;cursor:pointer;transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.path-btn span{display:block;margin-top:5px;color:var(--muted);font-size:10px;font-weight:800;line-height:1.25}
+.path-btn:last-child{grid-column:span 2}
 .path-btn:hover,.path-btn.active{border-color:var(--cyan);background:#eefbff;box-shadow:0 10px 22px rgba(0,200,240,.12);transform:translateY(-2px)}
 .coverage{background:#fff;border-bottom:1px solid var(--line)}
 .coverage-header{display:grid;grid-template-columns:.85fr 1.15fr;gap:34px;align-items:end;margin-bottom:34px}
@@ -129,7 +132,11 @@ button,input,select{font:inherit}
 .coverage-list a:hover{border-color:var(--cyan);background:#eafaff;color:#062233}
 .coverage-list a.featured{background:var(--navy);border-color:var(--navy);color:#fff}
 .answer-section{padding:48px 0 70px;background:#fff}
-.answer-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}
+.answer-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:42px;align-items:start}
+.owner-help-stack{display:grid;gap:16px}
+.owner-help-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px;box-shadow:0 12px 30px rgba(17,24,39,.05)}
+.owner-help-card h2{margin:0;font-family:var(--font-display);font-size:28px;line-height:1.05;font-weight:900;color:var(--ink)}
+.owner-help-card p{margin:10px 0 18px;color:var(--muted);line-height:1.6;font-size:15px}
 .answer-panel{background:#f6f8fb;border:1px solid var(--line);border-radius:8px;padding:34px}
 .answer-panel h3{margin:0;font-family:var(--font-display);font-size:34px;line-height:1.04}
 .answer-panel p{margin:16px 0 0;color:var(--muted);font-size:17px;line-height:1.7}
@@ -286,7 +293,7 @@ button,input,select{font:inherit}
   .nav-toggle{display:block}
   .hero-layout{grid-template-columns:1fr;gap:24px}
   .hero-area-card{width:min(100%,360px);aspect-ratio:auto;min-height:0;margin:0;padding:20px}
-  .hero-proof,.quick-paths,.process-grid,.project-grid{grid-template-columns:1fr 1fr}
+  .hero-proof,.process-grid,.project-grid{grid-template-columns:1fr 1fr}
   .problem-band .container,.coverage-header,.answer-grid,.promise-grid,.cost-grid,.faq-grid,.reviews-top,.claim-grid,.contact-form-grid{grid-template-columns:1fr}
   .estimate-card{position:relative;top:auto}
   .project-grid{gap:14px}
@@ -305,8 +312,9 @@ button,input,select{font:inherit}
   .hero-area-card{width:100%;padding:18px;gap:18px}
   .hero-area-label{margin-bottom:8px}
   .hero-actions{display:grid}
+  .conversion-actions{grid-template-columns:1fr 1fr}
   .reviews-aggregate{display:grid;text-align:center;width:100%;gap:8px}
-  .hero-proof,.quick-paths,.promise-cards,.process-grid,.project-grid,.review-grid,.claim-list,.footer-grid{grid-template-columns:1fr}
+  .hero-proof,.promise-cards,.process-grid,.project-grid,.review-grid,.claim-list,.footer-grid{grid-template-columns:1fr}
   .problem-band{padding:24px 0}
   .coverage-map{height:390px}
   .answer-photo{min-height:340px}
@@ -577,7 +585,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
       <li><a href="#proof">Our Work</a></li>
       <li><a href="/reviews/">Reviews</a></li>
       <li><a href="tel:+15014645139" class="nav-phone">(501) 464-5139</a></li>
-      <li><a href="#contact-form" class="nav-cta">Free Inspection</a></li>
+      <li><a data-open-inspection-form href="#contact-form" class="nav-cta">Free Inspection</a></li>
     </ul>
     <button class="nav-toggle" type="button" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </div>
@@ -603,9 +611,9 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
           </div>
           <h1>Get a Straight Answer About Your Roof <strong>Before You Spend a Dollar</strong></h1>
           <p>SMI Roofing inspects, photographs, explains, and gives you the next best step. If your roof is fine, we say that. If it needs work, you will know exactly why.</p>
-          <div class="hero-actions">
-            <a href="#contact-form" class="btn btn-primary">Schedule free inspection</a>
-            <a href="#paths" class="btn btn-secondary">Tell us what's going on</a>
+          <div class="hero-actions conversion-actions">
+            <a href="tel:+15014645139" class="btn btn-primary">Call Us</a>
+            <a href="#contact-form" class="btn btn-secondary" data-open-inspection-form>Fill out a form</a>
           </div>
         </div>
         <div class="hero-area-card">
@@ -626,21 +634,29 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
     </div>
   </section>
 
-  <section class="problem-band" id="paths" aria-label="Roofing problem paths">
-    <div class="container">
-      <h2>What are you worried about?</h2>
-      <div class="quick-paths">
-        <button class="path-btn active" type="button" data-path="leak">My roof is leaking<span>Stop the water first.</span></button>
-        <button class="path-btn" type="button" data-path="storm">A storm hit my home<span>Document damage fast.</span></button>
-        <button class="path-btn" type="button" data-path="claim">Insurance is confusing<span>Know what is missing.</span></button>
-        <button class="path-btn" type="button" data-path="cost">I need a roof estimate<span>Get a real range.</span></button>
-        <button class="path-btn" type="button" data-path="commercial">I manage a building<span>Protect operations.</span></button>
-      </div>
-    </div>
-  </section>
-
   <section class="answer-section">
     <div class="container answer-grid">
+      <div class="owner-help-stack" id="paths">
+        <div class="answer-photo owner-card">
+          <img class="owner-photo" src="/assets/cory-owner-smi-roofing.jpg" alt="Cory from SMI Roofing on an Arkansas roof inspection">
+          <div class="photo-note">
+            <strong>Cory, Owner of SMI Roofing.</strong>
+            <span>You get a real inspection from a local roofing company, with photos and a straight recommendation.</span>
+          </div>
+        </div>
+        <div class="owner-help-card" aria-label="Roofing problem paths">
+          <div class="eyebrow">How can we help you?</div>
+          <h2>Pick what matches your roof.</h2>
+          <p>Tap the closest issue and we will show the next best step.</p>
+          <div class="quick-paths">
+            <button class="path-btn active" type="button" data-path="leak">Roof leak<span>Stop water first.</span></button>
+            <button class="path-btn" type="button" data-path="storm">Storm damage<span>Document it fast.</span></button>
+            <button class="path-btn" type="button" data-path="claim">Insurance help<span>Know what is missing.</span></button>
+            <button class="path-btn" type="button" data-path="cost">Roof estimate<span>Get a real range.</span></button>
+            <button class="path-btn" type="button" data-path="commercial">Commercial roof<span>Protect operations.</span></button>
+          </div>
+        </div>
+      </div>
       <div class="answer-panel">
         <div class="eyebrow">Your next best step</div>
         <h3 id="pathTitle">Stop the leak, then inspect the whole roof.</h3>
@@ -652,15 +668,51 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
         </ul>
         <div class="hero-actions">
           <a href="tel:+15014645139" class="btn btn-dark">Call SMI now</a>
-          <a href="#process" class="btn btn-quiet">See the process</a>
+          <a href="#contact-form" class="btn btn-quiet" data-open-inspection-form>Fill out a form</a>
         </div>
       </div>
-      <div class="answer-photo owner-card">
-        <img class="owner-photo" src="/assets/cory-owner-smi-roofing.jpg" alt="Cory from SMI Roofing on an Arkansas roof inspection">
-        <div class="photo-note">
-          <strong>Cory, Owner of SMI Roofing.</strong>
-          <span>You get a real inspection from a local roofing company, with photos and a straight recommendation.</span>
+    </div>
+  </section>
+
+  <section class="cost section" id="cost">
+    <div class="container cost-grid">
+      <div>
+        <div class="eyebrow">Price clarity</div>
+        <h2 class="section-title">Get a real roof cost range before you call.</h2>
+        <p class="section-lede">Roofing can feel expensive and uncertain. A simple planning range helps you understand the size of the decision before SMI turns it into an exact inspection-based estimate.</p>
+        <div class="calculator" aria-label="Roof replacement estimate calculator">
+          <div class="calc-row">
+            <label class="calc-label" for="sizeRange"><span>Approximate home size</span><span id="sizeLabel">1,200 sq ft</span></label>
+            <input class="range" type="range" id="sizeRange" min="1200" max="4500" value="1200" step="100">
+          </div>
+          <div class="calc-row">
+            <div class="calc-label"><span>Material</span><span id="materialLabel">Architectural shingles</span></div>
+            <div class="segment" role="group" aria-label="Roof material">
+              <button type="button" class="material active" data-material="shingle">Shingles</button>
+              <button type="button" class="material" data-material="metal">Metal</button>
+              <button type="button" class="material" data-material="commercial">Commercial</button>
+            </div>
+          </div>
+          <div class="calc-row">
+            <label class="calc-label" for="complexity"><span>Roof complexity</span><span></span></label>
+            <select class="select" id="complexity">
+              <option value="simple" selected>Simple roof shape</option>
+              <option value="average">Average Arkansas home</option>
+              <option value="complex">Steep or complex roof</option>
+            </select>
+          </div>
+          <p class="calc-disclaimer">Planning tool only. This is not a quote or guarantee. Final pricing depends on roof measurements, pitch, access, decking, ventilation, materials, code requirements, and insurance scope.</p>
         </div>
+      </div>
+      <div class="estimate-card">
+        <h3>Estimated replacement range</h3>
+        <div class="estimate-number" id="estimateNumber">$7k-$9k</div>
+        <p id="estimateNote">This is a planning range, not a quote. Decking, pitch, ventilation, access, material selection, and insurance scope can change the final number.</p>
+        <div class="estimate-actions">
+          <a href="#contact-form" class="btn btn-primary" data-open-inspection-form>Fill out form</a>
+          <a href="tel:+15014645139" class="btn btn-secondary">Call SMI</a>
+        </div>
+        <p class="estimate-disclaimer">A free inspection is required before SMI can confirm exact pricing or insurance scope.</p>
       </div>
     </div>
   </section>
@@ -703,7 +755,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
         </div>
         <div class="process-cta">
           <a href="tel:+15014645139" class="btn btn-dark">Call now</a>
-          <a href="#contact-form" class="btn btn-quiet">Schedule inspection</a>
+          <a href="#contact-form" class="btn btn-quiet" data-open-inspection-form>Fill out form</a>
         </div>
       </div>
       <div class="process-grid">
@@ -711,69 +763,26 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
           <div class="step-num">1</div>
           <h3>Tell us what happened.</h3>
           <p>Leak, hail, wind, old roof, denied claim, or commercial issue. We route the inspection around the real problem.</p>
-          <div class="step-actions"><a href="tel:+15014645139">Call now</a><a href="#contact-form">Fill out form</a></div>
+          <div class="step-actions"><a href="tel:+15014645139">Call now</a><a href="#contact-form" data-open-inspection-form>Fill out form</a></div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
           <h3>We inspect and photograph.</h3>
           <p>We climb the roof, check the system, document concerns, and explain what the photos mean.</p>
-          <div class="step-actions"><a href="tel:+15014645139">Call now</a><a href="#contact-form">Fill out form</a></div>
+          <div class="step-actions"><a href="tel:+15014645139">Call now</a><a href="#contact-form" data-open-inspection-form>Fill out form</a></div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
           <h3>You get clear choices.</h3>
           <p>Repair price, replacement estimate, insurance direction, or a simple "your roof is okay."</p>
-          <div class="step-actions"><a href="tel:+15014645139">Call now</a><a href="#contact-form">Fill out form</a></div>
+          <div class="step-actions"><a href="tel:+15014645139">Call now</a><a href="#contact-form" data-open-inspection-form>Fill out form</a></div>
         </div>
         <div class="step">
           <div class="step-num">4</div>
           <h3>SMI handles the roof.</h3>
           <p>Materials, scheduling, protection, cleanup, warranty, and final walkthrough stay organized.</p>
-          <div class="step-actions"><a href="tel:+15014645139">Call now</a><a href="#contact-form">Fill out form</a></div>
+          <div class="step-actions"><a href="tel:+15014645139">Call now</a><a href="#contact-form" data-open-inspection-form>Fill out form</a></div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cost section" id="cost">
-    <div class="container cost-grid">
-      <div>
-        <div class="eyebrow">Price clarity</div>
-        <h2 class="section-title">Get a real roof cost range before you call.</h2>
-        <p class="section-lede">Roofing can feel expensive and uncertain. A simple planning range helps you understand the size of the decision before SMI turns it into an exact inspection-based estimate.</p>
-        <div class="calculator" aria-label="Roof replacement estimate calculator">
-          <div class="calc-row">
-            <label class="calc-label" for="sizeRange"><span>Approximate home size</span><span id="sizeLabel">1,200 sq ft</span></label>
-            <input class="range" type="range" id="sizeRange" min="1200" max="4500" value="1200" step="100">
-          </div>
-          <div class="calc-row">
-            <div class="calc-label"><span>Material</span><span id="materialLabel">Architectural shingles</span></div>
-            <div class="segment" role="group" aria-label="Roof material">
-              <button type="button" class="material active" data-material="shingle">Shingles</button>
-              <button type="button" class="material" data-material="metal">Metal</button>
-              <button type="button" class="material" data-material="commercial">Commercial</button>
-            </div>
-          </div>
-          <div class="calc-row">
-            <label class="calc-label" for="complexity"><span>Roof complexity</span><span></span></label>
-            <select class="select" id="complexity">
-              <option value="simple" selected>Simple roof shape</option>
-              <option value="average">Average Arkansas home</option>
-              <option value="complex">Steep or complex roof</option>
-            </select>
-          </div>
-          <p class="calc-disclaimer">Planning tool only. This is not a quote or guarantee. Final pricing depends on roof measurements, pitch, access, decking, ventilation, materials, code requirements, and insurance scope.</p>
-        </div>
-      </div>
-      <div class="estimate-card">
-        <h3>Estimated replacement range</h3>
-        <div class="estimate-number" id="estimateNumber">$7k-$9k</div>
-        <p id="estimateNote">This is a planning range, not a quote. Decking, pitch, ventilation, access, material selection, and insurance scope can change the final number.</p>
-        <div class="estimate-actions">
-          <a href="#contact-form" class="btn btn-primary">Get exact inspection price</a>
-          <a href="tel:+15014645139" class="btn btn-secondary">Call SMI</a>
-        </div>
-        <p class="estimate-disclaimer">A free inspection is required before SMI can confirm exact pricing or insurance scope.</p>
       </div>
     </div>
   </section>
@@ -1038,7 +1047,7 @@ src="https://www.facebook.com/tr?id=2124552908380703&ev=PageView&noscript=1"
           <h2>Start with pictures, answers, and a clear next step.</h2>
           <p>Call SMI Roofing or schedule your free inspection. We will look at the roof, show you what we find, and help you decide what makes sense.</p>
           <div class="hero-actions">
-            <a href="#contact-form" class="btn btn-primary">Schedule free inspection</a>
+            <a href="#contact-form" class="btn btn-primary" data-open-inspection-form>Fill out form</a>
             <a href="tel:+15014645139" class="btn btn-secondary">Call (501) 464-5139</a>
           </div>
         </div>
@@ -1288,7 +1297,7 @@ function submitContactForm(){
 <!-- MOBILE STICKY CTA BAR -->
 <nav class="mobile-sticky-cta" aria-label="Mobile quick actions">
   <a class="mobile-sticky-cta-call" href="tel:+15014645139" aria-label="Call SMI Roofing">Call</a>
-  <a class="mobile-sticky-cta-quote" href="https://clienthub.getjobber.com/booking/31b1fe0c-4da6-49e9-ad15-2e9a8cefa5fb" aria-label="Request a free roofing quote">Quote</a>
+  <a class="mobile-sticky-cta-quote" href="#contact-form" data-open-inspection-form aria-label="Open roofing form">Form</a>
 </nav>
 <!-- END MOBILE STICKY CTA BAR -->
 </body>
