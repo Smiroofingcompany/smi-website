@@ -66,7 +66,8 @@
       + 'button,input,select{font:inherit}'
       + '.iqw-wrap{width:min(380px,calc(100vw - 28px));line-height:1.35}'
       + '.iqw-launcher{width:100%;min-height:72px;display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid rgba(0,200,240,.42);border-radius:10px;background:#0a1628;color:#fff;box-shadow:0 18px 50px rgba(10,22,40,.28);cursor:pointer;text-align:left}'
-      + '.iqw-launcher:focus-visible,.iqw-close:focus-visible,.iqw-next:focus-visible,.iqw-back:focus-visible,.iqw-choice:focus-visible,.iqw-call:focus-visible{outline:3px solid rgba(0,200,240,.35);outline-offset:2px}'
+      + '.iqw-launcher::after{content:">";margin-left:auto;color:#8beaff;font-size:22px;font-weight:900;line-height:1}'
+      + '.iqw-launcher:focus-visible,.iqw-close:focus-visible,.iqw-next:focus-visible,.iqw-back:focus-visible,.iqw-choice:focus-visible,.iqw-timeline-choice:focus-visible,.iqw-call:focus-visible{outline:3px solid rgba(0,200,240,.35);outline-offset:2px}'
       + '.iqw-mark{width:42px;height:42px;border-radius:9px;background:#00C8F0;color:#06131d;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;flex:0 0 auto}'
       + '.iqw-launcher-copy{display:block;min-width:0}'
       + '.iqw-launcher-copy span{display:block;color:#8beaff;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.12em}'
@@ -90,6 +91,9 @@
       + '.iqw-input:focus,.iqw-select:focus{border-color:#00C8F0;box-shadow:0 0 0 4px rgba(0,200,240,.12)}'
       + '.iqw-field{margin-top:14px}'
       + '.iqw-field:first-child{margin-top:0}'
+      + '.iqw-urgency-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}'
+      + '.iqw-timeline-choice{min-height:44px;border:1px solid #dce3eb;border-radius:7px;background:#f8fafc;color:#111827;padding:8px;text-align:center;font-size:12px;font-weight:900;line-height:1.15;cursor:pointer}'
+      + '.iqw-timeline-choice.active{border-color:#00C8F0;background:#eafaff;box-shadow:0 8px 18px rgba(0,200,240,.12)}'
       + '.iqw-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}'
       + '.iqw-choice{min-height:58px;border:1px solid #dce3eb;border-radius:7px;background:#f8fafc;color:#111827;padding:10px;text-align:left;font-size:13px;font-weight:900;cursor:pointer}'
       + '.iqw-choice.active{border-color:#00C8F0;background:#eafaff;box-shadow:0 10px 22px rgba(0,200,240,.12)}'
@@ -111,7 +115,7 @@
       + '.iqw-success b{display:block;color:#111827;font-family:"Outfit","Plus Jakarta Sans",Arial,sans-serif;font-size:24px;font-weight:900}'
       + '.iqw-success p{margin:10px auto 0;color:#59677a;font-size:14px;font-weight:700;line-height:1.55;max-width:300px}'
       + '.iqw-success .iqw-call{margin-top:16px}'
-      + '@media(max-width:620px){:host{left:auto;right:14px;bottom:92px}.iqw-wrap{width:auto}.iqw-wrap.iqw-open{width:min(380px,calc(100vw - 28px))}.iqw-panel{max-height:calc(100vh - 112px);overflow:auto}.iqw-launcher{width:58px;min-height:58px;height:58px;justify-content:center;padding:0;border-radius:999px}.iqw-mark{width:58px;height:58px;border-radius:999px;font-size:20px}.iqw-launcher-copy{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important}.iqw-grid{grid-template-columns:1fr}.iqw-actions{flex-wrap:wrap}.iqw-back{width:100%}}'
+      + '@media(max-width:620px){:host{left:auto;right:14px;bottom:92px}.iqw-wrap{width:auto}.iqw-wrap.iqw-open{width:min(380px,calc(100vw - 28px))}.iqw-panel{max-height:calc(100vh - 112px);overflow:auto}.iqw-launcher{width:auto;min-height:58px;height:auto;justify-content:center;gap:9px;padding:8px 12px 8px 8px;border-radius:999px;background:#00C8F0;color:#06131d;box-shadow:0 14px 34px rgba(0,200,240,.28)}.iqw-launcher::after{color:#06131d;font-size:18px}.iqw-mark{width:42px;height:42px;border-radius:999px;background:#06131d;color:#00C8F0;font-size:14px;line-height:1;text-align:center}.iqw-launcher-copy{display:block;max-width:104px}.iqw-launcher-copy span{color:#06131d;font-size:8px;letter-spacing:.08em}.iqw-launcher-copy strong{margin-top:2px;color:#06131d;font-size:13px;line-height:1.05}.iqw-grid{grid-template-columns:1fr 1fr}.iqw-choice{min-height:54px;padding:9px 8px;font-size:12px}.iqw-choice small{font-size:10px}.iqw-actions{flex-wrap:wrap}.iqw-back{width:100%}}'
       + '</style>'
       + '<div class="iqw-wrap" data-step="1">'
       + '  <div class="iqw-panel" role="dialog" aria-label="Instant roof inspection request">'
@@ -123,7 +127,12 @@
       + '    <form class="iqw-form" novalidate>'
       + '      <section class="iqw-step active" data-step="1">'
       + '        <div class="iqw-field"><label class="iqw-label" for="iqw-address">Roof address</label><input class="iqw-input" id="iqw-address" name="address" autocomplete="street-address" placeholder="123 Main St, Russellville, AR" required></div>'
-      + '        <div class="iqw-field"><label class="iqw-label" for="iqw-timeline">How soon do you need help?</label><select class="iqw-select" id="iqw-timeline" name="timeline"><option value="This week">This week</option><option value="Active leak or storm damage">Active leak or storm damage</option><option value="Planning a replacement">Planning a replacement</option><option value="Just need an inspection">Just need an inspection</option></select></div>'
+      + '        <div class="iqw-field"><span class="iqw-label">How soon do you need help?</span><input type="hidden" id="iqw-timeline" name="timeline" value="This week"><div class="iqw-urgency-grid">'
+      + '          <button class="iqw-timeline-choice" type="button" data-timeline="Active leak or storm damage">Emergency leak</button>'
+      + '          <button class="iqw-timeline-choice active" type="button" data-timeline="This week">This week</button>'
+      + '          <button class="iqw-timeline-choice" type="button" data-timeline="Planning a replacement">Planning</button>'
+      + '          <button class="iqw-timeline-choice" type="button" data-timeline="Just need an inspection">Inspection only</button>'
+      + '        </div></div>'
       + '        <p class="iqw-error" data-error="1">Enter the roof address so SMI can route the request.</p>'
       + '      </section>'
       + '      <section class="iqw-step" data-step="2">'
@@ -151,7 +160,7 @@
       + '    <div class="iqw-success"><b>Request sent.</b><p>SMI will review the roof details and follow up. If this is urgent, call now.</p><a class="iqw-call" href="' + PHONE_TEL + '">Call ' + PHONE_DISPLAY + '</a></div>'
       + '  </div>'
       + '  <button class="iqw-launcher" type="button" aria-expanded="false">'
-      + '    <span class="iqw-mark">3</span><span class="iqw-launcher-copy"><span>Instant inspection</span><strong>Address, roof issue, contact</strong></span>'
+      + '    <span class="iqw-mark">3</span><span class="iqw-launcher-copy"><span>Tap for roof help</span><strong>Start form</strong></span>'
       + '  </button>'
       + '</div>';
 
@@ -164,6 +173,7 @@
     var steps = Array.prototype.slice.call(root.querySelectorAll('.iqw-step'));
     var dots = Array.prototype.slice.call(root.querySelectorAll('.iqw-dot'));
     var choices = Array.prototype.slice.call(root.querySelectorAll('.iqw-choice'));
+    var timelineChoices = Array.prototype.slice.call(root.querySelectorAll('.iqw-timeline-choice'));
     var success = root.querySelector('.iqw-success');
     var selectedService = '';
     var currentStep = 1;
@@ -290,6 +300,13 @@
         button.classList.add('active');
         selectedService = button.getAttribute('data-service');
         showError(2, false);
+      });
+    });
+    timelineChoices.forEach(function (button) {
+      button.addEventListener('click', function () {
+        timelineChoices.forEach(function (other) { other.classList.remove('active'); });
+        button.classList.add('active');
+        root.querySelector('#iqw-timeline').value = button.getAttribute('data-timeline');
       });
     });
     root.addEventListener('keydown', function (event) {
