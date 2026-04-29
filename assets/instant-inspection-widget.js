@@ -111,7 +111,7 @@
       + '.iqw-success b{display:block;color:#111827;font-family:"Outfit","Plus Jakarta Sans",Arial,sans-serif;font-size:24px;font-weight:900}'
       + '.iqw-success p{margin:10px auto 0;color:#59677a;font-size:14px;font-weight:700;line-height:1.55;max-width:300px}'
       + '.iqw-success .iqw-call{margin-top:16px}'
-      + '@media(max-width:620px){:host{left:14px;right:14px;bottom:14px}.iqw-wrap{width:100%}.iqw-panel{max-height:calc(100vh - 28px);overflow:auto}.iqw-launcher{min-height:64px}.iqw-grid{grid-template-columns:1fr}.iqw-actions{flex-wrap:wrap}.iqw-back{width:100%}}'
+      + '@media(max-width:620px){:host{left:auto;right:14px;bottom:92px}.iqw-wrap{width:auto}.iqw-wrap.iqw-open{width:min(380px,calc(100vw - 28px))}.iqw-panel{max-height:calc(100vh - 112px);overflow:auto}.iqw-launcher{width:58px;min-height:58px;height:58px;justify-content:center;padding:0;border-radius:999px}.iqw-mark{width:58px;height:58px;border-radius:999px;font-size:20px}.iqw-launcher-copy{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important}.iqw-grid{grid-template-columns:1fr}.iqw-actions{flex-wrap:wrap}.iqw-back{width:100%}}'
       + '</style>'
       + '<div class="iqw-wrap" data-step="1">'
       + '  <div class="iqw-panel" role="dialog" aria-label="Instant roof inspection request">'
