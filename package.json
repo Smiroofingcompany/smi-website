@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "generate:site-map": "node scripts/generate-html-sitemap.mjs"
+    "generate:site-map": "node scripts/generate-html-sitemap.mjs",
+    "validate:faq-library": "node scripts/validate-faq-library.mjs"
   },
   "dependencies": {
     "nodemailer": "^6.9.14"

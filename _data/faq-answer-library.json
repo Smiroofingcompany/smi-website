@@ -1,0 +1,452 @@
+{
+  "version": "2026-04-29",
+  "status": "draft_library",
+  "purpose": "Reusable FAQ answer drafts for SMI Roofing pages. These are not final page copy until localized with city, county, weather, service, proof, and page-specific details.",
+  "publishing_rule": "Do not publish a draft answer exactly as written. Replace every {token}, add at least one page-specific local fact, then run node scripts/sync-faq-schema.mjs --write so FAQPage JSON-LD matches the visible FAQ.",
+  "global_tokens": {
+    "city": "Target city or market, such as Russellville",
+    "state": "State abbreviation or full state name, such as AR or Arkansas",
+    "county": "County name when useful for local relevance",
+    "nearby_areas": "Nearby neighborhoods, suburbs, or service-area towns",
+    "service": "Primary service for the page",
+    "roof_type": "Shingle, metal, TPO, EPDM, modified bitumen, coating, or another roof type",
+    "weather_context": "Accurate local roof stressor, such as hail, wind, heat, humidity, heavy rain, tree cover, or low-slope drainage",
+    "property_type": "Home, rental, church, school, warehouse, office, retail, medical, industrial, or multifamily property",
+    "local_proof": "SMI proof point that fits the page, such as Russellville office, 231+ reviews, 35 years, 5.0 rating, or 1,700+ roofs",
+    "phone": "Primary phone number for the page",
+    "booking_url": "Inspection or quote booking URL"
+  },
+  "quality_rules": [
+    "Use the draft as a starting point, not final copy.",
+    "Every answer must be localized before publishing.",
+    "Visible FAQ text and FAQPage JSON-LD must match exactly.",
+    "Prefer practical answers a homeowner or facility manager would actually ask.",
+    "Avoid promises about insurance approval, claim outcomes, or exact pricing without inspection.",
+    "Keep answers clear enough to stand alone in a rich result."
+  ],
+  "categories": [
+    {
+      "id": "residential-roofing",
+      "service": "Residential Roofing",
+      "recommended_page_types": ["service_hub", "city_service", "city_hub"],
+      "drafts": [
+        {
+          "id": "residential-cost",
+          "intent": "cost",
+          "question_template": "How much does a roof replacement cost in {city}, {state}?",
+          "answer_template": "Roof replacement in {city} usually depends on roof size, pitch, layers, decking condition, ventilation, material choice, and access. Use {weather_context} and local roof age as part of the explanation, then give the homeowner a written SMI estimate before quoting a final number.",
+          "tokens": ["city", "state", "weather_context"],
+          "localization_notes": "Add a realistic range only when the page has a supported pricing source or cost guide link."
+        },
+        {
+          "id": "residential-timing",
+          "intent": "timeline",
+          "question_template": "How long does a roof replacement take in {city}?",
+          "answer_template": "Most residential roof replacements in {city} take one to two working days once materials are ready and weather cooperates. Larger homes, steep roofs, decking repairs, specialty materials, or storm-season demand can add time, so SMI confirms the schedule after inspecting the roof.",
+          "tokens": ["city"],
+          "localization_notes": "Mention local storm season or heat when it affects scheduling."
+        },
+        {
+          "id": "residential-repair-vs-replace",
+          "intent": "decision",
+          "question_template": "Should I repair or replace my roof in {city}?",
+          "answer_template": "The right choice depends on roof age, leak history, shingle condition, decking, storm damage, and how widespread the problem is. In {city}, SMI documents the roof with photos, explains whether a targeted repair is enough, and only recommends replacement when the evidence supports it.",
+          "tokens": ["city"],
+          "localization_notes": "Add a city-specific weather or neighborhood housing-stock detail."
+        },
+        {
+          "id": "residential-material-choice",
+          "intent": "materials",
+          "question_template": "What roofing material works best for homes in {city}?",
+          "answer_template": "The best material for a {city} home depends on budget, roof pitch, tree cover, ventilation, HOA requirements, and {weather_context}. Architectural shingles are common for value, while metal roofing can make sense for longer service life or specific design goals.",
+          "tokens": ["city", "weather_context"],
+          "localization_notes": "Mention HOA, heat, hail, trees, or slope only when accurate."
+        },
+        {
+          "id": "residential-warranty",
+          "intent": "trust",
+          "question_template": "What warranty does SMI offer on residential roofing in {city}?",
+          "answer_template": "SMI reviews workmanship warranty, manufacturer material options, ventilation details, and cleanup expectations before the project closes. For {city} homeowners, the exact warranty depends on the approved roof system and materials selected.",
+          "tokens": ["city"],
+          "localization_notes": "Use exact warranty language from the target page if it already exists."
+        }
+      ]
+    },
+    {
+      "id": "roof-repair",
+      "service": "Roof Repair",
+      "recommended_page_types": ["service_hub", "city_service", "storm_event"],
+      "drafts": [
+        {
+          "id": "repair-active-leak",
+          "intent": "urgent",
+          "question_template": "What should I do if my roof is leaking in {city}?",
+          "answer_template": "If water is coming in, protect the inside of the home first, move belongings, and call SMI at {phone}. In {city}, SMI can inspect the leak path, roof penetrations, flashing, shingles, and attic clues, then explain whether temporary protection, repair, or replacement is the next step.",
+          "tokens": ["city", "phone"],
+          "localization_notes": "Use emergency wording only on repair, storm, or city pages where the phone CTA is present."
+        },
+        {
+          "id": "repair-cost",
+          "intent": "cost",
+          "question_template": "How much does roof repair cost in {city}?",
+          "answer_template": "Roof repair cost in {city} depends on the leak source, roof access, slope, material, decking damage, storm impact, and how many areas need work. SMI inspects first, documents the problem with photos, and gives a written repair scope before work starts.",
+          "tokens": ["city"],
+          "localization_notes": "Add a supported cost range only if the page links to a cost guide."
+        },
+        {
+          "id": "repair-symptoms",
+          "intent": "symptoms",
+          "question_template": "What are signs my {city} roof needs repair?",
+          "answer_template": "Common signs include active leaks, ceiling stains, missing or lifted shingles, granules in gutters, loose flashing, cracked pipe boots, sagging areas, and damage after {weather_context}. SMI checks the roof before deciding whether a repair is enough.",
+          "tokens": ["city", "weather_context"],
+          "localization_notes": "Tie symptoms to local hail, wind, trees, or heavy rain."
+        },
+        {
+          "id": "repair-temporary-protection",
+          "intent": "emergency",
+          "question_template": "Can SMI tarp or temporarily protect a damaged roof in {city}?",
+          "answer_template": "Yes. When a roof opening, missing shingles, or storm damage exposes the property, SMI can discuss temporary protection for {city} homeowners while the permanent repair or claim documentation is planned.",
+          "tokens": ["city"],
+          "localization_notes": "Avoid guaranteeing response time unless the target page has a confirmed local response claim."
+        },
+        {
+          "id": "repair-insurance",
+          "intent": "insurance",
+          "question_template": "Will insurance pay for roof repair in {city}?",
+          "answer_template": "Insurance may apply when covered wind, hail, or storm damage caused the repair need. SMI can document visible roof conditions in {city}, but the insurance carrier and policy decide coverage, deductible, depreciation, and payment.",
+          "tokens": ["city"],
+          "localization_notes": "Never promise claim approval."
+        }
+      ]
+    },
+    {
+      "id": "storm-damage",
+      "service": "Storm Damage Roofing",
+      "recommended_page_types": ["service_hub", "city_service", "storm_event", "insurance"],
+      "drafts": [
+        {
+          "id": "storm-inspection-timing",
+          "intent": "timing",
+          "question_template": "Should I schedule a roof inspection after a storm in {city}?",
+          "answer_template": "Yes, if {city} had hail, high wind, falling limbs, or new leaks. Some storm damage is visible from the ground, but lifted shingles, bruising, flashing movement, and soft metal impacts usually require a roof inspection and photos.",
+          "tokens": ["city"],
+          "localization_notes": "Mention the storm date or event page if this is tied to a specific storm."
+        },
+        {
+          "id": "storm-signs",
+          "intent": "symptoms",
+          "question_template": "What storm damage signs should {city} homeowners look for?",
+          "answer_template": "Look for missing shingles, lifted tabs, granule piles, dents in gutters or vents, ceiling stains, loose ridge caps, damaged flashing, and new debris impact points. In {city}, {weather_context} can make small roof damage spread if it is not checked.",
+          "tokens": ["city", "weather_context"],
+          "localization_notes": "Use only accurate weather context."
+        },
+        {
+          "id": "storm-claim-before-inspection",
+          "intent": "insurance",
+          "question_template": "Should I file an insurance claim before SMI inspects my {city} roof?",
+          "answer_template": "If there is active leaking or obvious storm damage, report it promptly to your carrier. If you are unsure whether the damage is larger than your deductible, SMI can inspect the {city} roof and give you photos before you decide what to do next.",
+          "tokens": ["city"],
+          "localization_notes": "Keep this neutral. SMI documents roofing facts but does not decide coverage."
+        },
+        {
+          "id": "storm-emergency",
+          "intent": "urgent",
+          "question_template": "Does SMI help with emergency storm roof damage in {city}?",
+          "answer_template": "SMI can help {city} property owners with leak checks, temporary protection options, storm photos, repair planning, and replacement estimates when the damage is more widespread. Call {phone} first for urgent roof openings or active leaks.",
+          "tokens": ["city", "phone"],
+          "localization_notes": "Use 24/7 language only where the target page already supports it."
+        },
+        {
+          "id": "storm-photo-documentation",
+          "intent": "trust",
+          "question_template": "Why does SMI take photos after storm damage in {city}?",
+          "answer_template": "Photos help show what is damaged, what is still sound, and which repair or replacement items belong in the written scope. For {city} roofs, photo documentation also makes conversations with homeowners, adjusters, and crews clearer.",
+          "tokens": ["city"],
+          "localization_notes": "Add a nearby-area reference if the page targets a broader storm path."
+        }
+      ]
+    },
+    {
+      "id": "roof-inspections",
+      "service": "Roof Inspections",
+      "recommended_page_types": ["service_hub", "city_service", "city_hub"],
+      "drafts": [
+        {
+          "id": "inspection-free",
+          "intent": "conversion",
+          "question_template": "Is the roof inspection really free in {city}?",
+          "answer_template": "Yes. SMI provides a free roof inspection in {city}, documents roof conditions with photos, and explains the next step. If the roof does not need work, SMI tells you that instead of forcing a repair or replacement conversation.",
+          "tokens": ["city"],
+          "localization_notes": "Use this on free inspection pages and city pages with booking CTAs."
+        },
+        {
+          "id": "inspection-included",
+          "intent": "process",
+          "question_template": "What is included in a roof inspection in {city}?",
+          "answer_template": "SMI checks shingles or roof membrane, flashing, penetrations, vents, gutters, storm clues, leak paths, and visible decking or attic signs when accessible. The inspection in {city} should end with photos and clear next steps.",
+          "tokens": ["city"],
+          "localization_notes": "For commercial pages, swap in drains, rooftop units, seams, and low-slope details."
+        },
+        {
+          "id": "inspection-frequency",
+          "intent": "maintenance",
+          "question_template": "How often should I inspect my roof in {city}?",
+          "answer_template": "Most roofs in {city} should be checked at least once a year and after major {weather_context}. Older roofs, tree-covered properties, commercial roofs, and homes with past leaks may need more frequent inspections.",
+          "tokens": ["city", "weather_context"],
+          "localization_notes": "Use local weather carefully."
+        },
+        {
+          "id": "inspection-home",
+          "intent": "logistics",
+          "question_template": "Do I need to be home for a roof inspection in {city}?",
+          "answer_template": "Being home helps SMI walk you through photos and interior leak clues, but many exterior inspections in {city} can start while you are away if access is clear and the follow-up conversation is scheduled.",
+          "tokens": ["city"],
+          "localization_notes": "Do not promise access if gated communities, pets, or commercial tenants may complicate entry."
+        },
+        {
+          "id": "inspection-report",
+          "intent": "trust",
+          "question_template": "Will I get photos after my {city} roof inspection?",
+          "answer_template": "Yes. SMI uses photos to explain roof condition, storm indicators, repair needs, replacement options, and any areas that should be monitored. That makes the recommendation clearer for {city} homeowners and property managers.",
+          "tokens": ["city"],
+          "localization_notes": "Add a claim or real estate note if the page targets that situation."
+        }
+      ]
+    },
+    {
+      "id": "insurance-claims",
+      "service": "Insurance Claim Assistance",
+      "recommended_page_types": ["service_hub", "city_service", "carrier_page", "storm_event"],
+      "drafts": [
+        {
+          "id": "claim-help",
+          "intent": "process",
+          "question_template": "Does SMI help with roof insurance claims in {city}?",
+          "answer_template": "Yes. SMI can inspect the {city} roof, photograph visible storm damage, prepare a roofing scope, meet the adjuster when requested, and explain repair or replacement items. The carrier and policy decide coverage.",
+          "tokens": ["city"],
+          "localization_notes": "Keep the public-adjuster boundary intact."
+        },
+        {
+          "id": "claim-adjuster",
+          "intent": "trust",
+          "question_template": "Can SMI meet the insurance adjuster at my {city} property?",
+          "answer_template": "Yes, when the homeowner asks us to be there. SMI can point out roof conditions, storm indicators, photos, repair details, and missing scope items from a roofing perspective at the {city} property.",
+          "tokens": ["city"],
+          "localization_notes": "Do not imply SMI represents the carrier or policyholder legally."
+        },
+        {
+          "id": "claim-denied-underpaid",
+          "intent": "objection",
+          "question_template": "Can SMI help if my {city} roof claim is denied or underpaid?",
+          "answer_template": "SMI can review the roof photos and roofing scope, document visible conditions, and explain missing or unclear roofing items. For {city} claims, coverage decisions, policy interpretation, and disputes stay with the carrier, homeowner, adjuster, or other licensed professionals.",
+          "tokens": ["city"],
+          "localization_notes": "Avoid legal advice or coverage promises."
+        },
+        {
+          "id": "claim-deductible",
+          "intent": "cost",
+          "question_template": "Do I have to pay my deductible on a roof insurance claim in {city}?",
+          "answer_template": "Most policies require the homeowner to pay the deductible and any non-covered upgrades or exclusions. SMI can explain the roofing scope for a {city} project, but deductible, depreciation, and payment rules come from the policy and carrier.",
+          "tokens": ["city"],
+          "localization_notes": "Do not discuss deductible waiving as an option."
+        },
+        {
+          "id": "claim-supplement",
+          "intent": "process",
+          "question_template": "What is a roof claim supplement?",
+          "answer_template": "A supplement is a request to add legitimate roofing items that were missed or changed after inspection, such as decking, flashing, ventilation, code items, or material differences. SMI supports supplements with photos and scope notes when the {city} roof conditions justify them.",
+          "tokens": ["city"],
+          "localization_notes": "Use claim supplement wording only on insurance-related pages."
+        }
+      ]
+    },
+    {
+      "id": "metal-roofs",
+      "service": "Metal Roofing",
+      "recommended_page_types": ["service_hub", "city_service", "comparison"],
+      "drafts": [
+        {
+          "id": "metal-worth-it",
+          "intent": "decision",
+          "question_template": "Is a metal roof worth it in {city}?",
+          "answer_template": "A metal roof can be worth it in {city} when the homeowner wants longer service life, strong weather resistance, lower maintenance, or a specific look. The decision depends on budget, roof design, noise expectations, HOA rules, and {weather_context}.",
+          "tokens": ["city", "weather_context"],
+          "localization_notes": "Add local HOA or heat context only when accurate."
+        },
+        {
+          "id": "metal-vs-shingle",
+          "intent": "comparison",
+          "question_template": "Is metal roofing better than shingles for {city} homes?",
+          "answer_template": "Metal can last longer and handle certain weather conditions well, while architectural shingles usually cost less upfront and are easier to match for repairs. For {city} homes, SMI compares roof design, budget, warranty goals, and local exposure before recommending either system.",
+          "tokens": ["city"],
+          "localization_notes": "Link to comparison page when available."
+        },
+        {
+          "id": "metal-noise",
+          "intent": "objection",
+          "question_template": "Are metal roofs loud during rain in {city}?",
+          "answer_template": "A properly installed residential metal roof over solid decking, underlayment, and attic insulation is usually much quieter than people expect. SMI reviews the roof assembly on {city} homes so noise, ventilation, and fastening details are handled correctly.",
+          "tokens": ["city"],
+          "localization_notes": "Avoid overstating soundproofing."
+        },
+        {
+          "id": "metal-hail",
+          "intent": "storm",
+          "question_template": "Can hail damage a metal roof in {city}?",
+          "answer_template": "Severe hail can dent or damage any roof system, including metal. In {city}, SMI looks at panel type, gauge, coating, fasteners, seams, and insurance documentation before recommending repair, replacement, or monitoring.",
+          "tokens": ["city"],
+          "localization_notes": "Mention cosmetic vs functional damage only when the page explains it."
+        },
+        {
+          "id": "metal-panel-choice",
+          "intent": "materials",
+          "question_template": "What is the difference between standing seam and exposed-fastener metal roofing?",
+          "answer_template": "Standing seam hides fasteners and is usually the premium long-life option. Exposed-fastener panels can cost less upfront but require more attention to screws, washers, and penetrations over time. SMI helps {city} owners choose the system that fits the roof and budget.",
+          "tokens": ["city"],
+          "localization_notes": "Use for metal hub, city-service pages, and comparison guides."
+        }
+      ]
+    },
+    {
+      "id": "commercial-roofing",
+      "service": "Commercial Roofing",
+      "recommended_page_types": ["commercial_hub", "commercial_city", "commercial_service"],
+      "drafts": [
+        {
+          "id": "commercial-system-choice",
+          "intent": "materials",
+          "question_template": "Which commercial roof system is best for my {city} building?",
+          "answer_template": "The right commercial roof system in {city} depends on slope, drainage, insulation, deck condition, foot traffic, rooftop units, budget, and warranty goals. SMI may compare TPO, standing seam metal, EPDM, modified bitumen, metal panels, or coatings after inspecting the building.",
+          "tokens": ["city"],
+          "localization_notes": "Mention the local building type, such as school, warehouse, retail, medical, or industrial."
+        },
+        {
+          "id": "commercial-inspection-frequency",
+          "intent": "maintenance",
+          "question_template": "How often should a commercial roof in {city} be inspected?",
+          "answer_template": "Most commercial roofs in {city} should be inspected at least twice a year and after major {weather_context}. SMI checks seams, flashing, drains, penetrations, rooftop units, ponding water, and interior leak clues.",
+          "tokens": ["city", "weather_context"],
+          "localization_notes": "Use twice-a-year language for commercial pages, not all residential pages."
+        },
+        {
+          "id": "commercial-maintenance-plan",
+          "intent": "maintenance",
+          "question_template": "Can SMI build a maintenance plan for {city} commercial buildings?",
+          "answer_template": "Yes. SMI can build a maintenance plan for {city} {property_type} roofs that includes documented inspections, minor repairs, sealant checks, drain clearing, priority leak response, and budget planning for repair, coating, or replacement.",
+          "tokens": ["city", "property_type"],
+          "localization_notes": "Pick one or two real property types from the page instead of listing every type."
+        },
+        {
+          "id": "commercial-leak-response",
+          "intent": "urgent",
+          "question_template": "Does SMI handle commercial roof leaks in {city}?",
+          "answer_template": "Yes. SMI can inspect commercial leaks in {city}, look for seam, flashing, penetration, drainage, rooftop-unit, and membrane issues, then recommend temporary protection, repair, coating, or replacement based on the roof condition.",
+          "tokens": ["city"],
+          "localization_notes": "Add local response-time claims only when the page already supports them."
+        },
+        {
+          "id": "commercial-coating-vs-replacement",
+          "intent": "decision",
+          "question_template": "Can a coating extend the life of my {city} commercial roof?",
+          "answer_template": "A coating may extend roof life when the existing commercial roof in {city} is dry, structurally sound, and eligible for restoration. Wet insulation, failed seams, trapped moisture, or deck issues can make repair or replacement the better choice.",
+          "tokens": ["city"],
+          "localization_notes": "Use on commercial, coating, and cost pages."
+        }
+      ]
+    },
+    {
+      "id": "cost-and-pricing",
+      "service": "Roofing Cost Guidance",
+      "recommended_page_types": ["cost_page", "service_hub", "city_service"],
+      "drafts": [
+        {
+          "id": "cost-why-varies",
+          "intent": "cost",
+          "question_template": "Why do roof prices vary so much in {city}?",
+          "answer_template": "Roof prices in {city} vary because size, pitch, material, layers, decking, ventilation, flashing, access, code items, labor, and {weather_context} can all change the scope. SMI inspects first so the estimate is based on the actual roof.",
+          "tokens": ["city", "weather_context"],
+          "localization_notes": "Use on cost pages and high-intent service pages."
+        },
+        {
+          "id": "cost-estimate-free",
+          "intent": "conversion",
+          "question_template": "Does SMI provide free roofing estimates in {city}?",
+          "answer_template": "Yes. SMI can inspect the roof in {city}, take photos, explain repair or replacement options, and provide a written estimate. Final pricing depends on the approved scope and materials.",
+          "tokens": ["city"],
+          "localization_notes": "Use the booking URL near the visible CTA."
+        },
+        {
+          "id": "cost-hidden-items",
+          "intent": "objection",
+          "question_template": "What roofing items can change the final price?",
+          "answer_template": "Decking replacement, ventilation upgrades, flashing, steep access, multiple layers, specialty materials, code items, and hidden moisture can change the final roof price. SMI explains these risks before work starts on a {city} roof.",
+          "tokens": ["city"],
+          "localization_notes": "Tie to the service and roof type."
+        },
+        {
+          "id": "cost-repair-vs-replacement",
+          "intent": "decision",
+          "question_template": "Is repair cheaper than replacement in {city}?",
+          "answer_template": "A targeted repair is usually cheaper upfront when the roof problem is isolated. Replacement may be the better investment when the {city} roof is older, repeatedly leaking, storm-damaged across multiple slopes, or near the end of its service life.",
+          "tokens": ["city"],
+          "localization_notes": "Use this where the page gives repair/replacement context."
+        },
+        {
+          "id": "cost-commercial",
+          "intent": "commercial_cost",
+          "question_template": "How much does commercial roofing cost in {city}?",
+          "answer_template": "Commercial roofing cost in {city} depends on roof size, system, insulation, deck condition, access, penetrations, tear-off, drainage, code items, and warranty length. SMI documents those items before writing the final scope.",
+          "tokens": ["city"],
+          "localization_notes": "Add supported per-square-foot ranges only on cost pages that already include them."
+        }
+      ]
+    },
+    {
+      "id": "city-hubs",
+      "service": "City Hub FAQ",
+      "recommended_page_types": ["city_hub", "service_area_hub"],
+      "drafts": [
+        {
+          "id": "city-service-confirmation",
+          "intent": "local",
+          "question_template": "Does SMI Roofing serve {city}, {state}?",
+          "answer_template": "Yes. SMI Roofing serves {city}, {state}, and nearby areas including {nearby_areas}. Services can include inspections, roof repair, residential roof replacement, storm damage documentation, metal roofing, and insurance claim support.",
+          "tokens": ["city", "state", "nearby_areas"],
+          "localization_notes": "Use exact nearby places that are true for the page."
+        },
+        {
+          "id": "city-local-difference",
+          "intent": "trust",
+          "question_template": "What makes SMI different for roofing in {city}?",
+          "answer_template": "SMI combines {local_proof} with photo documentation, clear recommendations, property protection, and local roof planning around {weather_context}. That gives {city} homeowners a practical next step instead of a generic sales pitch.",
+          "tokens": ["local_proof", "weather_context", "city"],
+          "localization_notes": "Use only proof points already supported on the site."
+        },
+        {
+          "id": "city-nearby",
+          "intent": "internal_linking",
+          "question_template": "What nearby areas does SMI serve around {city}?",
+          "answer_template": "SMI serves {city} and nearby areas such as {nearby_areas}. Link the answer to the closest city-service pages so users and crawlers can move naturally through the local roofing pages.",
+          "tokens": ["city", "nearby_areas"],
+          "localization_notes": "Replace the instruction sentence with actual links in HTML when publishing."
+        },
+        {
+          "id": "city-weather",
+          "intent": "local_relevance",
+          "question_template": "How does local weather affect roofs in {city}?",
+          "answer_template": "Roofs in {city} can be affected by {weather_context}. SMI uses those local conditions when checking shingles, flashing, ventilation, roof age, and storm damage before recommending repair or replacement.",
+          "tokens": ["city", "weather_context"],
+          "localization_notes": "Do not mention hail, HOA, humidity, or codes unless accurate for the page."
+        },
+        {
+          "id": "city-booking",
+          "intent": "conversion",
+          "question_template": "How do I schedule a roofing inspection in {city}?",
+          "answer_template": "Call SMI at {phone} or use the booking form at {booking_url}. For {city} roofs, SMI starts with an inspection, photos, and a clear written recommendation before work is approved.",
+          "tokens": ["phone", "booking_url", "city"],
+          "localization_notes": "Turn the phone and booking URL into visible links on the final page."
+        }
+      ]
+    }
+  ]
+}
