@@ -142,6 +142,7 @@ Format: `YYYY-MM-DD | Agent | File(s) | What changed`
 | 2026-04-17 | Claude | AGENTS.md + CLAUDE.md | Full site audit pass (P0-P2 #1-20): localized footer/legal/hero banner 58 city pages, Nearby + Related Blog on 32 residential, neighborhoods on top 10, Russellville expansion, sitemap dates, schema fixes, image compression, contact form microcopy |
 | 2026-04-21 | Claude | AGENTS.md + CLAUDE.md | Installed Meta (Facebook) Pixel ID 2124552908380703 in `<head>` of all 120 HTML files — fires PageView on every page sitewide |
 | 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Image loading audit: added loading="lazy" + intrinsic width/height to 2869 img tags across 558 HTML files; added fetchpriority="high" to LCP images; added scripts/update-image-attrs.mjs |
+| 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Schema SEO pass: added Service schema (serviceType, areaServed, hasOfferCatalog) to all 41 service-areas/ city pages; added hasOfferCatalog (7 services) to homepage Organization node; extended scripts/sync-service-schema.mjs to manage residential city pages; Service count 379→420; all validations pass |
 
 ---
 

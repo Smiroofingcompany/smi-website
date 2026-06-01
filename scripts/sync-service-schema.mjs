@@ -31,6 +31,15 @@ const COMMERCIAL_SERVICE_OFFERS = [
   ['Commercial Roof Repair', `${SITE_URL}/commercial-roofing/commercial-roof-repair/`],
 ];
 
+const RESIDENTIAL_SERVICE_OFFERS = [
+  ['Residential Roof Replacement', `${SITE_URL}/residential-roofing/`],
+  ['Roof Repair', `${SITE_URL}/roof-repair/`],
+  ['Storm Damage Roof Repair', `${SITE_URL}/storm-damage/`],
+  ['Free Roof Inspection', `${SITE_URL}/roof-inspections/`],
+  ['Insurance Claim Assistance', `${SITE_URL}/insurance-claims/`],
+  ['Metal Roofing Installation', `${SITE_URL}/metal-roofs/`],
+];
+
 const ENTITY_MAP = {
   amp: '&',
   apos: "'",
@@ -174,8 +183,16 @@ function isCommercialCityPage(canonicalPath) {
   return /^\/commercial-roofing\/[a-z0-9-]+-ar\/$/.test(canonicalPath);
 }
 
+function isResidentialCityPage(canonicalPath) {
+  return /^\/service-areas\/[a-z0-9-]+-ar\/$/.test(canonicalPath);
+}
+
+function residentialCityFromSlug(slug) {
+  return slug.replace(/-ar$/, '').split('-').map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(' ');
+}
+
 function isTargetWithoutExistingService(canonicalPath) {
-  return isCommercialHub(canonicalPath) || isCommercialCityPage(canonicalPath);
+  return isCommercialHub(canonicalPath) || isCommercialCityPage(canonicalPath) || isResidentialCityPage(canonicalPath);
 }
 
 function findDirectServiceScript(scripts) {
@@ -245,8 +262,22 @@ function offerForPage(canonical, existingService) {
 }
 
 function serviceNameForPage(html, canonicalPath, existingService) {
+  if (isResidentialCityPage(canonicalPath)) {
+    const city = residentialCityFromSlug(canonicalPath.split('/').filter(Boolean).at(-1));
+    return `Residential Roofing in ${city}, AR`;
+  }
+
   if (existingService?.name) {
     return existingService.name;
+  }
+
+  if (isCommercialHub(canonicalPath)) {
+    return 'Commercial Roofing in Arkansas';
+  }
+
+  if (isCommercialCityPage(canonicalPath)) {
+    const city = commercialCityFromSlug(canonicalPath.split('/').filter(Boolean).at(-1));
+    return `Commercial Roofing in ${city}, AR`;
   }
 
   const h1 = extractH1(html);
@@ -259,15 +290,6 @@ function serviceNameForPage(html, canonicalPath, existingService) {
     return title;
   }
 
-  if (isCommercialHub(canonicalPath)) {
-    return 'Commercial Roofing in Arkansas';
-  }
-
-  if (isCommercialCityPage(canonicalPath)) {
-    const city = commercialCityFromSlug(canonicalPath.split('/').filter(Boolean).at(-1));
-    return `Commercial Roofing in ${city}, AR`;
-  }
-
   return existingService?.serviceType || 'Roofing Service';
 }
 
@@ -278,6 +300,10 @@ function serviceTypeForPage(canonicalPath, existingService) {
 
   if (isCommercialHub(canonicalPath) || isCommercialCityPage(canonicalPath)) {
     return 'Commercial Roofing';
+  }
+
+  if (isResidentialCityPage(canonicalPath)) {
+    return 'Residential Roofing';
   }
 
   const segments = canonicalPath.split('/').filter(Boolean);
@@ -326,6 +352,14 @@ function commercialServiceCatalog(name, areaServed = null) {
   };
 }
 
+function residentialServiceCatalog(name, areaServed = null) {
+  return {
+    '@type': 'OfferCatalog',
+    name,
+    itemListElement: RESIDENTIAL_SERVICE_OFFERS.map(([serviceName, url]) => catalogOffer(serviceName, url, areaServed)),
+  };
+}
+
 function offerCatalogForPage(canonicalPath, serviceType, areaServed, servicePages) {
   const serviceSlug = topServiceSlug(canonicalPath);
   if (serviceSlug) {
@@ -341,6 +375,11 @@ function offerCatalogForPage(canonicalPath, serviceType, areaServed, servicePage
 
   if (isCommercialCityPage(canonicalPath)) {
     return commercialServiceCatalog(`${serviceType} local service catalog`, areaServed);
+  }
+
+  if (isResidentialCityPage(canonicalPath)) {
+    const city = residentialCityFromSlug(canonicalPath.split('/').filter(Boolean).at(-1));
+    return residentialServiceCatalog(`Residential roofing services in ${city}`, areaServed);
   }
 
   return null;
