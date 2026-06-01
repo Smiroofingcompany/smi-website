@@ -290,9 +290,10 @@ Format: `YYYY-MM-DD | Agent | File(s) | What changed`
 | 2026-04-07 | Claude | AGENTS.md + CLAUDE.md | Restructured: AGENTS.md is now source of truth, CLAUDE.md imports via @AGENTS.md |
 | 2026-04-17 | Claude | AGENTS.md + CLAUDE.md | Full site audit pass: localized footer/legal/hero banner on all 58 city pages, Nearby + Related Blog blocks on 32 residential pages, neighborhoods on top 10 cities, Russellville home-base content + FAQ schema expansion, sitemap lastmod regen, schema containedInPlace normalization, image compression ~35%, contact form microcopy |
 | 2026-04-21 | Claude | AGENTS.md + CLAUDE.md | Installed Meta (Facebook) Pixel ID 2124552908380703 in `<head>` of all 120 HTML files — fires PageView on every page sitewide |
+| 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Image loading audit: added loading="lazy" + intrinsic width/height to 2869 img tags across 558 HTML files; added fetchpriority="high" to LCP images (hero-poster.jpg, smi-luxury-roof-finished.jpg); added scripts/update-image-attrs.mjs |
 
 ---
 
 ## LAST UPDATED
 
-April 21, 2026 — Claude
+June 1, 2026 — Claude
