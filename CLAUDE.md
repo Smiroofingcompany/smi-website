@@ -145,12 +145,13 @@ Format: `YYYY-MM-DD | Agent | File(s) | What changed`
 | 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Schema SEO pass: added Service schema (serviceType, areaServed, hasOfferCatalog) to all 41 service-areas/ city pages; added hasOfferCatalog (7 services) to homepage Organization node; extended scripts/sync-service-schema.mjs to manage residential city pages; Service count 379→420; all validations pass |
 | 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Conversion CTA pass: strengthened final CTA copy on homepage, storm-damage, insurance-claims, metal-roofs, commercial-roofing; updated mobile sticky bar labels from "Call/Form" → "Call Now/Free Inspection" across all 561 pages sitewide |
 | 2026-06-01 | Claude | vercel.json + AGENTS.md + CLAUDE.md | Cache-header fix: clean-URL HTML pages (`/` and `/:path*/`) now send `no-cache, no-store, must-revalidate` + `Pragma: no-cache`. Prior rule only matched `/(.*).html`, so clean canonical URLs were edge/proxy-cached and could replay stale CTA HTML to public fetchers (this was the cause of the "old CTA still showing" reports). Diagnosed via public no-query curl + independent WebFetch; public output confirmed byte-identical to repo, alias confirmed on newest commit. |
+| 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Internal link audit + strengthening pass: 18 contextual body links added across 7 files. /roof-inspections/ gained 4 inbound links (homepage, storm-damage, roof-repair, blog cost post); /metal-roofs/ gained 3; /residential-roofing/ gained 2; /storm-damage/ and /insurance-claims/ gained links from roof-repair FAQ; /commercial-roofing/tpo-roofing/ and /commercial-roofing/commercial-roof-repair/ each gained 2-3 inbound links from commercial blog posts. |
 
 ---
 
 ## LAST UPDATED
 
-June 1, 2026 (session 3) — Claude
+June 1, 2026 (session 4) — Claude
 
 ---
 
