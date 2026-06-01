@@ -144,12 +144,13 @@ Format: `YYYY-MM-DD | Agent | File(s) | What changed`
 | 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Image loading audit: added loading="lazy" + intrinsic width/height to 2869 img tags across 558 HTML files; added fetchpriority="high" to LCP images; added scripts/update-image-attrs.mjs |
 | 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Schema SEO pass: added Service schema (serviceType, areaServed, hasOfferCatalog) to all 41 service-areas/ city pages; added hasOfferCatalog (7 services) to homepage Organization node; extended scripts/sync-service-schema.mjs to manage residential city pages; Service count 379→420; all validations pass |
 | 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Conversion CTA pass: strengthened final CTA copy on homepage, storm-damage, insurance-claims, metal-roofs, commercial-roofing; updated mobile sticky bar labels from "Call/Form" → "Call Now/Free Inspection" across all 561 pages sitewide |
+| 2026-06-01 | Claude | vercel.json + AGENTS.md + CLAUDE.md | Cache-header fix: clean-URL HTML pages (`/` and `/:path*/`) now send `no-cache, no-store, must-revalidate` + `Pragma: no-cache`. Prior rule only matched `/(.*).html`, so clean canonical URLs were edge/proxy-cached and could replay stale CTA HTML to public fetchers (this was the cause of the "old CTA still showing" reports). Diagnosed via public no-query curl + independent WebFetch; public output confirmed byte-identical to repo, alias confirmed on newest commit. |
 
 ---
 
 ## LAST UPDATED
 
-June 1, 2026 (session 2) — Claude
+June 1, 2026 (session 3) — Claude
 
 ---
 

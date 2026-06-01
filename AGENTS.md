@@ -293,9 +293,10 @@ Format: `YYYY-MM-DD | Agent | File(s) | What changed`
 | 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Image loading audit: added loading="lazy" + intrinsic width/height to 2869 img tags across 558 HTML files; added fetchpriority="high" to LCP images (hero-poster.jpg, smi-luxury-roof-finished.jpg); added scripts/update-image-attrs.mjs |
 | 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Schema SEO pass: added Service schema (serviceType, areaServed, hasOfferCatalog) to all 41 service-areas/ city pages; added hasOfferCatalog (7 services) to homepage Organization node; extended scripts/sync-service-schema.mjs to manage residential city pages; Service count 379→420; all validations pass |
 | 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Conversion CTA pass: strengthened final CTA copy on homepage, storm-damage, insurance-claims, metal-roofs, commercial-roofing; updated mobile sticky bar labels from "Call/Form" → "Call Now/Free Inspection" across all 561 pages sitewide |
+| 2026-06-01 | Claude | vercel.json + AGENTS.md + CLAUDE.md | Cache-header fix: clean-URL HTML pages (`/` and `/:path*/`) now send `Cache-Control: no-cache, no-store, must-revalidate` + `Pragma: no-cache`. The prior rule only matched `/(.*).html`, so clean canonical URLs fell through to Vercel's default `public, max-age=0` and were edge/proxy-cached — letting stale CTA HTML replay to public fetchers. Diagnosed via public no-query curl (5 fetch methods) + independent WebFetch; confirmed public == repo and alias on newest commit. |
 
 ---
 
 ## LAST UPDATED
 
-June 1, 2026 (session 2) — Claude
+June 1, 2026 (session 3) — Claude
