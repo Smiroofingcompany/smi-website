@@ -1,9 +1,9 @@
 {
-  "version": "2026-04-29",
+  "version": "2026-06-01",
   "status": "active_refresh_log",
   "purpose": "People Also Ask refresh record for SMI Roofing FAQ publishing batches. Update this file before publishing each city/service FAQ batch so page questions stay tied to live search demand.",
   "valid_for_days": 14,
-  "last_refreshed": "2026-04-29",
+  "last_refreshed": "2026-06-01",
   "refresh_rule": "Before publishing a new FAQ batch, pull current People Also Ask or related-question data for each city/service target, record the source queries and questions here, then localize selected questions into visible FAQs and run node scripts/sync-faq-schema.mjs --write.",
   "acceptable_sources": [
     "Google People Also Ask manual capture",
@@ -22,40 +22,54 @@
   ],
   "source_notes": [
     {
-      "id": "russellville-cost-refresh",
+      "id": "russellville-cost-refresh-2026-06-01",
       "source_type": "current_search_result",
       "url": "https://www.instantroofer.com/arkansas-roof-replacement-cost/russellville/",
       "used_for": ["roof replacement cost", "metal roof cost", "Russellville cost intent"],
-      "note": "Current 2026 Russellville roof replacement cost result used to confirm cost-focused FAQ demand."
+      "note": "Opened during the 2026-06-01 refresh. The page showed a May 26, 2026 update, Russellville replacement cost data, and FAQ questions about labor cost, weather, roof damage causes, timing, and storm-related claims."
     },
     {
-      "id": "arkansas-cost-refresh",
+      "id": "roof-repair-cost-refresh-2026-06-01",
       "source_type": "current_search_result",
-      "url": "https://roofobservations.com/arkansas-roof-cost-guide/",
-      "used_for": ["Arkansas roof cost", "commercial roof cost", "material cost comparisons"],
-      "note": "Current Arkansas cost guide result used to confirm statewide price and material FAQ demand."
+      "url": "https://bestroofingestimates.com/roof-repair/",
+      "used_for": ["roof leak repair cost", "repair versus replacement", "urgent leak inspection"],
+      "note": "Opened during the 2026-06-01 refresh. The 2026 repair guide confirmed active leak cost, repair escalation risk, and repair-versus-replacement question demand."
     },
     {
-      "id": "hail-repair-refresh",
+      "id": "metal-roof-comparison-refresh-2026-06-01",
       "source_type": "current_search_result",
-      "url": "https://modernize.com/roof/repair-cost/hail",
-      "used_for": ["hail damage repair cost", "storm repair inspection cost"],
-      "note": "Current hail repair cost result used to confirm storm-cost FAQ demand."
+      "url": "https://www.gulfcoastmetalroofguide.com/metal-vs-shingles/",
+      "used_for": ["metal roof worth it", "metal versus shingles", "standing seam versus exposed-fastener panels"],
+      "note": "Opened during the 2026-06-01 refresh. The 2026 comparison page confirmed questions around upfront cost, long-term value, standing seam, exposed fasteners, and metal roof lifespan."
     },
     {
-      "id": "arkansas-insurance-dept-storm-tips",
+      "id": "commercial-roof-inspection-refresh-2026-06-01",
+      "source_type": "current_search_result",
+      "url": "https://commercialroofguide.com/guides/roof-inspections/",
+      "used_for": ["commercial roof inspection frequency", "TPO and EPDM inspection", "commercial maintenance versus replacement"],
+      "note": "Opened during the 2026-06-01 refresh. The 2026 inspection guide confirmed biannual and post-storm inspection questions, TPO/EPDM focus, and maintenance ROI demand."
+    },
+    {
+      "id": "arkansas-insurance-dept-storm-tips-2026-06-01",
       "source_type": "official_reference",
       "url": "https://insurance.arkansas.gov/insurance-commissioner-provides-post-storm-tips-to-consumers/",
       "used_for": ["insurance claim timing", "trusted contractor guidance", "deductible threshold"],
-      "note": "Official Arkansas Insurance Department post-storm guidance used to keep claim FAQs careful and compliant."
+      "note": "Re-opened during the 2026-06-01 refresh. Official Arkansas Insurance Department guidance confirmed deductible threshold, photo documentation, contractor vetting, and deductible-waiver cautions."
+    },
+    {
+      "id": "roof-adjuster-meeting-refresh-2026-06-01",
+      "source_type": "current_search_result",
+      "url": "https://localroofinghelp.com/guides/insurance-adjuster-roof-meeting-checklist",
+      "used_for": ["adjuster meeting support", "claim documentation", "recoverable depreciation and supplements"],
+      "note": "Opened during the 2026-06-01 refresh. The page showed a May 13, 2026 review date and confirmed questions about roofer attendance, documentation, adjuster scope, depreciation release, and supplements."
     }
   ],
   "batches": [
     {
-      "id": "core-arkansas-roofing-faq-refresh-2026-04-29",
-      "refreshed_at": "2026-04-29",
+      "id": "core-arkansas-roofing-faq-refresh-2026-06-01",
+      "refreshed_at": "2026-06-01",
       "owner": "Codex",
-      "source_method": "Current search/PAA-style refresh using priority city and service queries. Exact PAA panels should be re-captured before the next publishing batch.",
+      "source_method": "Current web search/PAA-style refresh using priority city and service queries on 2026-06-01. Public search-result question sources were used under the accepted fallback when direct Google PAA panel capture was unavailable in the local environment. No visible FAQ content was published in this maintenance pass.",
       "markets": [
         "Russellville, AR",
         "Ozark, AR",
@@ -73,10 +87,12 @@
         "commercial-roofing"
       ],
       "source_queries": [
-        "roof repair Russellville AR people also ask roof repair cost insurance hail",
-        "roof replacement cost Russellville AR questions roof replacement cost Arkansas",
-        "storm damage roof repair Arkansas insurance claim questions",
-        "commercial roofing Russellville AR TPO roof repair questions"
+        "roof replacement cost Russellville AR questions roof replacement Arkansas 2026",
+        "roof repair Russellville AR leaking roof repair cost insurance hail questions",
+        "storm damage roof repair Arkansas insurance claim hail roof questions",
+        "commercial roofing Russellville AR TPO roof repair inspection questions",
+        "metal roof Arkansas questions worth it hail noise standing seam exposed fastener 2026",
+        "roof insurance claim Arkansas questions adjuster recoverable depreciation supplement deductible storm damage"
       ],
       "question_sets": [
         {
@@ -84,10 +100,10 @@
           "service": "residential-roofing",
           "paa_questions": [
             "How much does a roof replacement cost in {city}, {state}?",
-            "What affects the price of a new roof in {city}?",
-            "Is it cheaper to repair or replace a roof in {city}?",
-            "How long should an asphalt shingle roof last in Arkansas?",
-            "Does a metal roof cost more than shingles in {city}?"
+            "What factors change a roof replacement price in {city}?",
+            "Should I repair or replace an older roof in {city}?",
+            "How does Arkansas weather affect roof lifespan?",
+            "Is a metal roof more expensive than shingles in {city}?"
           ],
           "recommended_library_ids": [
             "residential-roofing/residential-cost",
@@ -102,10 +118,11 @@
           "service": "roof-repair",
           "paa_questions": [
             "What should I do if my roof is leaking in {city}?",
-            "How much does roof repair cost in {city}?",
+            "How much does roof leak repair cost in {city}?",
             "Can a leaking roof be repaired instead of replaced?",
-            "How do I know if missing shingles caused a leak?",
-            "Will insurance pay for roof repair after wind or hail?"
+            "When does a roof repair turn into replacement?",
+            "Will insurance pay for roof repair after wind or hail?",
+            "How soon should a small roof leak be inspected?"
           ],
           "recommended_library_ids": [
             "roof-repair/repair-active-leak",
@@ -121,9 +138,10 @@
           "paa_questions": [
             "Should I have my roof inspected after hail in {city}?",
             "What does hail damage look like on shingles?",
-            "Should I call insurance or a roofer first after storm damage?",
-            "How long do I have to file a roof damage claim in Arkansas?",
-            "What if my roof damage is below my deductible?"
+            "Should I call insurance or a roofer first after storm damage in Arkansas?",
+            "What roof damage should I document before filing a claim?",
+            "What if my roof damage is below my deductible?",
+            "How long do I have to complete replacement-cost roof repairs after a covered loss?"
           ],
           "recommended_library_ids": [
             "storm-damage/storm-inspection-timing",
@@ -138,6 +156,7 @@
           "service": "insurance-claims",
           "paa_questions": [
             "Can a roofer meet the insurance adjuster at my {city} home?",
+            "What documents should I have ready for a roof adjuster meeting?",
             "What is recoverable depreciation on a roof claim?",
             "Can SMI help if my roof claim is underpaid?",
             "What is a supplement on a roof insurance claim?",
@@ -156,10 +175,10 @@
           "service": "metal-roofs",
           "paa_questions": [
             "Is a metal roof worth it in {city}?",
-            "Is metal roofing better than shingles in Arkansas?",
+            "Is standing seam metal better than exposed-fastener metal roofing?",
+            "Does a metal roof cost more than shingles in Arkansas?",
             "Can hail damage a metal roof?",
-            "Are metal roofs loud when it rains?",
-            "What is the difference between standing seam and exposed-fastener metal roofing?"
+            "Are metal roofs loud when it rains?"
           ],
           "recommended_library_ids": [
             "metal-roofs/metal-worth-it",
@@ -174,10 +193,11 @@
           "id": "commercial-roofing",
           "service": "commercial-roofing",
           "paa_questions": [
-            "Which commercial roof system is best for my {city} building?",
             "How often should a commercial roof be inspected?",
+            "Should a commercial roof be inspected after severe weather?",
+            "Can regular commercial roof maintenance delay replacement?",
+            "Which commercial roof system is best for my {city} building?",
             "Can a roof coating cost less than replacement?",
-            "Does SMI handle emergency commercial roof leaks in {city}?",
             "How much does commercial roofing cost in Arkansas?"
           ],
           "recommended_library_ids": [
