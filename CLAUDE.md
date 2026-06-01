@@ -143,12 +143,13 @@ Format: `YYYY-MM-DD | Agent | File(s) | What changed`
 | 2026-04-21 | Claude | AGENTS.md + CLAUDE.md | Installed Meta (Facebook) Pixel ID 2124552908380703 in `<head>` of all 120 HTML files — fires PageView on every page sitewide |
 | 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Image loading audit: added loading="lazy" + intrinsic width/height to 2869 img tags across 558 HTML files; added fetchpriority="high" to LCP images; added scripts/update-image-attrs.mjs |
 | 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Schema SEO pass: added Service schema (serviceType, areaServed, hasOfferCatalog) to all 41 service-areas/ city pages; added hasOfferCatalog (7 services) to homepage Organization node; extended scripts/sync-service-schema.mjs to manage residential city pages; Service count 379→420; all validations pass |
+| 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Conversion CTA pass: strengthened final CTA copy on homepage, storm-damage, insurance-claims, metal-roofs, commercial-roofing; updated mobile sticky bar labels from "Call/Form" → "Call Now/Free Inspection" across all 561 pages sitewide |
 
 ---
 
 ## LAST UPDATED
 
-June 1, 2026 — Claude
+June 1, 2026 (session 2) — Claude
 
 ---
 
