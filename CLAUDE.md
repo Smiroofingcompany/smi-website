@@ -94,7 +94,7 @@ Fix these when they come up. Do not wait for a separate session.
 
 Do not start without explicit instruction from Cory.
 
-- 9th commercial service page: commercial roof inspections / preventive maintenance
+- 9th commercial service page: commercial roof inspections / preventive maintenance (a preventive-maintenance BLOG post now exists at /blog/commercial-roof-maintenance-arkansas/ as of session 7; the standalone commercial service PAGE is still to be built)
 - GBP post content calendar: 4 weeks of draft posts
 - Blog expansion: additional local market posts for NW Arkansas cities
 - Replace placeholder /assets/ photos with real SMI Cam project photos from the CRM
@@ -150,12 +150,13 @@ Format: `YYYY-MM-DD | Agent | File(s) | What changed`
 | 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Internal link audit + strengthening pass: 18 contextual body links added across 7 files. /roof-inspections/ gained 4 inbound links (homepage, storm-damage, roof-repair, blog cost post); /metal-roofs/ gained 3; /residential-roofing/ gained 2; /storm-damage/ and /insurance-claims/ gained links from roof-repair FAQ; /commercial-roofing/tpo-roofing/ and /commercial-roofing/commercial-roof-repair/ each gained 2-3 inbound links from commercial blog posts. |
 | 2026-06-03 | Claude | 15 HTML files + AGENTS.md + CLAUDE.md | Contextual internal-link pass #2: fixed 9 broken blog sidebar links (`/blog/file-roofing-insurance-claim/` → `…-arkansas/`, missing suffix); added 13 contextual body links across 8 pages (homepage, roof-replacement-cost-2026 blog, signs-you-need-new-roof, how-long-does-roof-last, hail-storm-roof-damage, emergency-roof-tarping, TPO, commercial-roof-repair). Targeted the two under-linked money pages: /roof-repair/ contextual inbound 89→93 (homepage + cost blog + signs + tarping), /roof-inspections/ 56→59; plus /metal-roofs/ +1, /residential-roofing/ +1, reciprocal blog↔commercial links, /commercial-roofing-cost/ fed from both commercial money pages. Varied anchors, no footer dumps. Site-wide: 0 broken internal links; predeploy/FAQ/PAA/breadcrumb/blogposting validations all pass. |
 | 2026-06-03 | Claude | 30 city pages + sitemap.xml + AGENTS.md + CLAUDE.md | Local city-content pass #1 (15 priority cities): audit found the residential coverage section carried the SAME meta-boilerplate ("The map stays near the bottom as coverage proof…") on all 41 pages and zero neighborhood content sitewide, plus a promise weather sentence templated into only 3 regional variants (7 River Valley cities shared one verbatim). Rewrote the coverage block on the 15 priority residential pages with real local content — county, geography/landmarks, real neighborhoods, nearby towns, local roof/storm concerns, service fit + contextual links to /roof-repair/, /residential-roofing/, /storm-damage/, /insurance-claims/; made each promise weather sentence city-specific (3→15 unique). Added bidirectional residential↔commercial city cross-links for all 15 (none existed). Commercial pages were already richly localized (real employers, all requested building types) so they were left as-is apart from the new residential cross-link in the closing CTA. Bumped sitemap lastmod on the 45 affected entries. Codemod via /tmp scripts (not committed); A2P + nav + JSON-LD untouched. |
+| 2026-06-03 | Claude | 6 new + 3 existing blog posts + blog/index.html + sitemap.xml + scripts/validate-schema-release.mjs + AGENTS.md + CLAUDE.md | High-intent AEO blog expansion (priority topics audit). Created 6 posts: roof-repair-vs-replacement-arkansas (residential repair-vs-replace — commercial version already existed), how-long-does-roof-replacement-take-arkansas (timeline, distinct from what-happens-during process post), what-does-a-roof-inspection-include (general checklist vs storm-season post), what-roof-damage-insurance-covers-arkansas (coverage matrix vs denial/filing posts), commercial-flat-roof-repair-arkansas (leak response — fills gap, matches /commercial-roofing/commercial-roof-repair/ service page), commercial-roof-maintenance-arkansas (preventive program — clear gap). Each: Quick-Answer lead (≤40 words), question H2s, FAQ accordion→FAQPage schema, BlogPosting/BreadcrumbList/RoofingContractor JSON-LD, service-page links, CTA. Improved 3 covered topics: Quick Answer added to hail-storm-roof-damage + emergency-roof-tarping; service links added to metal-roof-vs-shingles; dateModified + sitemap lastmod bumped on all 3. Did NOT duplicate already-covered topics (metal-vs-shingles, what-happens-during). Index cards + 6 sitemap URLs added; BlogPosting floor 38→44. predeploy/faq-library/paa-refresh pass; 0 broken links. |
 
 ---
 
 ## LAST UPDATED
 
-June 3, 2026 (session 6) — Claude
+June 3, 2026 (session 7) — Claude
 
 ---
 
