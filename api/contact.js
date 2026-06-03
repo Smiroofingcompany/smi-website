@@ -120,7 +120,7 @@ async function sendInternalEmail({ name, phone, email, service, message, page })
   const SMTP_HOST = process.env.SMTP_HOST;
   const SMTP_USER = process.env.SMTP_USER;
   const SMTP_PASS = process.env.SMTP_PASS;
-  const LEAD_NOTIFY_TO = process.env.LEAD_NOTIFY_TO || 'dmcorysmith@gmaill.com';
+  const LEAD_NOTIFY_TO = process.env.LEAD_NOTIFY_TO || 'dmcorysmith@gmail.com';
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
     console.warn('SMTP env vars not set — skipping internal email');
     return;

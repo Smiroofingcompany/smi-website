@@ -157,7 +157,7 @@
       + '      <div class="iqw-actions"><button class="iqw-back" type="button">Back</button><button class="iqw-next" type="button">Next</button></div>'
       + '      <p class="iqw-note">No pressure. SMI reviews the request and follows up with the right next step.</p>'
       + '    </form>'
-      + '    <div class="iqw-success"><b>Request sent.</b><p>SMI will review the roof details and follow up. If this is urgent, call now.</p><a class="iqw-call" href="' + PHONE_TEL + '">Call ' + PHONE_DISPLAY + '</a></div>'
+      + '    <div class="iqw-success"><b>Request sent.</b><p>SMI will review your request and call you with a clear next step. For urgent leaks, call now.</p><a class="iqw-call" href="' + PHONE_TEL + '">Call ' + PHONE_DISPLAY + '</a></div>'
       + '  </div>'
       + '  <button class="iqw-launcher" type="button" aria-expanded="false">'
       + '    <span class="iqw-mark">3</span><span class="iqw-launcher-copy"><span>Tap for roof help</span><strong>Start form</strong></span>'
