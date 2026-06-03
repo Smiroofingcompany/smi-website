@@ -295,9 +295,10 @@ Format: `YYYY-MM-DD | Agent | File(s) | What changed`
 | 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Conversion CTA pass: strengthened final CTA copy on homepage, storm-damage, insurance-claims, metal-roofs, commercial-roofing; updated mobile sticky bar labels from "Call/Form" → "Call Now/Free Inspection" across all 561 pages sitewide |
 | 2026-06-01 | Claude | vercel.json + AGENTS.md + CLAUDE.md | Cache-header fix: clean-URL HTML pages (`/` and `/:path*/`) now send `Cache-Control: no-cache, no-store, must-revalidate` + `Pragma: no-cache`. The prior rule only matched `/(.*).html`, so clean canonical URLs fell through to Vercel's default `public, max-age=0` and were edge/proxy-cached — letting stale CTA HTML replay to public fetchers. Diagnosed via public no-query curl (5 fetch methods) + independent WebFetch; confirmed public == repo and alias on newest commit. |
 | 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Internal link audit + strengthening pass: added 18 contextual body links across 7 files. /roof-inspections/ gained 4 inbound links, /metal-roofs/ gained 3, /residential-roofing/ gained 2, /storm-damage/ and /insurance-claims/ gained links from roof-repair page, /commercial-roofing/tpo-roofing/ and /commercial-roofing/commercial-roof-repair/ each gained 2-3 inbound links from commercial blog posts. All links contextual — no footer dumps. |
+| 2026-06-03 | Claude | 15 HTML files + AGENTS.md + CLAUDE.md | Contextual internal-link pass #2: fixed 9 broken blog sidebar links (`/blog/file-roofing-insurance-claim/` → `…-arkansas/`); added 13 contextual body links across 8 pages (homepage, roof-replacement-cost-2026 blog, signs-you-need-new-roof, how-long-does-roof-last, hail-storm-roof-damage, emergency-roof-tarping, TPO, commercial-roof-repair). /roof-repair/ contextual inbound 89→93, /roof-inspections/ 56→59, /metal-roofs/ +1, /residential-roofing/ +1; added reciprocal blog↔commercial links and /commercial-roofing-cost/ links from the two commercial money pages. Varied anchors, no footer dumps. Whole-site audit: 0 broken internal links; all schema/FAQ/PAA validations pass. |
 
 ---
 
 ## LAST UPDATED
 
-June 1, 2026 (session 4) — Claude
+June 3, 2026 (session 5) — Claude

@@ -102,6 +102,7 @@ Do not start without explicit instruction from Cory.
 - Fix Google Business Profile service-area settings so prospects searching "SMI Roofing [city]" from door-knock towns see local presence, not just Russellville HQ
 - Submit updated sitemap.xml to Google Search Console and request indexing on top 10 city pages
 - Consider extracting shared inline CSS into /assets/site.css — would cut repeat page weight ~30% but breaks the "no build step" model; confirm with Cory before doing
+- Footer consistency (found 2026-06-03): blog, cost, and comparison pages (~70 files) use a footer "Residential" column that omits "Repairs & Inspections" (`/roof-repair/`), which the money- and city-page footers include. Adding it would give `/roof-repair/` ~70 more sitewide inbound links and make footers uniform. Left undone this session because it touches many files and the task scope was contextual links only — confirm with Cory before doing, and keep it to the single existing link (not a new link block).
 
 ---
 
@@ -146,12 +147,13 @@ Format: `YYYY-MM-DD | Agent | File(s) | What changed`
 | 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Conversion CTA pass: strengthened final CTA copy on homepage, storm-damage, insurance-claims, metal-roofs, commercial-roofing; updated mobile sticky bar labels from "Call/Form" → "Call Now/Free Inspection" across all 561 pages sitewide |
 | 2026-06-01 | Claude | vercel.json + AGENTS.md + CLAUDE.md | Cache-header fix: clean-URL HTML pages (`/` and `/:path*/`) now send `no-cache, no-store, must-revalidate` + `Pragma: no-cache`. Prior rule only matched `/(.*).html`, so clean canonical URLs were edge/proxy-cached and could replay stale CTA HTML to public fetchers (this was the cause of the "old CTA still showing" reports). Diagnosed via public no-query curl + independent WebFetch; public output confirmed byte-identical to repo, alias confirmed on newest commit. |
 | 2026-06-01 | Claude | AGENTS.md + CLAUDE.md | Internal link audit + strengthening pass: 18 contextual body links added across 7 files. /roof-inspections/ gained 4 inbound links (homepage, storm-damage, roof-repair, blog cost post); /metal-roofs/ gained 3; /residential-roofing/ gained 2; /storm-damage/ and /insurance-claims/ gained links from roof-repair FAQ; /commercial-roofing/tpo-roofing/ and /commercial-roofing/commercial-roof-repair/ each gained 2-3 inbound links from commercial blog posts. |
+| 2026-06-03 | Claude | 15 HTML files + AGENTS.md + CLAUDE.md | Contextual internal-link pass #2: fixed 9 broken blog sidebar links (`/blog/file-roofing-insurance-claim/` → `…-arkansas/`, missing suffix); added 13 contextual body links across 8 pages (homepage, roof-replacement-cost-2026 blog, signs-you-need-new-roof, how-long-does-roof-last, hail-storm-roof-damage, emergency-roof-tarping, TPO, commercial-roof-repair). Targeted the two under-linked money pages: /roof-repair/ contextual inbound 89→93 (homepage + cost blog + signs + tarping), /roof-inspections/ 56→59; plus /metal-roofs/ +1, /residential-roofing/ +1, reciprocal blog↔commercial links, /commercial-roofing-cost/ fed from both commercial money pages. Varied anchors, no footer dumps. Site-wide: 0 broken internal links; predeploy/FAQ/PAA/breadcrumb/blogposting validations all pass. |
 
 ---
 
 ## LAST UPDATED
 
-June 1, 2026 (session 4) — Claude
+June 3, 2026 (session 5) — Claude
 
 ---
 
