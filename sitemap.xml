@@ -835,8 +835,44 @@
   <!-- Blog Posts -->
   <url>
     <loc>https://smiroof.com/blog/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smiroof.com/blog/roof-repair-vs-replacement-arkansas/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smiroof.com/blog/how-long-does-roof-replacement-take-arkansas/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smiroof.com/blog/what-does-a-roof-inspection-include/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smiroof.com/blog/what-roof-damage-insurance-covers-arkansas/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smiroof.com/blog/commercial-flat-roof-repair-arkansas/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smiroof.com/blog/commercial-roof-maintenance-arkansas/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
@@ -847,7 +883,7 @@
   </url>
   <url>
     <loc>https://smiroof.com/blog/metal-roof-vs-shingles-arkansas/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -919,7 +955,7 @@
   </url>
   <url>
     <loc>https://smiroof.com/blog/emergency-roof-tarping-arkansas/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -949,7 +985,7 @@
   </url>
   <url>
     <loc>https://smiroof.com/blog/hail-storm-roof-damage-arkansas/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

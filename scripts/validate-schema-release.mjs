@@ -98,7 +98,7 @@ function ensureReleaseCoverage(counts) {
     ['FAQPage', 1],
     ['BreadcrumbList', 1],
     ['Service', 1],
-    ['BlogPosting', 38],
+    ['BlogPosting', 44],
     ['Organization', 1],
     ['WebSite', 1],
   ]);
