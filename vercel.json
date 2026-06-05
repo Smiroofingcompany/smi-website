@@ -5,6 +5,416 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/alma",
+      "destination": "/service-areas/alma-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/alma/:path*",
+      "destination": "/service-areas/alma-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/arkadelphia",
+      "destination": "/service-areas/arkadelphia-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/arkadelphia/:path*",
+      "destination": "/service-areas/arkadelphia-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/atkins",
+      "destination": "/service-areas/atkins-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/atkins/:path*",
+      "destination": "/service-areas/atkins-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/beebe",
+      "destination": "/service-areas/beebe-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/beebe/:path*",
+      "destination": "/service-areas/beebe-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/benton",
+      "destination": "/service-areas/benton-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/benton/:path*",
+      "destination": "/service-areas/benton-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bentonville",
+      "destination": "/service-areas/bentonville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bentonville/:path*",
+      "destination": "/service-areas/bentonville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/booneville",
+      "destination": "/service-areas/booneville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/booneville/:path*",
+      "destination": "/service-areas/booneville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bryant",
+      "destination": "/service-areas/bryant-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bryant/:path*",
+      "destination": "/service-areas/bryant-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cabot",
+      "destination": "/service-areas/cabot-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cabot/:path*",
+      "destination": "/service-areas/cabot-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/clarksville",
+      "destination": "/service-areas/clarksville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/clarksville/:path*",
+      "destination": "/service-areas/clarksville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/conway",
+      "destination": "/service-areas/conway-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/conway/:path*",
+      "destination": "/service-areas/conway-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dardanelle",
+      "destination": "/service-areas/dardanelle-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dardanelle/:path*",
+      "destination": "/service-areas/dardanelle-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dover",
+      "destination": "/service-areas/dover-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dover/:path*",
+      "destination": "/service-areas/dover-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/el-dorado",
+      "destination": "/service-areas/el-dorado-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/el-dorado/:path*",
+      "destination": "/service-areas/el-dorado-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fayetteville",
+      "destination": "/service-areas/fayetteville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fayetteville/:path*",
+      "destination": "/service-areas/fayetteville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fort-smith",
+      "destination": "/service-areas/fort-smith-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fort-smith/:path*",
+      "destination": "/service-areas/fort-smith-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/glenwood",
+      "destination": "/service-areas/glenwood-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/glenwood/:path*",
+      "destination": "/service-areas/glenwood-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/greenbrier",
+      "destination": "/service-areas/greenbrier-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/greenbrier/:path*",
+      "destination": "/service-areas/greenbrier-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/gurdon",
+      "destination": "/service-areas/gurdon-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/gurdon/:path*",
+      "destination": "/service-areas/gurdon-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hartford",
+      "destination": "/service-areas/hartford-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hartford/:path*",
+      "destination": "/service-areas/hartford-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hope",
+      "destination": "/service-areas/hope-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hope/:path*",
+      "destination": "/service-areas/hope-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hot-springs",
+      "destination": "/service-areas/hot-springs-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hot-springs/:path*",
+      "destination": "/service-areas/hot-springs-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/jacksonville",
+      "destination": "/service-areas/jacksonville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/jacksonville/:path*",
+      "destination": "/service-areas/jacksonville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/jonesboro",
+      "destination": "/service-areas/jonesboro-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/jonesboro/:path*",
+      "destination": "/service-areas/jonesboro-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/little-rock",
+      "destination": "/service-areas/little-rock-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/little-rock/:path*",
+      "destination": "/service-areas/little-rock-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/london",
+      "destination": "/service-areas/london-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/london/:path*",
+      "destination": "/service-areas/london-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/malvern",
+      "destination": "/service-areas/malvern-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/malvern/:path*",
+      "destination": "/service-areas/malvern-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/maumelle-sherwood",
+      "destination": "/service-areas/maumelle-sherwood-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/maumelle-sherwood/:path*",
+      "destination": "/service-areas/maumelle-sherwood-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mena",
+      "destination": "/service-areas/mena-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mena/:path*",
+      "destination": "/service-areas/mena-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/morrilton",
+      "destination": "/service-areas/morrilton-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/morrilton/:path*",
+      "destination": "/service-areas/morrilton-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nashville",
+      "destination": "/service-areas/nashville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nashville/:path*",
+      "destination": "/service-areas/nashville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/north-little-rock",
+      "destination": "/service-areas/north-little-rock-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/north-little-rock/:path*",
+      "destination": "/service-areas/north-little-rock-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ozark",
+      "destination": "/service-areas/ozark-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ozark/:path*",
+      "destination": "/service-areas/ozark-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pottsville",
+      "destination": "/service-areas/pottsville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pottsville/:path*",
+      "destination": "/service-areas/pottsville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/rogers",
+      "destination": "/service-areas/rogers-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/rogers/:path*",
+      "destination": "/service-areas/rogers-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/russellville",
+      "destination": "/service-areas/russellville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/russellville/:path*",
+      "destination": "/service-areas/russellville-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/searcy",
+      "destination": "/service-areas/searcy-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/searcy/:path*",
+      "destination": "/service-areas/searcy-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/siloam-springs",
+      "destination": "/service-areas/siloam-springs-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/siloam-springs/:path*",
+      "destination": "/service-areas/siloam-springs-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/springdale",
+      "destination": "/service-areas/springdale-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/springdale/:path*",
+      "destination": "/service-areas/springdale-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/van-buren",
+      "destination": "/service-areas/van-buren-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/van-buren/:path*",
+      "destination": "/service-areas/van-buren-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vilonia",
+      "destination": "/service-areas/vilonia-ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vilonia/:path*",
+      "destination": "/service-areas/vilonia-ar/",
+      "statusCode": 301
+    },
+    {
       "source": "/dfw/:path*",
       "destination": "/areas-we-serve/",
       "statusCode": 301
