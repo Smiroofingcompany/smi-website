@@ -114,6 +114,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://smiroof.com/commercial-roofing/commercial-roof-inspections/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smiroof.com/commercial-roofing/emergency-roof-repair/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Commercial City Pages -->
   <url>
     <loc>https://smiroof.com/commercial-roofing/little-rock-ar/</loc>
@@ -281,6 +293,12 @@
   <url>
     <loc>https://smiroof.com/industries/warehouse-industrial-roofing/</loc>
     <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smiroof.com/industries/agricultural-poultry-roofing/</loc>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
