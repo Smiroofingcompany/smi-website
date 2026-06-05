@@ -47,21 +47,9 @@ const stateCodeByName = new Map([
   ['Tennessee', 'TN']
 ]);
 
-const fallbackMetroContext = new Map([
-  ['dfw', 'North Texas hail, long heat cycles, fast subdivision growth, low-slope commercial drainage, and claim-ready photos across Dallas, Fort Worth, Arlington, Plano, Frisco, Irving, Grapevine, and nearby communities.'],
-  ['fort-worth', 'Tarrant County hail, long heat cycles, wind-driven rain, older neighborhoods, and large commercial roof areas around Fort Worth, Arlington, Keller, Burleson, Weatherford, Benbrook, and Saginaw.'],
-  ['houston', 'tropical rain, wind, humidity, tree debris, low-slope commercial drainage, and storm documentation across Harris County and nearby Gulf Coast communities.'],
-  ['san-antonio', 'hail, heat, wind-driven rain, older neighborhood roof systems, and storm documentation across Bexar County and nearby Hill Country communities.'],
-  ['nashville-tn', 'hail, high winds, humidity, tree cover, steep roof access, and mixed residential and commercial roof types around Nashville, Brentwood, Franklin, Hendersonville, and Mount Juliet.']
-]);
+const fallbackMetroContext = new Map([]);
 
-const fallbackMetroAreas = new Map([
-  ['dfw', 'Dallas, Fort Worth, Arlington, Plano, Frisco, Irving, Grapevine, and nearby North Texas communities'],
-  ['fort-worth', 'Fort Worth, Arlington, Keller, Burleson, Weatherford, Benbrook, Saginaw, and nearby Tarrant County communities'],
-  ['houston', 'Houston, Harris County, and nearby Gulf Coast communities'],
-  ['san-antonio', 'San Antonio, Bexar County, and nearby Hill Country communities'],
-  ['nashville-tn', 'Nashville, Brentwood, Franklin, Hendersonville, Mount Juliet, and nearby Middle Tennessee communities']
-]);
+const fallbackMetroAreas = new Map([]);
 
 const basePage = readFileSync(join(root, 'roofing-costs', 'index.html'), 'utf8');
 const baseStyle = basePage.match(/<style>[\s\S]*?<\/style>/)?.[0];
@@ -76,8 +64,6 @@ const style = baseStyle.replace('</style>', `${extraStyle}</style>`);
 
 function titleCaseSegment(segment) {
   const known = new Map([
-    ['dfw', 'DFW'],
-    ['tn', 'TN'],
     ['ar', 'AR']
   ]);
 

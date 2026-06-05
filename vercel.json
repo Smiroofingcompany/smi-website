@@ -5,6 +5,36 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/dfw/:path*",
+      "destination": "/areas-we-serve/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fort-worth/:path*",
+      "destination": "/areas-we-serve/",
+      "statusCode": 301
+    },
+    {
+      "source": "/houston/:path*",
+      "destination": "/areas-we-serve/",
+      "statusCode": 301
+    },
+    {
+      "source": "/san-antonio/:path*",
+      "destination": "/areas-we-serve/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nashville-tn/:path*",
+      "destination": "/areas-we-serve/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/:path*",
+      "destination": "/areas-we-serve/",
+      "statusCode": 301
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "statusCode": 301
