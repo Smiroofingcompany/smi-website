@@ -9,7 +9,7 @@ const mode = process.argv.includes('--write') ? 'write' : 'check';
 
 const SITE_URL = 'https://smiroof.com';
 const COMPANY_PHONE = '+1-501-464-5139';
-const COMPANY_EMAIL = 'info@smiroof.com';
+const COMPANY_EMAIL = 'office@smiroof.com';
 const COMPANY_PRICE_RANGE = '$$';
 const COMPANY_ADDRESS = {
   '@type': 'PostalAddress',

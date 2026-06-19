@@ -33,7 +33,7 @@ const orgSchema = {
   name: 'SMI Roofing',
   url: siteUrl,
   telephone: '+1-501-464-5139',
-  email: 'info@smiroof.com',
+  email: 'office@smiroof.com',
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
